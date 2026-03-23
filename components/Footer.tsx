@@ -1,0 +1,119 @@
+import Link from "next/link";
+import { siteInfo } from "@/lib/constants";
+import { Globe, Camera, Share2 } from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer style={{ background: "#0a0604", borderTop: "1px solid rgba(255,255,255,0.05)" }} className="pt-16 pb-10">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+
+        {/* top grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
+
+          {/* brand */}
+          <div>
+            <Link href="/" className="font-black text-xl tracking-tight mb-5 block">
+              <span style={{ color: "#FF6B35" }}>KANGEN</span>
+              <span className="text-white">BURGERS</span>
+            </Link>
+            <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.35)" }}>
+              {siteInfo.headline}
+            </p>
+            <div className="flex gap-4">
+              <a href={siteInfo.social.facebook}
+                 className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                 style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
+                <Globe size={16} />
+              </a>
+              <a href={siteInfo.social.instagram}
+                 className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                 style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
+                <Camera size={16} />
+              </a>
+              <a href={siteInfo.social.twitter}
+                 className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                 style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
+                <Share2 size={16} />
+              </a>
+            </div>
+          </div>
+
+          {/* quick links */}
+          <div>
+            <h4 className="text-white font-black text-xs tracking-[0.3em] uppercase mb-6">Quick Links</h4>
+            <ul className="space-y-3">
+              {["/", "/menu", "/franchise", "/kangen-water", "/blog"].map((href, i) => {
+                const labels = ["Home", "Menu", "Franchise", "Kangen Water", "Blog"];
+                return (
+                  <li key={href}>
+                    <Link href={href}
+                      className="text-sm transition-colors hover:text-[#FF6B35]"
+                      style={{ color: "rgba(255,255,255,0.4)" }}>
+                      {labels[i]}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* contact */}
+          <div>
+            <h4 className="text-white font-black text-xs tracking-[0.3em] uppercase mb-6">Contact</h4>
+            <ul className="space-y-3 text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
+              <li>
+                <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
+                      style={{ color: "rgba(255,255,255,0.25)" }}>Address</span>
+                {siteInfo.address}
+              </li>
+              <li>
+                <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
+                      style={{ color: "rgba(255,255,255,0.25)" }}>Phone</span>
+                <a href={`tel:${siteInfo.phone}`} className="hover:text-[#FF6B35] transition-colors">{siteInfo.phone}</a>
+              </li>
+              <li>
+                <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
+                      style={{ color: "rgba(255,255,255,0.25)" }}>Email</span>
+                <a href={`mailto:${siteInfo.email}`} className="hover:text-[#FF6B35] transition-colors">{siteInfo.email}</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* newsletter */}
+          <div>
+            <h4 className="text-white font-black text-xs tracking-[0.3em] uppercase mb-6">Newsletter</h4>
+            <p className="text-sm mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>Subscribe for special offers &amp; updates.</p>
+            <form className="flex flex-col gap-3">
+              <input
+                type="email"
+                placeholder="Your email"
+                required
+                className="px-4 py-2.5 rounded-lg text-sm focus:outline-none"
+                style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)", color: "#fff" }}
+              />
+              <button
+                type="submit"
+                className="px-4 py-2.5 rounded-lg font-bold text-sm transition-all hover:opacity-90"
+                style={{ background: "#FF6B35", color: "#fff" }}
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        {/* bottom bar */}
+        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs"
+             style={{ borderTop: "1px solid rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.2)" }}>
+          <p>&copy; {new Date().getFullYear()} Kangen Burgers. All rights reserved.</p>
+          <div className="flex gap-6">
+            {[["Privacy Policy", "/privacy"], ["Terms", "/terms"], ["Refund Policy", "/refund-policy"]].map(([label, href]) => (
+              <Link key={href} href={href} className="hover:text-[#FF6B35] transition-colors">{label}</Link>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
+}
