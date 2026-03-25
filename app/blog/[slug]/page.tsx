@@ -19,13 +19,13 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
   if (!post) notFound();
 
   return (
-    <div style={{ background: "#0f0a08" }} className="min-h-screen pt-28 pb-20 px-6 sm:px-10">
+    <div style={{ background: "var(--page-bg)" }} className="min-h-screen pt-28 pb-20 px-6 sm:px-10">
       <div className="max-w-3xl mx-auto">
         <SectionReveal>
           {/* back link */}
           <Link href="/blog"
             className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase mb-12 transition-colors hover:text-[#FF6B35]"
-            style={{ color: "rgba(255,255,255,0.30)" }}>
+            style={{ color: "var(--text-muted)" }}>
             ← Back to Blog
           </Link>
 
@@ -37,7 +37,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight text-white mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight mb-6"
+              style={{ color: "var(--text-primary)" }}>
             {post!.title}
           </h1>
 
@@ -46,12 +47,12 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           {/* article */}
           <article>
             <p className="text-lg leading-[1.85] mb-8 font-medium"
-               style={{ color: "rgba(255,255,255,0.65)" }}>
+               style={{ color: "var(--text-secondary)" }}>
               {post!.excerpt}
             </p>
 
-            <div className="space-y-6 text-base leading-[1.9]" style={{ color: "rgba(255,255,255,0.50)" }}>
-              <h2 className="text-xl font-black text-white mt-10 mb-3">The Role of Quality and Health</h2>
+            <div className="space-y-6 text-base leading-[1.9]" style={{ color: "var(--text-secondary)" }}>
+              <h2 className="text-xl font-black mt-10 mb-3" style={{ color: "var(--text-primary)" }}>The Role of Quality and Health</h2>
               <p>
                 At Kangen Burgers, we believe that great food starts with great ingredients.
                 Every burger, pizza, and beverage is crafted using high-quality produce sourced from
@@ -64,7 +65,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                 cooking water often strips away.
               </p>
 
-              <h2 className="text-xl font-black text-white mt-10 mb-3">Bringing It All Together</h2>
+              <h2 className="text-xl font-black mt-10 mb-3" style={{ color: "var(--text-primary)" }}>Bringing It All Together</h2>
               <p>
                 Whether it&apos;s the 100% organic patty, the farm-fresh veggies, or the unique twist
                 of our alkaline water preparation — what makes our burgers truly stand out is our
@@ -78,8 +79,8 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </article>
 
           {/* CTA */}
-          <div className="mt-14 pt-10" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
-            <p className="text-sm mb-5" style={{ color: "rgba(255,255,255,0.30)" }}>
+          <div className="mt-14 pt-10" style={{ borderTop: "1px solid var(--card-border)" }}>
+            <p className="text-sm mb-5" style={{ color: "var(--text-muted)" }}>
               Enjoyed reading? Try it for yourself.
             </p>
             <Link href="/menu"

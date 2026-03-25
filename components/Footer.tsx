@@ -3,7 +3,7 @@ import { siteInfo } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#0a0604", borderTop: "1px solid rgba(255,255,255,0.05)" }} className="pt-16 pb-10">
+    <footer style={{ background: "var(--footer-bg)", borderTop: "1px solid var(--footer-border)" }} className="pt-16 pb-10">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
 
         {/* top grid */}
@@ -13,25 +13,25 @@ export default function Footer() {
           <div>
             <Link href="/" className="font-black text-xl tracking-tight mb-5 block">
               <span style={{ color: "#FF6B35" }}>KANGEN</span>
-              <span className="text-white">BURGERS</span>
+              <span style={{ color: "rgba(255,255,255,0.9)" }}>BURGERS</span>
             </Link>
-            <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <p className="text-sm leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.45)" }}>
               {siteInfo.headline}
             </p>
             <div className="flex gap-4">
               <a href={siteInfo.social.facebook} target="_blank" rel="noopener noreferrer"
                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                 style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
+                 style={{ background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)" }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
               </a>
               <a href={siteInfo.social.instagram} target="_blank" rel="noopener noreferrer"
                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                 style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
+                 style={{ background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)" }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
               </a>
               <a href={siteInfo.social.linkedin} target="_blank" rel="noopener noreferrer"
                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                 style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
+                 style={{ background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)" }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
             </div>
@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* quick links */}
           <div>
-            <h4 className="text-white font-black text-xs tracking-[0.3em] uppercase mb-6">Quick Links</h4>
+            <h4 className="font-black text-xs tracking-[0.3em] uppercase mb-6" style={{ color: "rgba(255,255,255,0.8)" }}>Quick Links</h4>
             <ul className="space-y-3">
               {["/", "/menu", "/franchise", "/kangen-water", "/blog"].map((href, i) => {
                 const labels = ["Home", "Menu", "Franchise", "Kangen Water", "Blog"];
@@ -47,7 +47,7 @@ export default function Footer() {
                   <li key={href}>
                     <Link href={href}
                       className="text-sm transition-colors hover:text-[#FF6B35]"
-                      style={{ color: "rgba(255,255,255,0.4)" }}>
+                      style={{ color: "rgba(255,255,255,0.45)" }}>
                       {labels[i]}
                     </Link>
                   </li>
@@ -58,23 +58,23 @@ export default function Footer() {
 
           {/* contact */}
           <div>
-            <h4 className="text-white font-black text-xs tracking-[0.3em] uppercase mb-6">Contact</h4>
-            <ul className="space-y-3 text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <h4 className="font-black text-xs tracking-[0.3em] uppercase mb-6" style={{ color: "rgba(255,255,255,0.8)" }}>Contact</h4>
+            <ul className="space-y-3 text-sm" style={{ color: "rgba(255,255,255,0.45)" }}>
               <li>
                 <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
-                      style={{ color: "rgba(255,255,255,0.25)" }}>Address</span>
+                      style={{ color: "rgba(255,255,255,0.3)" }}>Address</span>
                 <a href={siteInfo.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6B35] transition-colors inline-block">
                   {siteInfo.address}
                 </a>
               </li>
               <li>
                 <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
-                      style={{ color: "rgba(255,255,255,0.25)" }}>Phone</span>
+                      style={{ color: "rgba(255,255,255,0.3)" }}>Phone</span>
                 <a href={`tel:${siteInfo.phone}`} className="hover:text-[#FF6B35] transition-colors">{siteInfo.phone}</a>
               </li>
               <li>
                 <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
-                      style={{ color: "rgba(255,255,255,0.25)" }}>Email</span>
+                      style={{ color: "rgba(255,255,255,0.3)" }}>Email</span>
                 <a href={`mailto:${siteInfo.email}`} className="hover:text-[#FF6B35] transition-colors">{siteInfo.email}</a>
               </li>
             </ul>
@@ -82,8 +82,8 @@ export default function Footer() {
 
           {/* newsletter */}
           <div>
-            <h4 className="text-white font-black text-xs tracking-[0.3em] uppercase mb-6">Newsletter</h4>
-            <p className="text-sm mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>Subscribe for special offers &amp; updates.</p>
+            <h4 className="font-black text-xs tracking-[0.3em] uppercase mb-6" style={{ color: "rgba(255,255,255,0.8)" }}>Newsletter</h4>
+            <p className="text-sm mb-5" style={{ color: "rgba(255,255,255,0.45)" }}>Subscribe for special offers &amp; updates.</p>
             <form className="flex flex-col gap-3">
               <input
                 type="email"
@@ -105,7 +105,7 @@ export default function Footer() {
 
         {/* bottom bar */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs"
-             style={{ borderTop: "1px solid rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.2)" }}>
+             style={{ borderTop: "1px solid rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.3)" }}>
           <p>&copy; {new Date().getFullYear()} Kangen Burgers. All rights reserved.</p>
           <div className="flex gap-6">
             {[["Privacy Policy", "/privacy"], ["Terms", "/terms"], ["Refund Policy", "/refund-policy"]].map(([label, href]) => (

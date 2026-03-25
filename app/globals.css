@@ -2,19 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Theme Variables ─────────────────────────────────────── */
+/* ══════════════════════════════════════════════════════════
+   THEME VARIABLES — Light (default) + Dark
+   ══════════════════════════════════════════════════════════ */
 :root {
-  --foreground-rgb: 26, 26, 26;
-  --background-start-rgb: 250, 247, 242;
-  --background-end-rgb: 250, 247, 242;
-  --accent: #FF6B35;
-  --gold: #c8a96b;
+  /* Page backgrounds */
+  --page-bg: #faf7f2;
+  --page-bg-alt: #f4efe7;
+  --section-dark-bg: #1a1410;
+  --section-kangen-bg: #e8f6f8;
+
+  /* Cards & surfaces */
+  --card-bg: rgba(0, 0, 0, 0.03);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-hover: rgba(255, 107, 53, 0.06);
+  --card-bg-solid: #ffffff;
+  --card-border-solid: rgba(0, 0, 0, 0.07);
+
+  /* Text */
+  --text-primary: #1a1410;
+  --text-secondary: #5a5247;
+  --text-muted: #9a8e82;
+  --text-accent: #FF6B35;
+
+  /* Input fields */
+  --input-bg: rgba(0, 0, 0, 0.04);
+  --input-border: rgba(0, 0, 0, 0.10);
+  --input-text: #1a1410;
+
+  /* Navbar */
+  --nav-bg: rgba(250, 247, 242, 0.92);
+  --nav-border: rgba(0, 0, 0, 0.06);
+  --nav-text: rgba(0, 0, 0, 0.55);
+  --nav-text-hover: #1a1410;
+
+  /* Footer */
+  --footer-bg: #1a1410;
+  --footer-border: rgba(255, 255, 255, 0.05);
+
+  /* Overlays & glows */
+  --overlay-light: rgba(255, 255, 255, 0.6);
+  --glow-accent: rgba(255, 107, 53, 0.08);
+  --divider: rgba(0, 0, 0, 0.08);
+
+  /* Kangen Water accents */
+  --kangen-accent: #008a96;
+  --kangen-card-bg: rgba(0, 200, 220, 0.06);
+  --kangen-card-border: rgba(0, 200, 220, 0.15);
+
+  /* Big number decorative */
+  --number-color: rgba(255, 107, 53, 0.10);
 }
 
 html.dark {
-  --foreground-rgb: 250, 247, 242;
-  --background-start-rgb: 15, 10, 8;
-  --background-end-rgb: 15, 10, 8;
+  --page-bg: #0f0a08;
+  --page-bg-alt: #0a0604;
+  --section-dark-bg: #0f0a08;
+  --section-kangen-bg: #040d14;
+
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.07);
+  --card-hover: rgba(255, 107, 53, 0.08);
+  --card-bg-solid: rgba(255, 255, 255, 0.03);
+  --card-border-solid: rgba(255, 255, 255, 0.07);
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.55);
+  --text-muted: rgba(255, 255, 255, 0.35);
+  --text-accent: #FF6B35;
+
+  --input-bg: rgba(255, 255, 255, 0.04);
+  --input-border: rgba(255, 255, 255, 0.10);
+  --input-text: #ffffff;
+
+  --nav-bg: rgba(15, 10, 8, 0.92);
+  --nav-border: rgba(255, 255, 255, 0.06);
+  --nav-text: rgba(255, 255, 255, 0.60);
+  --nav-text-hover: #ffffff;
+
+  --footer-bg: #0a0604;
+  --footer-border: rgba(255, 255, 255, 0.05);
+
+  --overlay-light: rgba(0, 0, 0, 0.4);
+  --glow-accent: rgba(255, 107, 53, 0.08);
+  --divider: rgba(255, 255, 255, 0.07);
+
+  --kangen-accent: #00c8dc;
+  --kangen-card-bg: rgba(0, 200, 220, 0.04);
+  --kangen-card-border: rgba(0, 200, 220, 0.10);
+
+  --number-color: rgba(255, 107, 53, 0.12);
 }
 
 /* Smooth theme transition */
@@ -23,8 +100,8 @@ html {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  color: var(--text-primary);
+  background: var(--page-bg);
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
@@ -44,15 +121,15 @@ body {
     @apply bg-black/40 border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
   }
   .glass-premium {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--card-bg);
     backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid var(--card-border);
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.12),
+      0 8px 32px rgba(0, 0, 0, 0.06),
       inset 0 1px 0 rgba(255, 255, 255, 0.05);
   }
   .glass-glow {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--card-bg);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 107, 53, 0.15);
     box-shadow:
@@ -62,6 +139,16 @@ body {
   .text-glow {
     text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
   }
+}
+
+/* ── Themed section helper classes ───────────────────────── */
+.themed-section {
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+.themed-section-alt {
+  background: var(--section-dark-bg);
+  color: var(--text-primary);
 }
 
 /* ── Premium Button Glow ─────────────────────────────────── */
@@ -129,7 +216,7 @@ body {
   border-radius: 1rem;
 }
 
-/* ── Countdown glow intensity ────────────────────────────── */
+/* ── Countdown urgency ───────────────────────────────────── */
 .countdown-urgent {
   border-color: rgba(255, 107, 53, 0.5) !important;
   box-shadow: 0 0 24px rgba(255, 107, 53, 0.25) !important;

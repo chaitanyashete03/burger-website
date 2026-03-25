@@ -47,10 +47,10 @@ export default function NavBar() {
           : "py-2"
       )}
       style={{
-        background: scrolled ? "rgba(15,10,8,0.92)" : "transparent",
+        background: scrolled ? "var(--nav-bg)" : "transparent",
         backdropFilter: scrolled ? "blur(20px)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
+        borderBottom: scrolled ? "1px solid var(--nav-border)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -59,25 +59,32 @@ export default function NavBar() {
           {/* Logo */}
           <Link href="/" className="z-50 font-black text-xl tracking-tight">
             <span style={{ color: "#FF6B35" }}>KANGEN</span>
-            <span className="text-white">BURGERS</span>
+            <span style={{ color: "var(--text-primary)" }}>BURGERS</span>
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={cn(
-                  "text-[13px] font-semibold tracking-wide transition-colors duration-200",
-                  pathname === link.href
-                    ? "text-[#FF6B35]"
-                    : "text-white/60 hover:text-white"
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-[13px] font-semibold tracking-wide transition-colors duration-200"
+                  style={{
+                    color: isActive ? "#FF6B35" : "var(--nav-text)",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) (e.target as HTMLElement).style.color = "var(--nav-text-hover)";
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) (e.target as HTMLElement).style.color = "var(--nav-text)";
+                  }}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* CTA + Toggle */}
@@ -85,7 +92,7 @@ export default function NavBar() {
             <DarkModeToggle />
             <Link
               href="/order-online"
-              className="btn-glow px-6 py-2.5 rounded-full font-bold text-sm tracking-wide"
+              className="btn-glow px-6 py-2.5 rounded-full font-bold text-sm tracking-wide text-white"
             >
               Order Online
             </Link>
@@ -94,7 +101,7 @@ export default function NavBar() {
           {/* Hamburger */}
           <button
             className="md:hidden z-50 transition-colors"
-            style={{ color: "rgba(255,255,255,0.8)" }}
+            style={{ color: "var(--nav-text)" }}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={26} /> : <Menu size={26} />}
@@ -107,14 +114,15 @@ export default function NavBar() {
     {isOpen && (
       <div
         className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-start pt-32 pb-12 gap-8 overflow-y-auto"
-        style={{ background: "rgba(15,10,8,0.98)", backdropFilter: "blur(24px)" }}
+        style={{ background: "var(--nav-bg)", backdropFilter: "blur(24px)" }}
       >
         {navLinks.map((link) => (
           <Link
             key={link.name}
             href={link.href}
             onClick={() => setIsOpen(false)}
-            className="text-2xl font-black tracking-tight text-white hover:text-[#FF6B35] transition-colors"
+            className="text-2xl font-black tracking-tight transition-colors hover:text-[#FF6B35]"
+            style={{ color: pathname === link.href ? "#FF6B35" : "var(--text-primary)" }}
           >
             {link.name}
           </Link>
@@ -125,7 +133,7 @@ export default function NavBar() {
         <Link
           href="/order-online"
           onClick={() => setIsOpen(false)}
-          className="mt-2 px-10 py-4 rounded-full font-black text-lg btn-glow"
+          className="mt-2 px-10 py-4 rounded-full font-black text-lg btn-glow text-white"
         >
           Order Online
         </Link>

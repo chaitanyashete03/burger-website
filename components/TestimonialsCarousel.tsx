@@ -53,7 +53,7 @@ export default function TestimonialsCarousel() {
   return (
     <section
       className="relative overflow-hidden py-28 lg:py-36 px-6 sm:px-10 lg:px-20"
-      style={{ background: "#0f0a08" }}
+      style={{ background: "var(--page-bg)" }}
     >
       {/* radial glow */}
       <div
@@ -76,7 +76,8 @@ export default function TestimonialsCarousel() {
             </span>
             <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
           </div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight text-white">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight"
+              style={{ color: "var(--text-primary)" }}>
             What Our <span style={{ color: "#FF6B35" }}>Customers</span> Say
           </h2>
         </div>
@@ -105,15 +106,15 @@ export default function TestimonialsCarousel() {
               <div
                 className="relative rounded-3xl p-8 sm:p-12 text-center"
                 style={{
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.07)",
+                  background: "var(--card-bg)",
+                  border: "1px solid var(--card-border)",
                   backdropFilter: "blur(20px)",
                 }}
               >
                 {/* Quote icon */}
                 <div
                   className="absolute top-4 left-6 text-[5rem] leading-none font-black select-none pointer-events-none"
-                  style={{ color: "rgba(255,107,53,0.06)" }}
+                  style={{ color: "var(--number-color)" }}
                 >
                   &ldquo;
                 </div>
@@ -127,7 +128,7 @@ export default function TestimonialsCarousel() {
                       height="18"
                       viewBox="0 0 24 24"
                       fill={i < item.rating ? "#FF6B35" : "none"}
-                      stroke={i < item.rating ? "#FF6B35" : "rgba(255,255,255,0.15)"}
+                      stroke={i < item.rating ? "#FF6B35" : "var(--card-border)"}
                       strokeWidth="2"
                     >
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -138,7 +139,7 @@ export default function TestimonialsCarousel() {
                 {/* Text */}
                 <p
                   className="text-base sm:text-lg leading-relaxed mb-8 max-w-2xl mx-auto"
-                  style={{ color: "rgba(255,255,255,0.6)" }}
+                  style={{ color: "var(--text-secondary)" }}
                 >
                   &ldquo;{item.text}&rdquo;
                 </p>
@@ -149,9 +150,9 @@ export default function TestimonialsCarousel() {
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-black"
                     style={{
-                      background: "rgba(255,107,53,0.12)",
+                      background: "rgba(255,107,53,0.08)",
                       color: "#FF6B35",
-                      border: "1px solid rgba(255,107,53,0.2)",
+                      border: "1px solid rgba(255,107,53,0.15)",
                     }}
                   >
                     {item.name
@@ -159,10 +160,10 @@ export default function TestimonialsCarousel() {
                       .map((w) => w[0])
                       .join("")}
                   </div>
-                  <p className="text-white font-black text-sm">{item.name}</p>
+                  <p className="font-black text-sm" style={{ color: "var(--text-primary)" }}>{item.name}</p>
                   <p
                     className="text-[10px] font-bold tracking-widest uppercase mt-1"
-                    style={{ color: "rgba(255,255,255,0.3)" }}
+                    style={{ color: "var(--text-muted)" }}
                   >
                     {item.role}
                   </p>
@@ -178,9 +179,9 @@ export default function TestimonialsCarousel() {
             className="absolute top-1/2 -translate-y-1/2 -left-2 sm:-left-6 w-10 h-10 rounded-full flex items-center justify-center
                        transition-all hover:scale-110"
             style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              color: "rgba(255,255,255,0.5)",
+              background: "var(--input-bg)",
+              border: "1px solid var(--input-border)",
+              color: "var(--text-secondary)",
             }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -193,9 +194,9 @@ export default function TestimonialsCarousel() {
             className="absolute top-1/2 -translate-y-1/2 -right-2 sm:-right-6 w-10 h-10 rounded-full flex items-center justify-center
                        transition-all hover:scale-110"
             style={{
-              background: "rgba(255,255,255,0.05)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              color: "rgba(255,255,255,0.5)",
+              background: "var(--input-bg)",
+              border: "1px solid var(--input-border)",
+              color: "var(--text-secondary)",
             }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -215,7 +216,7 @@ export default function TestimonialsCarousel() {
               style={{
                 width: idx === current ? "24px" : "8px",
                 height: "8px",
-                background: idx === current ? "#FF6B35" : "rgba(255,255,255,0.15)",
+                background: idx === current ? "#FF6B35" : "var(--card-border)",
               }}
             />
           ))}

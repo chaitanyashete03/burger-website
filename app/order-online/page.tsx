@@ -8,7 +8,7 @@ export const metadata = generatePageMetadata("orderOnline");
 
 export default function OrderOnline() {
   return (
-    <div style={{ background: "#0f0a08" }} className="min-h-screen flex items-center justify-center pt-24 pb-20 px-6">
+    <div style={{ background: "var(--page-bg)" }} className="min-h-screen flex items-center justify-center pt-24 pb-20 px-6">
 
       <SectionReveal className="w-full max-w-2xl">
 
@@ -19,13 +19,14 @@ export default function OrderOnline() {
             <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>Delivery & Pickup</span>
             <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-4"
+              style={{ color: "var(--text-primary)" }}>
             Order <span style={{ color: "#FF6B35" }}>Online</span>
           </h1>
           <div className="flex justify-center mb-5">
             <div className="w-8 h-[2px] rounded-full" style={{ background: "#FF6B35" }} />
           </div>
-          <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
+          <p className="text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>
             Enjoy our delicious, healthy burgers right at your door — choose your preferred platform.
           </p>
         </div>
@@ -40,7 +41,7 @@ export default function OrderOnline() {
               key={name}
               href={href}
               className="group relative rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1"
-              style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
+              style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}
             >
               <div
                 className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
@@ -52,23 +53,23 @@ export default function OrderOnline() {
               >
                 {icon}
               </div>
-              <h3 className="text-2xl font-black text-white mb-1">{name}</h3>
-              <p className="text-sm" style={{ color: "rgba(255,255,255,0.35)" }}>{sub}</p>
+              <h3 className="text-2xl font-black mb-1" style={{ color: "var(--text-primary)" }}>{name}</h3>
+              <p className="text-sm" style={{ color: "var(--text-muted)" }}>{sub}</p>
             </a>
           ))}
         </div>
 
         {/* divider */}
         <div className="flex items-center gap-4 mb-8">
-          <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
-          <span className="text-[10px] font-black tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.25)" }}>Or</span>
-          <div className="flex-1 h-px" style={{ background: "rgba(255,255,255,0.07)" }} />
+          <div className="flex-1 h-px" style={{ background: "var(--card-border)" }} />
+          <span className="text-[10px] font-black tracking-widest uppercase" style={{ color: "var(--text-muted)" }}>Or</span>
+          <div className="flex-1 h-px" style={{ background: "var(--card-border)" }} />
         </div>
 
         {/* call CTA */}
         <div className="text-center">
           <p className="text-[10px] font-black tracking-widest uppercase mb-5"
-             style={{ color: "rgba(255,255,255,0.25)" }}>Call Us Directly for Takeaway</p>
+             style={{ color: "var(--text-muted)" }}>Call Us Directly for Takeaway</p>
           <a
             href={`tel:${siteInfo.phone}`}
             className="inline-flex items-center gap-3 px-10 py-4 rounded-full font-black text-base tracking-wide transition-all hover:scale-105"
