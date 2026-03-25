@@ -19,7 +19,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <SectionReveal>
             <div className="relative h-[420px] rounded-3xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.15)]">
-              <Image src="/images/kitchen.jpg" alt="Our Kitchen" fill className="object-cover" />
+              <Image src="/images/scroll-laptop/ezgif-frame-100.jpg" alt="Our Kitchen" fill className="object-cover" />
               <div className="absolute inset-0"
                    style={{ background: "linear-gradient(135deg, rgba(255,107,53,0.15) 0%, transparent 60%)" }} />
             </div>

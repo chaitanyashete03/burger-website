@@ -18,7 +18,7 @@ export default function Franchise() {
 
       {/* Hero */}
       <section className="relative h-[70vh] flex items-end pb-20 px-6 sm:px-10">
-        <Image src="/images/hero-bg.jpg" alt="Franchise" fill className="object-cover" priority />
+        <Image src="/images/scroll-laptop/ezgif-frame-001.jpg" alt="Franchise" fill className="object-cover" priority />
         <div className="absolute inset-0"
              style={{ background: "linear-gradient(to top, rgba(15,10,8,1) 0%, rgba(15,10,8,0.5) 50%, rgba(0,0,0,0.2) 100%)" }} />
         <div className="relative z-10 max-w-3xl">

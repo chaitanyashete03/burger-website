@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Kangen Burgers",
     images: [
       {
-        url: "/images/hero-bg.jpg",
+        url: "/images/scroll-laptop/ezgif-frame-001.jpg",
         width: 1200,
         height: 630,
         alt: "Kangen Burgers – Healthy Burgers in Pune",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: defaultSEO.title,
     description: defaultSEO.description,
-    images: ["/images/hero-bg.jpg"],
+    images: ["/images/scroll-laptop/ezgif-frame-001.jpg"],
   },
   robots: {
     index: true,
@@ -69,8 +69,8 @@ const jsonLd = {
   url: "https://www.kangenburgers.com",
   telephone: "+911234567890",
   email: "hello@kangenburgers.com",
-  image: "https://www.kangenburgers.com/images/hero-bg.jpg",
-  logo: "https://www.kangenburgers.com/images/hero-bg.jpg",
+  image: "https://www.kangenburgers.com/images/scroll-laptop/ezgif-frame-001.jpg",
+  logo: "https://www.kangenburgers.com/images/scroll-laptop/ezgif-frame-001.jpg",
   priceRange: "₹₹",
   servesCuisine: ["Burgers", "Pizzas", "Fast Food", "Healthy Food"],
   address: {
