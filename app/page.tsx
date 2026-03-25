@@ -112,7 +112,7 @@ export default function Home() {
           <SectionReveal>
             <div className="relative h-[420px] sm:h-[500px] rounded-3xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.5)] bg-black/20">
               <Image 
-                src="/images/about-cafe.png" 
+                src="/images/about-cafe.jpg" 
                 alt="About Kangen Burgers Cafe Front" 
                 fill 
                 className="object-cover"
