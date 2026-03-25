@@ -65,7 +65,7 @@ export default function Contact() {
               {/* map */}
               <div className="h-[340px] rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.07)" }}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d3780.207802871147!2d73.6811201!3d18.7289896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDQzJzQ0LjQiTiA3M8KwNDAnNTIuMCJF!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.3803888861985!2d73.67388900000003!3d18.736538600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b163be0c7683%3A0x9cc4c420bc6b6587!2sKangen%20Burger%27s%20cafe%20%7C%20Best%20cafe%20in%20Yashwant%20Nagar%20%7C%20Talegaon%20Dabhade!5e0!3m2!1sen!2sin!4v1774434716133!5m2!1sen!2sin"
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
