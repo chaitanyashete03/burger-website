@@ -26,6 +26,17 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Disable background scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    // Cleanup on unmount just in case
+    return () => { document.body.style.overflow = "unset"; };
+  }, [isOpen]);
+
   return (
     <header
       className={cn(
