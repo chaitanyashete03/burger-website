@@ -111,8 +111,8 @@ export default function NavBar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-2xl font-black tracking-tight text-white hover:text-[#FF6B35] transition-colors"
               onClick={() => setIsOpen(false)}
+              className="text-2xl font-black tracking-tight text-white hover:text-[#FF6B35] transition-colors"
             >
               {link.name}
             </Link>
@@ -120,7 +120,7 @@ export default function NavBar() {
           <Link
             href="/order-online"
             onClick={() => setIsOpen(false)}
-            className="mt-4 px-10 py-4 rounded-full font-black text-lg"
+            className="mt-4 px-10 py-4 rounded-full font-black text-lg transition-transform active:scale-95"
             style={{ background: "#FF6B35", color: "#fff" }}
           >
             Order Online
