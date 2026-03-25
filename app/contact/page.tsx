@@ -41,7 +41,7 @@ export default function Contact() {
                 <h3 className="text-xl font-black text-white mb-6">Store Details</h3>
                 <div className="space-y-5">
                   {[
-                    { label: "Address", value: siteInfo.address, href: undefined },
+                    { label: "Address", value: siteInfo.address, href: siteInfo.mapUrl },
                     { label: "Phone", value: siteInfo.phone, href: `tel:${siteInfo.phone}` },
                     { label: "Email", value: siteInfo.email, href: `mailto:${siteInfo.email}` },
                   ].map(({ label, value, href }) => (

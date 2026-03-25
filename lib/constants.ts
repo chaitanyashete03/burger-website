@@ -2,8 +2,9 @@ export const siteInfo = {
   name: "Kangen Burgers",
   headline: "Enjoy healthy and tasty burgers with a twist of alkaline goodness",
   address: "Chatrapati Shivaji Maharaj Chowk, 409, Station Road, Yashwant Nagar, Talegaon Dabhade, Maharashtra 410507",
-  phone: "+91 1234567890", // Placeholder
-  email: "hello@kangenburgers.com",
+  mapUrl: "https://www.google.com/maps/place/Kangen+Burger's+cafe+%7C+Best+cafe+in+Yashwant+Nagar+%7C+Talegaon+Dabhade/@18.7365386,73.6713141,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2b163be0c7683:0x9cc4c420bc6b6587!8m2!3d18.7365386!4d73.673889!16s%2Fg%2F11kbq2nlg6?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D",
+  phone: "+91 9112738490",
+  email: "kagenburgers@gmail.com",
   social: {
     facebook: "https://www.facebook.com/people/Kangen-Burger/61558688043249/",
     instagram: "https://www.instagram.com/kangen_burgers_/",

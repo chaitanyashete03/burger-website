@@ -63,7 +63,9 @@ export default function Footer() {
               <li>
                 <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
                       style={{ color: "rgba(255,255,255,0.25)" }}>Address</span>
-                {siteInfo.address}
+                <a href={siteInfo.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6B35] transition-colors inline-block">
+                  {siteInfo.address}
+                </a>
               </li>
               <li>
                 <span className="block text-[10px] font-black tracking-widest uppercase mb-1"

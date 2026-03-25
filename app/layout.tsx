@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 import './globals.css';
 import { defaultSEO } from '@/lib/seo';
+import { siteInfo } from '@/lib/constants';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 
@@ -67,8 +68,8 @@ const jsonLd = {
   name: "Kangen Burgers",
   description: defaultSEO.description,
   url: "https://www.kangenburgers.com",
-  telephone: "+911234567890",
-  email: "hello@kangenburgers.com",
+  telephone: siteInfo.phone,
+  email: siteInfo.email,
   image: "https://www.kangenburgers.com/images/scroll-laptop/ezgif-frame-001.jpg",
   logo: "https://www.kangenburgers.com/images/scroll-laptop/ezgif-frame-001.jpg",
   priceRange: "₹₹",
