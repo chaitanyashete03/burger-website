@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { siteInfo } from "@/lib/constants";
-import { Globe, Camera } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -23,12 +23,12 @@ export default function Footer() {
               <a href={siteInfo.social.facebook} target="_blank" rel="noopener noreferrer"
                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
                  style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
-                <Globe size={16} />
+                <Facebook size={16} />
               </a>
               <a href={siteInfo.social.instagram} target="_blank" rel="noopener noreferrer"
                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
                  style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
-                <Camera size={16} />
+                <Instagram size={16} />
               </a>
               <a href={siteInfo.social.linkedin} target="_blank" rel="noopener noreferrer"
                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
