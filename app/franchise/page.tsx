@@ -22,8 +22,7 @@ export default function Franchise() {
       {/* Hero */}
       <section className="relative h-[70vh] flex items-end pb-20 px-6 sm:px-10">
         <Image src="/images/scroll-laptop/ezgif-frame-001.jpg" alt="Franchise" fill className="object-cover" priority />
-        <div className="absolute inset-0"
-             style={{ background: "linear-gradient(to top, rgba(15,10,8,1) 0%, rgba(15,10,8,0.5) 50%, rgba(0,0,0,0.2) 100%)" }} />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-3xl">
           <SectionReveal>
             <div className="flex items-center gap-3 mb-5">
@@ -65,11 +64,10 @@ export default function Franchise() {
                   style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)" }}
                 >
                   <div
-                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                    style={{ background: "radial-gradient(circle at top left, rgba(255,107,53,0.08), transparent 60%)" }}
+                    className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-[#FF6B35]/5"
                   />
                   <div className="text-[3rem] font-black mb-4 select-none"
-                       style={{ color: "rgba(255,107,53,0.12)" }}>{String(idx + 1).padStart(2, "0")}</div>
+                    style={{ color: "rgba(255,107,53,0.12)" }}>{String(idx + 1).padStart(2, "0")}</div>
                   <div className="w-6 h-[2px] mb-3 rounded-full" style={{ background: "#FF6B35" }} />
                   <h3 className="text-xl font-black text-white mb-3">{benefit.title}</h3>
                   <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>{benefit.description}</p>
@@ -81,13 +79,13 @@ export default function Franchise() {
           {/* Inquiry Form */}
           <SectionReveal>
             <div id="apply" className="max-w-3xl mx-auto rounded-3xl p-8 md:p-12"
-                 style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
+              style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
                 <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>Apply Now</span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-black text-white mb-10">Franchise Inquiry</h2>
-              
+
               {isSubmitted ? (
                 <div className="py-12 text-center animate-in fade-in zoom-in duration-500">
                   <div className="w-20 h-20 rounded-full bg-[#FF6B35]/10 flex items-center justify-center mx-auto mb-6">
@@ -97,7 +95,7 @@ export default function Franchise() {
                   <p className="text-base leading-relaxed max-w-sm mx-auto" style={{ color: "rgba(255,255,255,0.45)" }}>
                     Thank you for your interest in the Kangen family. Our expansion team will review your details and reach out within 48–72 hours.
                   </p>
-                  <button 
+                  <button
                     onClick={() => setIsSubmitted(false)}
                     className="mt-8 text-xs font-black tracking-widest uppercase hover:text-[#FF6B35] transition-colors"
                     style={{ color: "rgba(255,255,255,0.25)" }}
@@ -110,29 +108,29 @@ export default function Franchise() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-[10px] font-black tracking-widest uppercase mb-2"
-                             style={{ color: "rgba(255,255,255,0.35)" }}>Full Name</label>
+                        style={{ color: "rgba(255,255,255,0.35)" }}>Full Name</label>
                       <input type="text" required className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none" style={fieldStyle} />
                     </div>
                     <div>
                       <label className="block text-[10px] font-black tracking-widest uppercase mb-2"
-                             style={{ color: "rgba(255,255,255,0.35)" }}>Email</label>
+                        style={{ color: "rgba(255,255,255,0.35)" }}>Email</label>
                       <input type="email" required className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none" style={fieldStyle} />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                     <div>
                       <label className="block text-[10px] font-black tracking-widest uppercase mb-2"
-                             style={{ color: "rgba(255,255,255,0.35)" }}>Phone</label>
+                        style={{ color: "rgba(255,255,255,0.35)" }}>Phone</label>
                       <input type="tel" required className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none" style={fieldStyle} />
                     </div>
                     <div>
                       <label className="block text-[10px] font-black tracking-widest uppercase mb-2"
-                             style={{ color: "rgba(255,255,255,0.35)" }}>Preferred City</label>
+                        style={{ color: "rgba(255,255,255,0.35)" }}>Preferred City</label>
                       <input type="text" required className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none" style={fieldStyle} />
                     </div>
                     <div>
                       <label className="block text-[10px] font-black tracking-widest uppercase mb-2"
-                             style={{ color: "rgba(255,255,255,0.35)" }}>Available Capital</label>
+                        style={{ color: "rgba(255,255,255,0.35)" }}>Available Capital</label>
                       <select className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none" style={fieldStyle}>
                         <option>₹5L – ₹10L</option>
                         <option>₹10L – ₹20L</option>
@@ -142,12 +140,12 @@ export default function Franchise() {
                   </div>
                   <div>
                     <label className="block text-[10px] font-black tracking-widest uppercase mb-2"
-                           style={{ color: "rgba(255,255,255,0.35)" }}>Message / Experience</label>
+                      style={{ color: "rgba(255,255,255,0.35)" }}>Message / Experience</label>
                     <textarea rows={4} required className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none resize-none" style={fieldStyle} />
                   </div>
                   <div className="pt-2 text-center">
                     <button type="submit" className="px-12 py-4 rounded-full font-black text-base tracking-wide transition-all hover:scale-105"
-                            style={{ background: "#FF6B35", color: "#fff" }}>
+                      style={{ background: "#FF6B35", color: "#fff" }}>
                       Submit Inquiry
                     </button>
                     <p className="text-xs mt-4" style={{ color: "rgba(255,255,255,0.25)" }}>We respond within 48–72 hours.</p>
