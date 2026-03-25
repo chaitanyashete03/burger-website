@@ -97,8 +97,9 @@ const jsonLd = {
   menu: "https://www.kangenburgers.com/menu",
   hasMap: "https://maps.google.com/?q=Talegaon+Dabhade,+Pune",
   sameAs: [
-    "https://www.facebook.com/kangenburgers",
-    "https://www.instagram.com/kangenburgers",
+    "https://www.facebook.com/people/Kangen-Burger/61558688043249/",
+    "https://www.instagram.com/kangen_burgers_/",
+    "https://www.linkedin.com/in/kangen-burgers-47a964305/",
   ],
 };
 

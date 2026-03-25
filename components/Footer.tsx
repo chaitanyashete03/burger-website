@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { siteInfo } from "@/lib/constants";
-import { Globe, Camera, Share2 } from "lucide-react";
+import { Globe, Camera } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -20,20 +20,20 @@ export default function Footer() {
               {siteInfo.headline}
             </p>
             <div className="flex gap-4">
-              <a href={siteInfo.social.facebook}
+              <a href={siteInfo.social.facebook} target="_blank" rel="noopener noreferrer"
                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
                  style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
                 <Globe size={16} />
               </a>
-              <a href={siteInfo.social.instagram}
+              <a href={siteInfo.social.instagram} target="_blank" rel="noopener noreferrer"
                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
                  style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
                 <Camera size={16} />
               </a>
-              <a href={siteInfo.social.twitter}
+              <a href={siteInfo.social.linkedin} target="_blank" rel="noopener noreferrer"
                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
                  style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.4)" }}>
-                <Share2 size={16} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </a>
             </div>
           </div>

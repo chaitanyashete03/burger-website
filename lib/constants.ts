@@ -5,9 +5,9 @@ export const siteInfo = {
   phone: "+91 1234567890", // Placeholder
   email: "hello@kangenburgers.com",
   social: {
-    facebook: "#",
-    instagram: "#",
-    twitter: "#",
+    facebook: "https://www.facebook.com/people/Kangen-Burger/61558688043249/",
+    instagram: "https://www.instagram.com/kangen_burgers_/",
+    linkedin: "https://www.linkedin.com/in/kangen-burgers-47a964305/",
   },
 };
 
