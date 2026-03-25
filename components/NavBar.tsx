@@ -8,6 +8,8 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/components/GlassCard";
 import DarkModeToggle from "@/components/DarkModeToggle";
 
+import { useIsDarkMode } from "@/hooks/useIsDarkMode";
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Menu", href: "/menu" },
@@ -21,6 +23,7 @@ export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const isDark = useIsDarkMode();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -59,13 +62,14 @@ export default function NavBar() {
 
           {/* Logo */}
           <Link href="/" className="z-50 font-black text-xl tracking-tight flex items-center gap-3">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
               <Image 
-                src="/logo.jpeg" 
+                src={isDark ? "/logo-white.png" : "/logo-black.png"} 
                 alt="Kangen Burgers Logo" 
                 width={40}
                 height={40}
-                className="w-full h-full object-contain p-1"
+                className="w-full h-full object-cover"
+                priority
               />
             </div>
             <div className="flex flex-col md:flex-row md:items-baseline md:gap-1 leading-none">
