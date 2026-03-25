@@ -138,22 +138,39 @@ export default function BurgerScroll() {
 
   // preload
   useEffect(() => {
-    imagesRef.current = []; setLoaded(0); setReady(false); frameRef.current = 0;
+    // Determine the frame corresponding to current scroll progress
+    const currentP = scrollYProgress.get();
+    const initialFrame = Math.min(TOTAL_FRAMES - 1, Math.floor(currentP * TOTAL_FRAMES));
+
+    imagesRef.current = [];
+    setLoaded(0);
+    setReady(false);
+    frameRef.current = initialFrame;
+
     let cancelled = false, loaded = 0;
     const imgs = Array.from({ length: TOTAL_FRAMES }, (_, i) => {
       const img = new Image();
       img.src = frameUrl(folder, i + 1);
       img.onload = () => {
         if (cancelled) return;
-        loaded++; setLoaded(loaded);
+        loaded++;
+        setLoaded(loaded);
         if (loaded === TOTAL_FRAMES) setReady(true);
-        if (loaded === 1) draw(img);
+        // Draw only if it is the current frame
+        if (i === frameRef.current) draw(img);
       };
-      img.onerror = () => { if (!cancelled) { loaded++; setLoaded(loaded); } };
+      img.onerror = () => {
+        if (!cancelled) {
+          loaded++;
+          setLoaded(loaded);
+        }
+      };
       return img;
     });
     imagesRef.current = imgs;
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [folder]);
 
