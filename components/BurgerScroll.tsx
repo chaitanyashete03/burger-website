@@ -142,6 +142,13 @@ export default function BurgerScroll() {
     const currentP = scrollYProgress.get();
     const initialFrame = Math.min(TOTAL_FRAMES - 1, Math.floor(currentP * TOTAL_FRAMES));
 
+    // Clear canvas on folder pivot to avoid flickering previous folder's frames
+    const c = canvasRef.current;
+    if (c) {
+      const ctx = c.getContext("2d");
+      if (ctx) ctx.clearRect(0, 0, c.width, c.height);
+    }
+
     imagesRef.current = [];
     setLoaded(0);
     setReady(false);
@@ -192,6 +199,14 @@ export default function BurgerScroll() {
     window.addEventListener("resize", fn);
     return () => window.removeEventListener("resize", fn);
   }, [draw]);
+
+  // Ensure the correct frame is drawn once everything is ready
+  useEffect(() => {
+    if (ready) {
+      const img = imagesRef.current[frameRef.current];
+      if (img) draw(img);
+    }
+  }, [ready, draw]);
 
   // ── hero ──────────────────────────────────────────────────────────────────
   const heroO = useTransform(scrollYProgress, [0, 0.04],  [1, 0]);
