@@ -9,6 +9,7 @@ import {
   MotionValue,
 } from "framer-motion";
 import Link from "next/link";
+import NextImage from "next/image";
 
 const TOTAL_FRAMES = 200;
 const MOBILE_BREAKPOINT = 768;
@@ -233,6 +234,21 @@ export default function BurgerScroll() {
         {!heroGone && (
           <motion.div style={{ opacity: heroO, y: heroY }}
             className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6 pointer-events-none">
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="w-24 h-24 bg-white rounded-full flex items-center justify-center p-3 mb-8 shadow-[0_20px_50px_rgba(255,107,53,0.3)] border border-white/20"
+            >
+              <NextImage 
+                src="/logo.jpeg" 
+                alt="Kangen Logo" 
+                width={96}
+                height={96}
+                className="w-full h-full object-contain"
+              />
+            </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7, ease: [0.25,0.4,0.25,1] }}

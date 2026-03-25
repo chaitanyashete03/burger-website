@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/components/GlassCard";
@@ -57,9 +58,20 @@ export default function NavBar() {
         <div className="flex justify-between items-center h-16">
 
           {/* Logo */}
-          <Link href="/" className="z-50 font-black text-xl tracking-tight">
-            <span style={{ color: "#FF6B35" }}>KANGEN</span>
-            <span style={{ color: "var(--text-primary)" }}>BURGERS</span>
+          <Link href="/" className="z-50 font-black text-xl tracking-tight flex items-center gap-3">
+            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+              <Image 
+                src="/logo.jpeg" 
+                alt="Kangen Burgers Logo" 
+                width={40}
+                height={40}
+                className="w-full h-full object-contain p-1"
+              />
+            </div>
+            <div className="flex flex-col md:flex-row md:items-baseline md:gap-1 leading-none">
+              <span style={{ color: "#FF6B35" }}>KANGEN</span>
+              <span style={{ color: "var(--text-primary)" }}>BURGERS</span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
