@@ -38,6 +38,7 @@ export default function NavBar() {
   }, [isOpen]);
 
   return (
+    <>
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-500",
@@ -100,33 +101,34 @@ export default function NavBar() {
           </button>
         </div>
       </div>
-
-      {/* Mobile overlay */}
-      {isOpen && (
-        <div
-          className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-center gap-8"
-          style={{ background: "rgba(15,10,8,0.97)", backdropFilter: "blur(24px)" }}
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="text-2xl font-black tracking-tight text-white hover:text-[#FF6B35] transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Link
-            href="/order-online"
-            onClick={() => setIsOpen(false)}
-            className="mt-4 px-10 py-4 rounded-full font-black text-lg transition-transform active:scale-95"
-            style={{ background: "#FF6B35", color: "#fff" }}
-          >
-            Order Online
-          </Link>
-        </div>
-      )}
     </header>
+
+    {/* Mobile overlay - rendered outside header to avoid backdrop-filter stacking context bugs */}
+    {isOpen && (
+      <div
+        className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-start pt-32 pb-12 gap-8 overflow-y-auto"
+        style={{ background: "rgba(15,10,8,0.98)", backdropFilter: "blur(24px)" }}
+      >
+        {navLinks.map((link) => (
+          <Link
+            key={link.name}
+            href={link.href}
+            onClick={() => setIsOpen(false)}
+            className="text-2xl font-black tracking-tight text-white hover:text-[#FF6B35] transition-colors"
+          >
+            {link.name}
+          </Link>
+        ))}
+        <Link
+          href="/order-online"
+          onClick={() => setIsOpen(false)}
+          className="mt-4 px-10 py-4 rounded-full font-black text-lg transition-transform active:scale-95"
+          style={{ background: "#FF6B35", color: "#fff" }}
+        >
+          Order Online
+        </Link>
+      </div>
+    )}
+    </>
   );
 }
