@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/components/GlassCard";
+import DarkModeToggle from "@/components/DarkModeToggle";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -33,7 +34,6 @@ export default function NavBar() {
     } else {
       document.body.style.overflow = "unset";
     }
-    // Cleanup on unmount just in case
     return () => { document.body.style.overflow = "unset"; };
   }, [isOpen]);
 
@@ -80,12 +80,12 @@ export default function NavBar() {
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="hidden md:flex">
+          {/* CTA + Toggle */}
+          <div className="hidden md:flex items-center gap-3">
+            <DarkModeToggle />
             <Link
               href="/order-online"
-              className="px-6 py-2.5 rounded-full font-bold text-sm tracking-wide transition-all hover:scale-105"
-              style={{ background: "#FF6B35", color: "#fff" }}
+              className="btn-glow px-6 py-2.5 rounded-full font-bold text-sm tracking-wide"
             >
               Order Online
             </Link>
@@ -103,7 +103,7 @@ export default function NavBar() {
       </div>
     </header>
 
-    {/* Mobile overlay - rendered outside header to avoid backdrop-filter stacking context bugs */}
+    {/* Mobile overlay */}
     {isOpen && (
       <div
         className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-start pt-32 pb-12 gap-8 overflow-y-auto"
@@ -119,11 +119,13 @@ export default function NavBar() {
             {link.name}
           </Link>
         ))}
+        <div className="flex items-center gap-4 mt-2">
+          <DarkModeToggle />
+        </div>
         <Link
           href="/order-online"
           onClick={() => setIsOpen(false)}
-          className="mt-4 px-10 py-4 rounded-full font-black text-lg transition-transform active:scale-95"
-          style={{ background: "#FF6B35", color: "#fff" }}
+          className="mt-2 px-10 py-4 rounded-full font-black text-lg btn-glow"
         >
           Order Online
         </Link>

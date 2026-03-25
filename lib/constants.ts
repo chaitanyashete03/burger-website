@@ -5,6 +5,7 @@ export const siteInfo = {
   mapUrl: "https://www.google.com/maps/place/Kangen+Burger's+cafe+%7C+Best+cafe+in+Yashwant+Nagar+%7C+Talegaon+Dabhade/@18.7365386,73.6713141,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2b163be0c7683:0x9cc4c420bc6b6587!8m2!3d18.7365386!4d73.673889!16s%2Fg%2F11kbq2nlg6?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D",
   phone: "+91 9112738490",
   email: "kagenburgers@gmail.com",
+  whatsappNumber: "919112738490",
   social: {
     facebook: "https://www.facebook.com/people/Kangen-Burger/61558688043249/",
     instagram: "https://www.instagram.com/kangen_burgers_/",
@@ -40,6 +41,41 @@ export const specialOffers = [
     subtitle: "Vegetarian Specials",
     description: "Delight in our flavorful vegetarian dishes tailored for your health."
   }
+];
+
+export const offerEndDate = "2026-05-01T00:00:00";
+
+export const testimonials = [
+  {
+    name: "Priya Sharma",
+    role: "Regular Customer",
+    text: "The best burgers in Talegaon! The Kangen water twist makes them taste incredibly fresh. I bring my whole family here every weekend.",
+    rating: 5,
+  },
+  {
+    name: "Rahul Patil",
+    role: "Food Blogger",
+    text: "As a food blogger, I've tried burgers everywhere. Kangen Burgers stands out with their commitment to health without compromising on flavor. A true gem!",
+    rating: 5,
+  },
+  {
+    name: "Sneha Desai",
+    role: "Fitness Enthusiast",
+    text: "Finally, a burger joint that understands health-conscious eating! The alkaline water infusion is a game-changer. My go-to cheat meal spot.",
+    rating: 5,
+  },
+  {
+    name: "Amit Kulkarni",
+    role: "Franchise Partner",
+    text: "Partnering with Kangen Burgers was the best business decision I've made. The support team is incredible and the brand practically sells itself.",
+    rating: 5,
+  },
+  {
+    name: "Meera Joshi",
+    role: "Local Resident",
+    text: "Love the vibe, love the food, love the concept. The veggie burgers are to die for! Best café experience in Yashwant Nagar, hands down.",
+    rating: 4,
+  },
 ];
 
 export const franchiseBenefits = [

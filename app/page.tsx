@@ -5,6 +5,8 @@ import GlassCard from "@/components/GlassCard";
 import BurgerScroll from "@/components/BurgerScroll";
 import Image from "next/image";
 import { generatePageMetadata } from "@/lib/seo";
+import CountdownTimer from "@/components/CountdownTimer";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 
 export const metadata = generatePageMetadata("home");
 
@@ -290,6 +292,7 @@ export default function Home() {
               <div className="w-8 h-[2px] rounded-full" style={{ background: "#FF6B35" }} />
               <div className="h-px w-24" style={{ background: "rgba(255,255,255,0.08)" }} />
             </div>
+            <CountdownTimer />
           </SectionReveal>
 
           {/* cards */}
@@ -372,6 +375,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── Testimonials ──────────────────────────────────────────────────── */}
+      <TestimonialsCarousel />
       
       {/* ── Stay Connected ────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden py-28 lg:py-32 px-6 sm:px-10 text-center"

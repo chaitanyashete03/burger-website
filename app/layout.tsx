@@ -5,6 +5,7 @@ import { defaultSEO } from '@/lib/seo';
 import { siteInfo } from '@/lib/constants';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
@@ -115,6 +116,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#FF6B35" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
+        {/* Dark mode init – prevent FOUC */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();`,
+          }}
+        />
         {/* JSON-LD LocalBusiness structured data */}
         <script
           type="application/ld+json"
@@ -127,6 +134,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );
