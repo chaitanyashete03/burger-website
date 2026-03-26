@@ -50,7 +50,8 @@ export default function ComboBuilder() {
           body: JSON.stringify({
             source: "Combo Builder",
             phone: phone,
-            details: `Order: ${burger.name}, ${fry.name}, ${drink.name}. Total: ₹${computed.comboPrice}`,
+            details: `Combo: ${burger.name} + ${fry.name} + ${drink.name}`,
+            price: `₹${computed.comboPrice}`,
           }),
         });
       } catch (err) {

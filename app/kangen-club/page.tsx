@@ -22,6 +22,7 @@ export default function KangenClub() {
               source: "Kangen Club",
               phone: phone,
               details: "New Loyalty Program Signup",
+              price: "-",
             }),
           });
         } catch (err) {
