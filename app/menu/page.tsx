@@ -7,6 +7,7 @@ import { menuData } from "@/lib/constants";
 import MenuItemCard, { DietType } from "@/components/MenuItemCard";
 import ComboCard from "@/components/ComboCard";
 import MenuFilterBar from "@/components/MenuFilterBar";
+import { X } from "lucide-react";
 
 // Map structure for easier iteration and rendering
 interface CategorizedItem {
@@ -261,27 +262,36 @@ export default function Menu() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedItem(null)}
-              className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
+              className="absolute inset-0 bg-black/40 dark:bg-black/80 backdrop-blur-md cursor-pointer"
             />
             
             <motion.div
               layoutId={`card-container-${selectedItem.id}`}
-              className="relative w-full max-w-lg rounded-3xl p-8 sm:p-12 overflow-hidden shadow-2xl"
+              className="relative w-full max-w-lg rounded-[2.5rem] p-8 sm:p-12 overflow-hidden shadow-[0_32px_120px_-10px_rgba(0,0,0,0.3)] dark:shadow-[0_32px_120px_-10px_rgba(0,0,0,0.8)]"
               style={{
-                background: "var(--card-bg)",
+                background: "var(--card-bg-solid)",
                 border: "1px solid var(--card-border)",
               }}
             >
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedItem(null)}
+                className="absolute top-6 right-6 z-20 p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors duration-200"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                <X size={20} />
+              </button>
+
               <div
-                className="absolute inset-0 rounded-3xl pointer-events-none"
-                style={{ background: `radial-gradient(circle at top right, ${selectedItem.accentColor}20, transparent 70%)` }}
+                className="absolute inset-0 rounded-[2.5rem] pointer-events-none"
+                style={{ background: `radial-gradient(circle at top right, ${selectedItem.accentColor}15, transparent 70%)` }}
               />
 
               <div className="relative z-10 flex flex-col gap-6">
                 <div className="flex justify-between items-start">
                   <motion.h3
                     layoutId={`card-title-${selectedItem.id}`}
-                    className="text-3xl sm:text-4xl font-black leading-tight"
+                    className="text-3xl sm:text-4xl font-black leading-tight tracking-tight"
                     style={{ color: "var(--text-primary)" }}
                   >
                     {selectedItem.name.replace(/(?:\(([^)]*pcs[^)]*)\)|-\s*([\d]+)\s*$)/i, "").trim()}
@@ -314,8 +324,8 @@ export default function Menu() {
 
                 <div className="w-12 h-[2px]" style={{ background: selectedItem.accentColor }} />
 
-                <div className="mt-4 flex items-center justify-between">
-                  <p className="text-lg opacity-80" style={{ color: "var(--text-secondary)" }}>
+                <div className="mt-4 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                  <p className="text-lg leading-relaxed font-medium" style={{ color: "var(--text-secondary)" }}>
                     {selectedItem.description || "Freshly made with our signature Kangen Water twist for maximum flavor and health benefits."}
                   </p>
                   
