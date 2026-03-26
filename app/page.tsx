@@ -5,7 +5,6 @@ import GlassCard from "@/components/GlassCard";
 import BurgerScroll from "@/components/BurgerScroll";
 import Image from "next/image";
 import { generatePageMetadata } from "@/lib/seo";
-import CountdownTimer from "@/components/CountdownTimer";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 
 export const metadata = generatePageMetadata("home");
@@ -226,11 +225,11 @@ export default function Home() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight text-white">
               Special <span style={{ color: "#FF6B35" }}>Offers</span>
             </h2>
-            <div className="mt-5 flex items-center gap-3">
+            <div className="mt-5 flex flex-col md:flex-row md:items-center gap-3">
               <div className="w-8 h-[2px] rounded-full" style={{ background: "#FF6B35" }} />
               <div className="h-px w-24" style={{ background: "rgba(255,255,255,0.08)" }} />
+              <p className="text-sm md:ml-3" style={{ color: "rgba(255,255,255,0.5)"}}>Available only at our physical outlet.</p>
             </div>
-            <CountdownTimer />
           </SectionReveal>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
