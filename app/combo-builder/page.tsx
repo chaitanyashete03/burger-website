@@ -17,9 +17,12 @@ export default function ComboBuilder() {
     drink: null,
   });
 
+  const [phone, setPhone] = useState("");
+
   const { burgers, fries, drinks, comboDiscount } = comboBuilderOptions;
 
   const computed = useMemo(() => {
+    // ... same as before
     const burgerPrice = selected.burger !== null ? burgers[selected.burger].price : 0;
     const friesPrice = selected.fries !== null ? fries[selected.fries].price : 0;
     const drinkPrice = selected.drink !== null ? drinks[selected.drink].price : 0;
@@ -30,12 +33,31 @@ export default function ComboBuilder() {
     return { burgerPrice, friesPrice, drinkPrice, total, discount, comboPrice, allSelected };
   }, [selected, burgers, fries, drinks, comboDiscount]);
 
-  const handleOrder = () => {
-    if (!computed.allSelected) return;
+  const handleOrder = async () => {
+    if (!computed.allSelected || phone.length < 10) return;
     const burger = burgers[selected.burger!];
     const fry = fries[selected.fries!];
     const drink = drinks[selected.drink!];
     const msg = `Hi! I'd like to order my custom combo:\n🍔 ${burger.name} (₹${burger.price})\n🍟 ${fry.name} (₹${fry.price})\n🥤 ${drink.name} (₹${drink.price})\n\n💰 Combo Price: ₹${computed.comboPrice} (saved ₹${computed.discount})`;
+    
+    // Capture to Google Sheets if webhook is configured
+    if (siteInfo.googleSheetsWebhookUrl) {
+      try {
+        fetch(siteInfo.googleSheetsWebhookUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            source: "Combo Builder",
+            phone: phone,
+            details: `Order: ${burger.name}, ${fry.name}, ${drink.name}. Total: ₹${computed.comboPrice}`,
+          }),
+        });
+      } catch (err) {
+        console.error("Sheet capture failed", err);
+      }
+    }
+
     window.open(
       `https://wa.me/${siteInfo.whatsappNumber}?text=${encodeURIComponent(msg)}`,
       "_blank"
@@ -187,7 +209,20 @@ export default function ComboBuilder() {
               </div>
 
               {/* Price */}
-              <div className="flex items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                {computed.allSelected && (
+                  <div className="w-full sm:w-64">
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
+                      placeholder="Enter Phone Number"
+                      required
+                      className="w-full px-4 py-3 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6B35]"
+                      style={{ background: "var(--page-bg)", border: "1px solid var(--card-border)", color: "var(--text-primary)" }}
+                    />
+                  </div>
+                )}
                 <div className="text-right">
                   {computed.allSelected && (
                     <div className="flex items-center gap-2 mb-1">
@@ -208,7 +243,7 @@ export default function ComboBuilder() {
                 </div>
                 <button
                   onClick={handleOrder}
-                  disabled={!computed.allSelected}
+                  disabled={!computed.allSelected || (computed.allSelected && phone.length < 10)}
                   className="px-8 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
                   style={{ background: "#FF6B35" }}
                 >

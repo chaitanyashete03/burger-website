@@ -8,9 +8,27 @@ export default function KangenClub() {
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleJoin = (e: React.FormEvent) => {
+  const handleJoin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (phone.length >= 10) {
+      // Capture to Google Sheets if webhook is configured
+      if (siteInfo.googleSheetsWebhookUrl) {
+        try {
+          fetch(siteInfo.googleSheetsWebhookUrl, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              source: "Kangen Club",
+              phone: phone,
+              details: "New Loyalty Program Signup",
+            }),
+          });
+        } catch (err) {
+          console.error("Sheet capture failed", err);
+        }
+      }
+
       // Open WhatsApp with pre-filled message
       window.open(
         `https://wa.me/${siteInfo.whatsappNumber}?text=${encodeURIComponent(

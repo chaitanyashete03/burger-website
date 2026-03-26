@@ -11,6 +11,7 @@ export const siteInfo = {
     instagram: "https://www.instagram.com/kangen_burgers_/",
     linkedin: "https://www.linkedin.com/in/kangen-burgers-47a964305/",
   },
+  googleSheetsWebhookUrl: "", // Paste your Apps Script Web App URL here
 };
 
 export const aboutText = {
