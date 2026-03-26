@@ -11,6 +11,7 @@ export const siteInfo = {
     instagram: "https://www.instagram.com/kangen_burgers_/",
     linkedin: "https://www.linkedin.com/in/kangen-burgers-47a964305/",
   },
+  siteUrl: "https://kangenburgers.vercel.app",
   googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbx3tXZw4eZlJhtVsVv5re4opsJ5tRNyoANlADHSbZUfOG_tRSbmuVZfKpnLi-ilVyd5/exec",
 };
 

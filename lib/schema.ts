@@ -5,7 +5,7 @@ export function generateLocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": siteInfo.name,
-    "image": "https://www.kangenburgers.com/images/hero-bg.jpg",
+    "image": `${siteInfo.siteUrl}/images/hero-bg.jpg`,
     "description": siteInfo.headline,
     "address": {
       "@type": "PostalAddress",
@@ -26,7 +26,7 @@ export function generateMenuSchema() {
     "@context": "https://schema.org",
     "@type": "Menu",
     "name": "Kangen Burgers Menu",
-    "mainEntityOfPage": "https://www.kangenburgers.com/menu"
+    "mainEntityOfPage": `${siteInfo.siteUrl}/menu`
   };
 }
 
@@ -38,7 +38,7 @@ export function generateBreadcrumbSchema(items: { name: string; item: string }[]
       "@type": "ListItem",
       "position": index + 1,
       "name": breadcrumb.name,
-      "item": `https://www.kangenburgers.com${breadcrumb.item}`
+      "item": `${siteInfo.siteUrl}${breadcrumb.item}`
     }))
   };
 }

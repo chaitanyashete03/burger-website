@@ -10,7 +10,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.kangenburgers.com"),
+  metadataBase: new URL(siteInfo.siteUrl),
   title: {
     default: defaultSEO.title,
     template: "%s | Kangen Burgers",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   creator: "Kangen Burgers",
   publisher: "Kangen Burgers",
   alternates: {
-    canonical: "https://www.kangenburgers.com",
+    canonical: siteInfo.siteUrl,
   },
   openGraph: {
     title: defaultSEO.title,
@@ -65,14 +65,14 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  "@id": "https://www.kangenburgers.com/#restaurant",
+  "@id": `${siteInfo.siteUrl}/#restaurant`,
   name: "Kangen Burgers",
   description: defaultSEO.description,
-  url: "https://www.kangenburgers.com",
+  url: siteInfo.siteUrl,
   telephone: siteInfo.phone,
   email: siteInfo.email,
-  image: "https://www.kangenburgers.com/images/scroll-laptop/ezgif-frame-001.jpg",
-  logo: "https://www.kangenburgers.com/images/scroll-laptop/ezgif-frame-001.jpg",
+  image: `${siteInfo.siteUrl}/images/scroll-laptop/ezgif-frame-001.jpg`,
+  logo: `${siteInfo.siteUrl}/images/scroll-laptop/ezgif-frame-001.jpg`,
   priceRange: "₹₹",
   servesCuisine: ["Burgers", "Pizzas", "Fast Food", "Healthy Food", "Sandwiches", "Pasta"],
   acceptsReservations: "True",
@@ -106,7 +106,7 @@ const jsonLd = {
       closes: "22:00",
     },
   ],
-  menu: "https://www.kangenburgers.com/menu",
+  menu: `${siteInfo.siteUrl}/menu`,
   hasMap: "https://maps.google.com/?q=Talegaon+Dabhade,+Pune",
   sameAs: [
     "https://www.facebook.com/people/Kangen-Burger/61558688043249/",

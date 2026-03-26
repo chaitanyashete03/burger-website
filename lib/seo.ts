@@ -1,4 +1,6 @@
-const BASE_URL = "https://www.kangenburgers.com";
+import { siteInfo } from "./constants";
+
+const BASE_URL = siteInfo.siteUrl;
 const OG_IMAGE = `${BASE_URL}/images/hero-bg.jpg`;
 
 export const defaultSEO = {

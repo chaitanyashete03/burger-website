@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { siteInfo } from "@/lib/constants";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -9,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/", "/privacy", "/terms", "/refund-policy"],
       },
     ],
-    sitemap: "https://www.kangenburgers.com/sitemap.xml",
-    host: "https://www.kangenburgers.com",
+    sitemap: `${siteInfo.siteUrl}/sitemap.xml`,
+    host: siteInfo.siteUrl,
   };
 }

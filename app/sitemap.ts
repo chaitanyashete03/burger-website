@@ -1,7 +1,9 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/constants";
 
-const BASE_URL = "https://www.kangenburgers.com";
+import { siteInfo } from "@/lib/constants";
+
+const BASE_URL = siteInfo.siteUrl;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
