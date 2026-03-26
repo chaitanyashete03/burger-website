@@ -39,8 +39,8 @@ export default function Menu() {
         label: "Burgers",
         accentColor: "#FF6B35",
         items: [
-          ...menuData.burgers.veg.map((n) => ({ id: `burger-v-${n}`, name: n, type: "veg" as DietType })),
-          ...menuData.burgers.nonVeg.map((n) => ({ id: `burger-nv-${n}`, name: n, type: "nonVeg" as DietType })),
+          ...menuData.burgers.veg.map((n) => ({ id: `burger-v-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
+          ...menuData.burgers.nonVeg.map((n) => ({ id: `burger-nv-${n.name}`, name: n.name, description: n.description, type: "nonVeg" as DietType })),
         ],
       },
       {
@@ -48,8 +48,8 @@ export default function Menu() {
         label: "Fries & Pizza",
         accentColor: "#f59e0b",
         items: [
-          ...menuData.friesAndPizza.fries.map((n) => ({ id: `fries-${n}`, name: n, type: "veg" as DietType })), // Assuming fries veg
-          ...menuData.friesAndPizza.pizza.map((n) => ({ id: `pizza-${n}`, name: n, type: n.includes("Chicken") ? "nonVeg" as DietType : "veg" as DietType })),
+          ...menuData.friesAndPizza.fries.map((n) => ({ id: `fries-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
+          ...menuData.friesAndPizza.pizza.map((n) => ({ id: `pizza-${n.name}`, name: n.name, description: n.description, type: n.name.includes("Chicken") ? "nonVeg" as DietType : "veg" as DietType })),
         ],
       },
       {
@@ -57,23 +57,23 @@ export default function Menu() {
         label: "Pasta",
         accentColor: "#ef4444",
         items: [
-          ...menuData.pasta.veg.map((n) => ({ id: `pasta-v-${n}`, name: n, type: "veg" as DietType })),
-          ...menuData.pasta.nonVeg.map((n) => ({ id: `pasta-nv-${n}`, name: n, type: "nonVeg" as DietType })),
+          ...menuData.pasta.veg.map((n) => ({ id: `pasta-v-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
+          ...menuData.pasta.nonVeg.map((n) => ({ id: `pasta-nv-${n.name}`, name: n.name, description: n.description, type: "nonVeg" as DietType })),
         ],
       },
       {
         id: "garlicBread",
         label: "Garlic Bread",
         accentColor: "#eab308",
-        items: menuData.garlicBread.map((n) => ({ id: `gb-${n}`, name: n, type: "veg" as DietType })),
+        items: menuData.garlicBread.map((n) => ({ id: `gb-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
       },
       {
         id: "snacks",
         label: "Snacks",
         accentColor: "#8b5cf6",
         items: [
-          ...menuData.snacks.veg.map((n) => ({ id: `snack-v-${n}`, name: n, type: "veg" as DietType })),
-          ...menuData.snacks.nonVeg.map((n) => ({ id: `snack-nv-${n}`, name: n, type: "nonVeg" as DietType })),
+          ...menuData.snacks.veg.map((n) => ({ id: `snack-v-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
+          ...menuData.snacks.nonVeg.map((n) => ({ id: `snack-nv-${n.name}`, name: n.name, description: n.description, type: "nonVeg" as DietType })),
         ],
       },
       {
@@ -81,33 +81,33 @@ export default function Menu() {
         label: "Sandwiches",
         accentColor: "#10b981",
         items: [
-          ...menuData.sandwiches.veg.map((n) => ({ id: `sand-v-${n}`, name: n, type: "veg" as DietType })),
-          ...menuData.sandwiches.nonVeg.map((n) => ({ id: `sand-nv-${n}`, name: n, type: "nonVeg" as DietType })),
+          ...menuData.sandwiches.veg.map((n) => ({ id: `sand-v-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
+          ...menuData.sandwiches.nonVeg.map((n) => ({ id: `sand-nv-${n.name}`, name: n.name, description: n.description, type: "nonVeg" as DietType })),
         ],
       },
       {
         id: "cakes",
         label: "Cakes",
         accentColor: "#ec4899",
-        items: menuData.cakes.map((n) => ({ id: `cake-${n}`, name: n, type: "none" as DietType })),
+        items: menuData.cakes.map((n) => ({ id: `cake-${n.name}`, name: n.name, description: n.description, type: "none" as DietType })),
       },
       {
         id: "beverages",
         label: "Beverages",
         accentColor: "#06b6d4",
-        items: menuData.beverages.map((n) => ({ id: `bev-${n}`, name: n, type: "none" as DietType })),
+        items: menuData.beverages.map((n) => ({ id: `bev-${n.name}`, name: n.name, description: n.description, type: "none" as DietType })),
       },
       {
         id: "softDrinks",
         label: "Soft Drinks",
         accentColor: "#3b82f6",
-        items: menuData.softDrinks.map((n) => ({ id: `sd-${n}`, name: n, type: "none" as DietType })),
+        items: menuData.softDrinks.map((n) => ({ id: `sd-${n.name}`, name: n.name, description: n.description, type: "none" as DietType })),
       },
       {
         id: "alkalineWater",
         label: "Alkaline Water",
         accentColor: "#0ea5e9",
-        items: menuData.alkalineWater.map((n) => ({ id: `aw-${n}`, name: n, type: "none" as DietType })),
+        items: menuData.alkalineWater.map((n) => ({ id: `aw-${n.name}`, name: n.name, description: n.description, type: "none" as DietType })),
       },
       {
         id: "combos",
