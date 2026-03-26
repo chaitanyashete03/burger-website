@@ -43,10 +43,10 @@ export default function ComboBuilder() {
     // Capture to Google Sheets if webhook is configured
     if (siteInfo.googleSheetsWebhookUrl) {
       try {
+        // Send as plain text to avoid CORS preflight issues with Google Apps Script
         fetch(siteInfo.googleSheetsWebhookUrl, {
           method: "POST",
           mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             source: "Combo Builder",
             phone: phone,
