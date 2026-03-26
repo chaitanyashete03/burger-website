@@ -41,7 +41,7 @@ export default function MenuFilterBar({
   }, [activeCategory]);
 
   return (
-    <div className="sticky top-24 z-40 backdrop-blur-md bg-[var(--page-bg)]/80 py-4 mb-8 border-b border-[var(--card-border)] transition-colors duration-300">
+    <div className="sticky top-16 z-40 backdrop-blur-md bg-[var(--page-bg)]/80 py-4 mb-6 border-b border-[var(--card-border)] transition-colors duration-300">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
         {/* Search */}
         <div className="relative w-full md:w-auto md:min-w-[300px]">
