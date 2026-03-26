@@ -14,7 +14,7 @@ interface CategorizedItem {
   id: string; // unique ID for key
   name: string;
   type: DietType; // 'veg' | 'nonVeg' | 'none'
-  price?: string; // Currently not well defined in new object, using undefined initially
+  price?: string;
   description?: string;
 }
 
@@ -22,8 +22,50 @@ interface ProcessedCategory {
   id: string;
   label: string;
   items: CategorizedItem[];
-  combos?: { name: string; items: string[] }[];
+  combos?: { name: string; price?: string; items: string[] }[];
   accentColor: string;
+}
+
+// Build Menu JSON-LD for Google rich results
+function buildMenuJsonLd() {
+  const sections = [
+    { name: "Burgers (Veg)", items: menuData.burgers.veg },
+    { name: "Burgers (Non-Veg)", items: menuData.burgers.nonVeg },
+    { name: "Fries", items: menuData.friesAndPizza.fries },
+    { name: "Pizza", items: menuData.friesAndPizza.pizza },
+    { name: "Pasta (Veg)", items: menuData.pasta.veg },
+    { name: "Pasta (Non-Veg)", items: menuData.pasta.nonVeg },
+    { name: "Snacks (Veg)", items: menuData.snacks.veg },
+    { name: "Snacks (Non-Veg)", items: menuData.snacks.nonVeg },
+    { name: "Sandwiches (Veg)", items: menuData.sandwiches.veg },
+    { name: "Sandwiches (Non-Veg)", items: menuData.sandwiches.nonVeg },
+    { name: "Cakes", items: menuData.cakes },
+    { name: "Beverages", items: menuData.beverages },
+    { name: "Soft Drinks", items: menuData.softDrinks },
+    { name: "Alkaline Water", items: menuData.alkalineWater },
+  ];
+  return {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    name: "Kangen Burgers Full Menu",
+    description: "Handcrafted burgers, pizzas, snacks, and beverages prepared with alkaline Kangen Water",
+    hasMenuSection: sections.map((s) => ({
+      "@type": "MenuSection",
+      name: s.name,
+      hasMenuItem: s.items.map((item) => ({
+        "@type": "MenuItem",
+        name: item.name,
+        description: item.description,
+        ...((item as { price?: string }).price ? {
+          offers: {
+            "@type": "Offer",
+            price: (item as { price?: string }).price!.replace("₹", ""),
+            priceCurrency: "INR",
+          },
+        } : {}),
+      })),
+    })),
+  };
 }
 
 export default function Menu() {
@@ -40,8 +82,8 @@ export default function Menu() {
         label: "Burgers",
         accentColor: "#FF6B35",
         items: [
-          ...menuData.burgers.veg.map((n) => ({ id: `burger-v-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
-          ...menuData.burgers.nonVeg.map((n) => ({ id: `burger-nv-${n.name}`, name: n.name, description: n.description, type: "nonVeg" as DietType })),
+          ...menuData.burgers.veg.map((n) => ({ id: `burger-v-${n.name}`, name: n.name, description: n.description, price: n.price, type: "veg" as DietType })),
+          ...menuData.burgers.nonVeg.map((n) => ({ id: `burger-nv-${n.name}`, name: n.name, description: n.description, price: n.price, type: "nonVeg" as DietType })),
         ],
       },
       {
@@ -49,8 +91,8 @@ export default function Menu() {
         label: "Fries & Pizza",
         accentColor: "#f59e0b",
         items: [
-          ...menuData.friesAndPizza.fries.map((n) => ({ id: `fries-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
-          ...menuData.friesAndPizza.pizza.map((n) => ({ id: `pizza-${n.name}`, name: n.name, description: n.description, type: n.name.includes("Chicken") ? "nonVeg" as DietType : "veg" as DietType })),
+          ...menuData.friesAndPizza.fries.map((n) => ({ id: `fries-${n.name}`, name: n.name, description: n.description, price: n.price, type: "veg" as DietType })),
+          ...menuData.friesAndPizza.pizza.map((n) => ({ id: `pizza-${n.name}`, name: n.name, description: n.description, price: n.price, type: n.name.includes("Chicken") ? "nonVeg" as DietType : "veg" as DietType })),
         ],
       },
       {
@@ -58,23 +100,23 @@ export default function Menu() {
         label: "Pasta",
         accentColor: "#ef4444",
         items: [
-          ...menuData.pasta.veg.map((n) => ({ id: `pasta-v-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
-          ...menuData.pasta.nonVeg.map((n) => ({ id: `pasta-nv-${n.name}`, name: n.name, description: n.description, type: "nonVeg" as DietType })),
+          ...menuData.pasta.veg.map((n) => ({ id: `pasta-v-${n.name}`, name: n.name, description: n.description, price: n.price, type: "veg" as DietType })),
+          ...menuData.pasta.nonVeg.map((n) => ({ id: `pasta-nv-${n.name}`, name: n.name, description: n.description, price: n.price, type: "nonVeg" as DietType })),
         ],
       },
       {
         id: "garlicBread",
         label: "Garlic Bread",
         accentColor: "#eab308",
-        items: menuData.garlicBread.map((n) => ({ id: `gb-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
+        items: menuData.garlicBread.map((n) => ({ id: `gb-${n.name}`, name: n.name, description: n.description, price: n.price, type: "veg" as DietType })),
       },
       {
         id: "snacks",
         label: "Snacks",
         accentColor: "#8b5cf6",
         items: [
-          ...menuData.snacks.veg.map((n) => ({ id: `snack-v-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
-          ...menuData.snacks.nonVeg.map((n) => ({ id: `snack-nv-${n.name}`, name: n.name, description: n.description, type: "nonVeg" as DietType })),
+          ...menuData.snacks.veg.map((n) => ({ id: `snack-v-${n.name}`, name: n.name, description: n.description, price: n.price, type: "veg" as DietType })),
+          ...menuData.snacks.nonVeg.map((n) => ({ id: `snack-nv-${n.name}`, name: n.name, description: n.description, price: n.price, type: "nonVeg" as DietType })),
         ],
       },
       {
@@ -82,33 +124,33 @@ export default function Menu() {
         label: "Sandwiches",
         accentColor: "#10b981",
         items: [
-          ...menuData.sandwiches.veg.map((n) => ({ id: `sand-v-${n.name}`, name: n.name, description: n.description, type: "veg" as DietType })),
-          ...menuData.sandwiches.nonVeg.map((n) => ({ id: `sand-nv-${n.name}`, name: n.name, description: n.description, type: "nonVeg" as DietType })),
+          ...menuData.sandwiches.veg.map((n) => ({ id: `sand-v-${n.name}`, name: n.name, description: n.description, price: n.price, type: "veg" as DietType })),
+          ...menuData.sandwiches.nonVeg.map((n) => ({ id: `sand-nv-${n.name}`, name: n.name, description: n.description, price: n.price, type: "nonVeg" as DietType })),
         ],
       },
       {
         id: "cakes",
         label: "Cakes",
         accentColor: "#ec4899",
-        items: menuData.cakes.map((n) => ({ id: `cake-${n.name}`, name: n.name, description: n.description, type: "none" as DietType })),
+        items: menuData.cakes.map((n) => ({ id: `cake-${n.name}`, name: n.name, description: n.description, price: n.price, type: "none" as DietType })),
       },
       {
         id: "beverages",
         label: "Beverages",
         accentColor: "#06b6d4",
-        items: menuData.beverages.map((n) => ({ id: `bev-${n.name}`, name: n.name, description: n.description, type: "none" as DietType })),
+        items: menuData.beverages.map((n) => ({ id: `bev-${n.name}`, name: n.name, description: n.description, price: n.price, type: "none" as DietType })),
       },
       {
         id: "softDrinks",
         label: "Soft Drinks",
         accentColor: "#3b82f6",
-        items: menuData.softDrinks.map((n) => ({ id: `sd-${n.name}`, name: n.name, description: n.description, type: "none" as DietType })),
+        items: menuData.softDrinks.map((n) => ({ id: `sd-${n.name}`, name: n.name, description: n.description, price: n.price, type: "none" as DietType })),
       },
       {
         id: "alkalineWater",
         label: "Alkaline Water",
         accentColor: "#0ea5e9",
-        items: menuData.alkalineWater.map((n) => ({ id: `aw-${n.name}`, name: n.name, description: n.description, type: "none" as DietType })),
+        items: menuData.alkalineWater.map((n) => ({ id: `aw-${n.name}`, name: n.name, description: n.description, price: n.price, type: "none" as DietType })),
       },
       {
         id: "combos",
@@ -180,7 +222,12 @@ export default function Menu() {
   }, [processedCategories, searchQuery, dietFilter]);
 
   return (
-    <div style={{ background: "var(--page-bg)" }} className="min-h-screen pt-[80px] pb-20 px-6 sm:px-10 lg:px-16 transition-colors duration-300">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildMenuJsonLd()) }}
+      />
+      <div style={{ background: "var(--page-bg)" }} className="min-h-screen pt-[80px] pb-20 px-6 sm:px-10 lg:px-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         <SectionReveal className="mb-0">
           <div className="flex items-center gap-3 mb-5">
@@ -343,5 +390,6 @@ export default function Menu() {
         )}
       </AnimatePresence>
     </div>
+    </>
   );
 }

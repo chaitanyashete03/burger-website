@@ -74,7 +74,10 @@ const jsonLd = {
   image: "https://www.kangenburgers.com/images/scroll-laptop/ezgif-frame-001.jpg",
   logo: "https://www.kangenburgers.com/images/scroll-laptop/ezgif-frame-001.jpg",
   priceRange: "₹₹",
-  servesCuisine: ["Burgers", "Pizzas", "Fast Food", "Healthy Food"],
+  servesCuisine: ["Burgers", "Pizzas", "Fast Food", "Healthy Food", "Sandwiches", "Pasta"],
+  acceptsReservations: "True",
+  paymentAccepted: "Cash, UPI, Credit Card, Debit Card",
+  currenciesAccepted: "INR",
   address: {
     "@type": "PostalAddress",
     streetAddress: "409, Station Road, Chatrapati Shivaji Maharaj Chowk, Yashwant Nagar",
@@ -87,6 +90,13 @@ const jsonLd = {
     "@type": "GeoCoordinates",
     latitude: 18.7289896,
     longitude: 73.6811201,
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.6",
+    reviewCount: "320",
+    bestRating: "5",
+    worstRating: "1",
   },
   openingHoursSpecification: [
     {

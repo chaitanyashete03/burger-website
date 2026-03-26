@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { siteInfo, aboutText, whyChooseUs, specialOffers } from "@/lib/constants";
+import { siteInfo, aboutText, whyChooseUs, specialOffers, faqData } from "@/lib/constants";
 import SectionReveal from "@/components/SectionReveal";
 import GlassCard from "@/components/GlassCard";
 import BurgerScroll from "@/components/BurgerScroll";
@@ -297,6 +297,73 @@ export default function Home() {
               </SectionReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── FAQ Preview ────────────────────────────────── */}
+      <section className="relative py-28 lg:py-36 px-6 sm:px-10 lg:px-20"
+               style={{ background: "var(--page-bg)" }}>
+        <div className="max-w-4xl mx-auto">
+          <SectionReveal>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+              <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>Got Questions?</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-black leading-tight tracking-tight mb-4" style={{ color: "var(--text-primary)" }}>
+              Frequently Asked <span style={{ color: "#FF6B35" }}>Questions</span>
+            </h2>
+            <div className="w-8 h-[2px] rounded-full mb-10" style={{ background: "#FF6B35" }} />
+          </SectionReveal>
+          <div className="space-y-3 mb-10">
+            {faqData.slice(0, 5).map((faq, idx) => (
+              <SectionReveal key={idx} delay={idx * 0.05}>
+                <div className="rounded-2xl p-6" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
+                  <h3 className="text-base font-bold mb-2" style={{ color: "var(--text-primary)" }}>{faq.question}</h3>
+                  <p className="text-sm leading-relaxed line-clamp-2" style={{ color: "var(--text-secondary)" }}>{faq.answer}</p>
+                </div>
+              </SectionReveal>
+            ))}
+          </div>
+          <SectionReveal>
+            <div className="text-center">
+              <Link href="/faq" className="px-8 py-3.5 rounded-full font-black text-sm tracking-wide text-white transition-all hover:scale-105 inline-block" style={{ background: "#FF6B35" }}>View All FAQs</Link>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
+      {/* ── Google Reviews CTA ────────────────────────── */}
+      <section className="relative py-20 lg:py-28 px-6 sm:px-10 lg:px-20"
+               style={{ background: "var(--page-bg)" }}>
+        <div className="max-w-4xl mx-auto text-center">
+          <SectionReveal>
+            <div className="rounded-2xl p-10 sm:p-14" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
+              <div className="flex items-center justify-center gap-1 mb-4">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <svg key={star} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill={star <= 4 ? "#FBBF24" : "none"} stroke="#FBBF24" strokeWidth="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                ))}
+                <span className="ml-2 text-2xl font-black" style={{ color: "var(--text-primary)" }}>4.6</span>
+              </div>
+              <p className="text-sm mb-1" style={{ color: "var(--text-muted)" }}>Based on 320+ Google Reviews</p>
+              <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "var(--text-primary)" }}>
+                Love Our Food? <span style={{ color: "#FF6B35" }}>Leave a Review!</span>
+              </h2>
+              <p className="text-sm mb-8 max-w-md mx-auto" style={{ color: "var(--text-secondary)" }}>
+                Your reviews help us grow and serve you better. Share your experience on Google!
+              </p>
+              <a
+                href="https://search.google.com/local/writereview?placeid=ChIJg3YMvmOxskARhxVrDCDExJw"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-10 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105 inline-block"
+                style={{ background: "#FF6B35" }}
+              >
+                Write a Google Review ★
+              </a>
+            </div>
+          </SectionReveal>
         </div>
       </section>
 

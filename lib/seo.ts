@@ -15,6 +15,20 @@ export const defaultSEO = {
     "Best Burger Pune",
     "Talegaon Dabhade Restaurant",
     "Alkaline Burger Pune",
+    "best burger near me",
+    "burger shop Talegaon",
+    "burger delivery Pune",
+    "healthy fast food Pune",
+    "veg burger Pune",
+    "non veg burger near me",
+    "chicken burger Pune",
+    "pizza near Talegaon Dabhade",
+    "best cafe Talegaon",
+    "alkaline water restaurant India",
+    "burger Talegaon Dabhade",
+    "cafe near Talegaon station",
+    "best restaurant Yashwant Nagar",
+    "burger party catering Pune",
   ],
   url: BASE_URL,
 };
@@ -30,7 +44,7 @@ export const pageSEO = {
     title: "Our Menu – Burgers, Pizzas & Beverages | Kangen Burgers Pune",
     description:
       "Explore our full menu of handcrafted burgers, stone-baked pizzas, and alkaline Kangen water beverages. Something for every taste at Kangen Burgers, Pune.",
-    keywords: ["Kangen Burger menu", "Burger menu Pune", "Alkaline pizza Pune", "Healthy fast food menu"],
+    keywords: ["Kangen Burger menu", "Burger menu Pune", "Alkaline pizza Pune", "Healthy fast food menu", "veg burger menu Talegaon", "chicken burger price Pune"],
     canonical: `${BASE_URL}/menu`,
   },
   franchise: {
@@ -67,6 +81,34 @@ export const pageSEO = {
       "Order your favourite Kangen Burgers via Zomato, Swiggy, or call us directly for takeaway. Fast delivery across Talegaon Dabhade, Pune.",
     keywords: ["Order burger online Pune", "Kangen Burgers delivery", "Burger delivery Talegaon"],
     canonical: `${BASE_URL}/order-online`,
+  },
+  faq: {
+    title: "FAQ – Frequently Asked Questions | Kangen Burgers Pune",
+    description:
+      "Get answers to common questions about Kangen Burgers: our Kangen Water process, menu options, delivery, franchise opportunities, and more.",
+    keywords: ["Kangen Burgers FAQ", "Kangen water food questions", "burger restaurant FAQ Pune", "alkaline water cooking FAQ"],
+    canonical: `${BASE_URL}/faq`,
+  },
+  catering: {
+    title: "Catering & Party Orders – Birthday, Corporate & Events | Kangen Burgers",
+    description:
+      "Order Kangen Burgers catering for birthdays, corporate lunches, family parties, and events in Pune. Customizable packages starting from ₹2,999.",
+    keywords: ["burger catering Pune", "party food order Talegaon", "corporate lunch catering Pune", "birthday party food Pune"],
+    canonical: `${BASE_URL}/catering`,
+  },
+  burgersInTalegaon: {
+    title: "Best Burgers in Talegaon Dabhade – Kangen Burgers | Pune",
+    description:
+      "Looking for the best burgers in Talegaon Dabhade? Visit Kangen Burgers for handcrafted, Kangen Water-infused burgers, pizzas, and more near Talegaon Station.",
+    keywords: ["burgers in Talegaon Dabhade", "best burger Talegaon", "best cafe Talegaon Dabhade", "restaurant near Talegaon station", "fast food Talegaon"],
+    canonical: `${BASE_URL}/burgers-in-talegaon-dabhade`,
+  },
+  burgerDeliveryPune: {
+    title: "Burger Delivery in Pune – Order Kangen Burgers Online",
+    description:
+      "Get the best burgers delivered to your doorstep in Pune. Order Kangen Burgers via Zomato, Swiggy, or direct call. Fast delivery across Talegaon Dabhade & Pune.",
+    keywords: ["burger delivery Pune", "order burger online Pune", "best burger delivery Talegaon", "fast food delivery Pune", "burger home delivery"],
+    canonical: `${BASE_URL}/burger-delivery-pune`,
   },
 };
 
