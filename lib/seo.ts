@@ -110,6 +110,20 @@ export const pageSEO = {
     keywords: ["burger delivery Pune", "order burger online Pune", "best burger delivery Talegaon", "fast food delivery Pune", "burger home delivery"],
     canonical: `${BASE_URL}/burger-delivery-pune`,
   },
+  kangenClub: {
+    title: "Kangen Club – Loyalty Rewards Program | Kangen Burgers Pune",
+    description:
+      "Join the Kangen Club! Buy 5 burgers, get 1 free. Earn points on every order, enjoy birthday discounts, and unlock exclusive rewards at Kangen Burgers.",
+    keywords: ["Kangen Club rewards", "burger loyalty program Pune", "buy 5 get 1 free burger", "Kangen Burgers rewards"],
+    canonical: `${BASE_URL}/kangen-club`,
+  },
+  comboBuilder: {
+    title: "Build Your Combo – Custom Burger Combos | Kangen Burgers Pune",
+    description:
+      "Build your own burger combo at Kangen Burgers! Pick a burger + fries + drink and save 15%. Interactive combo builder with live pricing.",
+    keywords: ["build your own combo", "custom burger combo Pune", "burger combo deal", "Kangen Burgers combo builder"],
+    canonical: `${BASE_URL}/combo-builder`,
+  },
 };
 
 export const generatePageMetadata = (page: keyof typeof pageSEO) => {

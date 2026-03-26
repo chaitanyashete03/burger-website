@@ -367,3 +367,81 @@ export const cateringPackages = [
   },
 ];
 
+export const kangenClub = {
+  tagline: "Eat More. Save More. Repeat.",
+  perks: [
+    {
+      icon: "🍔",
+      title: "Buy 5, Get 1 Free",
+      description: "Every 5th burger is on us! Track your progress with your registered phone number.",
+    },
+    {
+      icon: "🎂",
+      title: "Birthday Discount",
+      description: "Celebrate with 10% off your entire order during your birthday week. Just show your ID!",
+    },
+    {
+      icon: "⭐",
+      title: "Points on Every Order",
+      description: "Earn 1 point per ₹10 spent. Redeem 100 points = ₹50 off. Points are tied to your phone number.",
+    },
+    {
+      icon: "🎁",
+      title: "Surprise Rewards",
+      description: "Random bonus points, free add-ons, and exclusive combo deals for loyal members.",
+    },
+    {
+      icon: "🚀",
+      title: "Early Access",
+      description: "Be the first to try new menu items and limited-edition burgers before anyone else.",
+    },
+    {
+      icon: "👥",
+      title: "Refer & Earn",
+      description: "Refer a friend — you both get 50 bonus points when they place their first order.",
+    },
+  ],
+  howItWorks: [
+    { step: "01", title: "Sign Up", description: "Register with your phone number at the counter or on WhatsApp." },
+    { step: "02", title: "Eat & Earn", description: "Earn points on every order. Track your progress via SMS updates." },
+    { step: "03", title: "Redeem Rewards", description: "Use your points for discounts, free items, and exclusive perks." },
+  ],
+};
+
+export const comboBuilderOptions = {
+  burgers: [
+    { name: "Crunchy Burger", price: 69, type: "veg" as const },
+    { name: "Veg Tikki Burger", price: 79, type: "veg" as const },
+    { name: "Aloo Tikki Cheese Burger", price: 99, type: "veg" as const },
+    { name: "Corn Cheese Burger", price: 109, type: "veg" as const },
+    { name: "Mushroom Burger", price: 119, type: "veg" as const },
+    { name: "Paneer Cheese Burger", price: 129, type: "veg" as const },
+    { name: "Paneer Tandoori Burger", price: 139, type: "veg" as const },
+    { name: "Super Duper Burger", price: 89, type: "nonVeg" as const },
+    { name: "Egg Burger", price: 89, type: "nonVeg" as const },
+    { name: "Crispy Chicken Burger", price: 119, type: "nonVeg" as const },
+    { name: "Spicy Chicken Burger", price: 129, type: "nonVeg" as const },
+    { name: "Mexican Chicken Burger", price: 139, type: "nonVeg" as const },
+    { name: "Tandoori Chicken Burger", price: 149, type: "nonVeg" as const },
+    { name: "Butter Chicken Burger", price: 159, type: "nonVeg" as const },
+  ],
+  fries: [
+    { name: "Regular Fries", price: 49 },
+    { name: "Medium Fries", price: 69 },
+    { name: "Large Fries", price: 89 },
+    { name: "Peri Peri Fries", price: 99 },
+    { name: "Tandoori Fries", price: 99 },
+    { name: "Cheesy Barbeque Fries", price: 119 },
+  ],
+  drinks: [
+    { name: "Alkaline Water", price: 30 },
+    { name: "Sprite / Coke / Fanta", price: 40 },
+    { name: "Hot Coffee", price: 49 },
+    { name: "Cold Coffee", price: 89 },
+    { name: "Classic Chocolate Milkshake", price: 109 },
+    { name: "Strawberry Milkshake", price: 119 },
+    { name: "Blueberry Milkshake", price: 129 },
+    { name: "Mango Milkshake", price: 119 },
+  ],
+  comboDiscount: 15, // 15% off when making a combo
+};

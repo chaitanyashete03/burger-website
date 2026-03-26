@@ -1,0 +1,224 @@
+"use client";
+
+import { useState, useMemo } from "react";
+import SectionReveal from "@/components/SectionReveal";
+import { comboBuilderOptions, siteInfo } from "@/lib/constants";
+
+type SelectedItems = {
+  burger: number | null;
+  fries: number | null;
+  drink: number | null;
+};
+
+export default function ComboBuilder() {
+  const [selected, setSelected] = useState<SelectedItems>({
+    burger: null,
+    fries: null,
+    drink: null,
+  });
+
+  const { burgers, fries, drinks, comboDiscount } = comboBuilderOptions;
+
+  const computed = useMemo(() => {
+    const burgerPrice = selected.burger !== null ? burgers[selected.burger].price : 0;
+    const friesPrice = selected.fries !== null ? fries[selected.fries].price : 0;
+    const drinkPrice = selected.drink !== null ? drinks[selected.drink].price : 0;
+    const total = burgerPrice + friesPrice + drinkPrice;
+    const allSelected = selected.burger !== null && selected.fries !== null && selected.drink !== null;
+    const discount = allSelected ? Math.round(total * comboDiscount / 100) : 0;
+    const comboPrice = total - discount;
+    return { burgerPrice, friesPrice, drinkPrice, total, discount, comboPrice, allSelected };
+  }, [selected, burgers, fries, drinks, comboDiscount]);
+
+  const handleOrder = () => {
+    if (!computed.allSelected) return;
+    const burger = burgers[selected.burger!];
+    const fry = fries[selected.fries!];
+    const drink = drinks[selected.drink!];
+    const msg = `Hi! I'd like to order my custom combo:\n🍔 ${burger.name} (₹${burger.price})\n🍟 ${fry.name} (₹${fry.price})\n🥤 ${drink.name} (₹${drink.price})\n\n💰 Combo Price: ₹${computed.comboPrice} (saved ₹${computed.discount})`;
+    window.open(
+      `https://wa.me/${siteInfo.whatsappNumber}?text=${encodeURIComponent(msg)}`,
+      "_blank"
+    );
+  };
+
+  const categories = [
+    {
+      key: "burger" as const,
+      label: "Pick Your Burger",
+      emoji: "🍔",
+      step: "01",
+      items: burgers.map((b) => ({ name: b.name, price: b.price, badge: b.type === "veg" ? "🟢" : "🔴" })),
+    },
+    {
+      key: "fries" as const,
+      label: "Add Fries",
+      emoji: "🍟",
+      step: "02",
+      items: fries.map((f) => ({ name: f.name, price: f.price, badge: "🟢" })),
+    },
+    {
+      key: "drink" as const,
+      label: "Choose a Drink",
+      emoji: "🥤",
+      step: "03",
+      items: drinks.map((d) => ({ name: d.name, price: d.price, badge: "" })),
+    },
+  ];
+
+  return (
+    <div style={{ background: "var(--page-bg)" }} className="min-h-screen pt-28 pb-20 px-6 sm:px-10 lg:px-16">
+      <div className="max-w-6xl mx-auto">
+        {/* Hero */}
+        <SectionReveal className="mb-16 text-center">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>
+              Build Your Own
+            </span>
+            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+          </div>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tight mb-5" style={{ color: "var(--text-primary)" }}>
+            Combo <span style={{ color: "#FF6B35" }}>Builder</span>
+          </h1>
+          <div className="w-8 h-[2px] rounded-full mb-5 mx-auto" style={{ background: "#FF6B35" }} />
+          <p className="text-base max-w-xl mx-auto leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+            Pick a burger + fries + drink and get <span className="font-black text-[#FF6B35]">{comboDiscount}% OFF</span> your total! Build your perfect meal below.
+          </p>
+        </SectionReveal>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          {/* Selection Columns */}
+          {categories.map((cat) => (
+            <SectionReveal key={cat.key}>
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <span className="text-3xl">{cat.emoji}</span>
+                  <div>
+                    <div className="text-[10px] font-black tracking-widest uppercase" style={{ color: "var(--text-muted)" }}>
+                      Step {cat.step}
+                    </div>
+                    <h2 className="text-xl font-black" style={{ color: "var(--text-primary)" }}>
+                      {cat.label}
+                    </h2>
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  {cat.items.map((item, idx) => {
+                    const isSelected = selected[cat.key] === idx;
+                    return (
+                      <button
+                        key={item.name}
+                        onClick={() =>
+                          setSelected((prev) => ({
+                            ...prev,
+                            [cat.key]: prev[cat.key] === idx ? null : idx,
+                          }))
+                        }
+                        className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-xl text-left transition-all duration-200 group"
+                        style={{
+                          background: isSelected ? "rgba(255,107,53,0.1)" : "var(--card-bg)",
+                          border: isSelected ? "2px solid #FF6B35" : "1px solid var(--card-border)",
+                          transform: isSelected ? "scale(1.01)" : "scale(1)",
+                        }}
+                      >
+                        <div className="flex items-center gap-2 min-w-0">
+                          {cat.key !== "drink" && (
+                            <span className="text-xs flex-shrink-0">{item.badge}</span>
+                          )}
+                          <span
+                            className="text-sm font-bold truncate"
+                            style={{ color: isSelected ? "#FF6B35" : "var(--text-primary)" }}
+                          >
+                            {item.name}
+                          </span>
+                        </div>
+                        <span
+                          className="text-sm font-black flex-shrink-0"
+                          style={{ color: isSelected ? "#FF6B35" : "var(--text-muted)" }}
+                        >
+                          ₹{item.price}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </SectionReveal>
+          ))}
+        </div>
+
+        {/* Sticky Price Summary */}
+        <SectionReveal>
+          <div
+            className="sticky bottom-6 z-30 rounded-2xl p-6 sm:p-8 transition-all duration-300"
+            style={{
+              background: "var(--card-bg)",
+              border: computed.allSelected ? "2px solid #FF6B35" : "1px solid var(--card-border)",
+              boxShadow: "0 -8px 40px rgba(0,0,0,0.15)",
+            }}
+          >
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+              {/* Summary */}
+              <div className="flex-1 w-full">
+                <div className="text-[10px] font-black tracking-widest uppercase mb-3" style={{ color: "var(--text-muted)" }}>
+                  Your Combo
+                </div>
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm" style={{ color: "var(--text-secondary)" }}>
+                  <span>
+                    🍔{" "}
+                    <span className="font-bold" style={{ color: selected.burger !== null ? "var(--text-primary)" : "var(--text-muted)" }}>
+                      {selected.burger !== null ? burgers[selected.burger].name : "Pick a burger"}
+                    </span>
+                  </span>
+                  <span>
+                    🍟{" "}
+                    <span className="font-bold" style={{ color: selected.fries !== null ? "var(--text-primary)" : "var(--text-muted)" }}>
+                      {selected.fries !== null ? fries[selected.fries].name : "Pick fries"}
+                    </span>
+                  </span>
+                  <span>
+                    🥤{" "}
+                    <span className="font-bold" style={{ color: selected.drink !== null ? "var(--text-primary)" : "var(--text-muted)" }}>
+                      {selected.drink !== null ? drinks[selected.drink].name : "Pick a drink"}
+                    </span>
+                  </span>
+                </div>
+              </div>
+
+              {/* Price */}
+              <div className="flex items-center gap-6">
+                <div className="text-right">
+                  {computed.allSelected && (
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-sm line-through" style={{ color: "var(--text-muted)" }}>
+                        ₹{computed.total}
+                      </span>
+                      <span
+                        className="text-[10px] font-black px-2 py-0.5 rounded-full text-white"
+                        style={{ background: "#FF6B35" }}
+                      >
+                        SAVE ₹{computed.discount}
+                      </span>
+                    </div>
+                  )}
+                  <div className="text-3xl font-black" style={{ color: computed.allSelected ? "#FF6B35" : "var(--text-muted)" }}>
+                    ₹{computed.allSelected ? computed.comboPrice : computed.total || 0}
+                  </div>
+                </div>
+                <button
+                  onClick={handleOrder}
+                  disabled={!computed.allSelected}
+                  className="px-8 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  style={{ background: "#FF6B35" }}
+                >
+                  Order on WhatsApp
+                </button>
+              </div>
+            </div>
+          </div>
+        </SectionReveal>
+      </div>
+    </div>
+  );
+}

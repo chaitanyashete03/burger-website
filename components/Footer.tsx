@@ -58,8 +58,8 @@ export default function Footer() {
           <div>
             <h4 className="font-black text-xs tracking-[0.3em] uppercase mb-6" style={{ color: "rgba(255,255,255,0.8)" }}>Quick Links</h4>
             <ul className="space-y-3">
-              {["/", "/menu", "/franchise", "/kangen-water", "/blog", "/faq", "/catering"].map((href, i) => {
-                const labels = ["Home", "Menu", "Franchise", "Kangen Water", "Blog", "FAQ", "Catering"];
+              {["/", "/menu", "/franchise", "/kangen-water", "/blog", "/faq", "/catering", "/kangen-club", "/combo-builder"].map((href, i) => {
+                const labels = ["Home", "Menu", "Franchise", "Kangen Water", "Blog", "FAQ", "Catering", "Kangen Club", "Combo Builder"];
                 return (
                   <li key={href}>
                     <Link href={href}
