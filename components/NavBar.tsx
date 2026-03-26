@@ -45,7 +45,7 @@ export default function NavBar() {
     <>
     <header
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-500",
+        "fixed top-0 w-full z-[90] transition-all duration-500",
         scrolled
           ? "py-0"
           : "py-2"
@@ -129,8 +129,8 @@ export default function NavBar() {
     {/* Mobile overlay */}
     {isOpen && (
       <div
-        className="md:hidden fixed inset-0 z-40 flex flex-col items-center justify-start pt-32 pb-12 gap-8 overflow-y-auto"
-        style={{ background: "var(--nav-bg)", backdropFilter: "blur(24px)" }}
+        className="md:hidden fixed inset-0 z-[80] flex flex-col items-center justify-start pt-32 pb-12 gap-8 overflow-y-auto"
+        style={{ background: "var(--page-bg)" }}
       >
         {navLinks.map((link) => (
           <Link
