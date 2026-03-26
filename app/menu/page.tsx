@@ -180,9 +180,9 @@ export default function Menu() {
   }, [processedCategories, searchQuery, dietFilter]);
 
   return (
-    <div style={{ background: "var(--page-bg)" }} className="min-h-screen pt-24 pb-20 px-6 sm:px-10 lg:px-16 transition-colors duration-300">
+    <div style={{ background: "var(--page-bg)" }} className="min-h-screen pt-[80px] pb-20 px-6 sm:px-10 lg:px-16 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
-        <SectionReveal className="mb-4">
+        <SectionReveal className="mb-0">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
             <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>
