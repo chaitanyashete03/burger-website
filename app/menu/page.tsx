@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import SectionReveal from "@/components/SectionReveal";
 import { menuData } from "@/lib/constants";
 import MenuItemCard, { DietType } from "@/components/MenuItemCard";
@@ -28,6 +29,7 @@ export default function Menu() {
   const [searchQuery, setSearchQuery] = useState("");
   const [dietFilter, setDietFilter] = useState<DietType | "all">("all");
   const [activeCategory, setActiveCategory] = useState<string>("burgers");
+  const [selectedItem, setSelectedItem] = useState<(CategorizedItem & { accentColor: string }) | null>(null);
 
   // Flatten and process menu data into a predictable shape array
   const processedCategories: ProcessedCategory[] = useMemo(() => {
@@ -227,10 +229,12 @@ export default function Menu() {
                     {category.items.map((item) => (
                       <MenuItemCard
                         key={item.id}
+                        id={item.id}
                         name={item.name}
                         price={item.price}
                         type={item.type}
                         accentColor={category.accentColor}
+                        onClick={() => setSelectedItem({ ...item, accentColor: category.accentColor })}
                       />
                     ))}
                     {category.combos?.map((combo, idx) => (
@@ -248,6 +252,86 @@ export default function Menu() {
           )}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedItem && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedItem(null)}
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
+            />
+            
+            <motion.div
+              layoutId={`card-container-${selectedItem.id}`}
+              className="relative w-full max-w-lg rounded-3xl p-8 sm:p-12 overflow-hidden shadow-2xl"
+              style={{
+                background: "var(--card-bg)",
+                border: "1px solid var(--card-border)",
+              }}
+            >
+              <div
+                className="absolute inset-0 rounded-3xl pointer-events-none"
+                style={{ background: `radial-gradient(circle at top right, ${selectedItem.accentColor}20, transparent 70%)` }}
+              />
+
+              <div className="relative z-10 flex flex-col gap-6">
+                <div className="flex justify-between items-start">
+                  <motion.h3
+                    layoutId={`card-title-${selectedItem.id}`}
+                    className="text-3xl sm:text-4xl font-black leading-tight"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    {selectedItem.name.replace(/(?:\(([^)]*pcs[^)]*)\)|-\s*([\d]+)\s*$)/i, "").trim()}
+                  </motion.h3>
+                  
+                  {selectedItem.type !== "none" && (
+                    <div
+                      className={`mt-2 shrink-0 flex items-center justify-center w-6 h-6 rounded-[4px] border-[2px] ${
+                        selectedItem.type === "veg" ? "border-green-600" : "border-red-600"
+                      }`}
+                    >
+                      {selectedItem.type === "veg" ? (
+                        <div className="w-3.5 h-3.5 rounded-full bg-green-600" />
+                      ) : (
+                        <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[10px] border-b-red-600" />
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                {selectedItem.name.match(/(?:\(([^)]*pcs[^)]*)\)|-\s*([\d]+)\s*$)/i) && (
+                  <span
+                    className="text-sm font-bold px-3 py-1 rounded inline-block w-fit"
+                    style={{ color: selectedItem.accentColor, border: `1px solid ${selectedItem.accentColor}` }}
+                  >
+                    {selectedItem.name.match(/(?:\(([^)]*pcs[^)]*)\)|-\s*([\d]+)\s*$)/i)?.[1] || 
+                     selectedItem.name.match(/(?:\(([^)]*pcs[^)]*)\)|-\s*([\d]+)\s*$)/i)?.[2] + "pcs"}
+                  </span>
+                )}
+
+                <div className="w-12 h-[2px]" style={{ background: selectedItem.accentColor }} />
+
+                <div className="mt-4 flex items-center justify-between">
+                  <p className="text-lg opacity-80" style={{ color: "var(--text-secondary)" }}>
+                    {selectedItem.description || "Freshly made with our signature Kangen Water twist for maximum flavor and health benefits."}
+                  </p>
+                  
+                  <motion.span
+                    layoutId={`card-price-${selectedItem.id}`}
+                    className="font-black text-4xl shrink-0"
+                    style={{ color: selectedItem.accentColor }}
+                  >
+                    {selectedItem.price || "—"}
+                  </motion.span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
