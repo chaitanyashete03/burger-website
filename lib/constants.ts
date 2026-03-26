@@ -124,3 +124,61 @@ export const blogPosts = [
     date: "December 12, 2023"
   }
 ];
+
+export const menuData = {
+  burgers: {
+    veg: [
+      "Crunchy Burger", "Veg Tikki Burger", "Schezwan Burger", "Aloo Tikki Cheese Burger",
+      "Corn Cheese Burger", "Mushroom Burger", "Paneer Cheese Burger", "Paneer Tandoori Burger",
+      "Paneer Mexican Burger", "Paneer Cheese Monster Burger"
+    ],
+    nonVeg: [
+      "Super Duper Burger", "Half Fry Egg Burger", "Egg Burger", "Crispy Chicken Burger",
+      "Spicy Chicken Burger", "Mexican Chicken Burger", "Pizza Chicken Burger", "Tandoori Chicken Burger",
+      "Butter Chicken Burger", "Chicken Cheese Smash Burger", "Roasted Barbecue Tender", "Three Cheese Monster Burger"
+    ]
+  },
+  friesAndPizza: {
+    fries: ["Regular", "Medium", "Large", "Peri peri magic", "Tandoori", "Cheesy Barbeque"],
+    pizza: ["BBQ Chicken Pizza", "Chicken Cheese Pizza", "Tandoori Chicken Pizza", "Peri Peri Chicken Pizza"]
+  },
+  pasta: {
+    veg: ["White Sauce", "Red Sauce", "Pink Sauce"],
+    nonVeg: ["Ch. White Sa", "Ch. Red Sau", "Ch. Pink Sau", "Prawns Past"]
+  },
+  garlicBread: ["Bread & Butter Regular (4pcs)"],
+  snacks: {
+    veg: ["Veg Masala Maggie", "Veg Cheese Masala Maggie", "Veg Nachos", "Mushroom Popcorn", "Paneer Popcorn"],
+    nonVeg: [
+      "Egg Cheese Masala Maggie", "Ch. Cheese Masala Maggie", "Egg Nachos", "Chicken Nachos",
+      "Chicken Nuggets (7pcs)", "Chicken Popcorn (15pcs)", "Crispy Chicken Strips (3pcs)", "Chicken Wings (4pcs)",
+      "Chicken Popcorn (20pcs) with Cheese Dips", "Prawn Popcorn", "Chicken Wings (6pcs)", "Crispy Chicken Fingers",
+      "Spicy Ch. Wings (6pcs)", "BBQ Ch. Wings (6pcs)", "Tandoori Ch. Wings", "Crispy Ch. Strips 6pcs"
+    ]
+  },
+  sandwiches: {
+    veg: ["Veggie Sandwich", "Corn Cheese Sandwich", "Club Sandwich", "Paneer Sandwich"],
+    nonVeg: ["Egg Toast Sandwich", "Bread Egg Sandwich", "Chicken Mayo Sandwich", "Chicken Tikka Sandwich", "Peri Peri Sandwich"]
+  },
+  cakes: [
+    "ButterScotch", "Simple Chocolate", "Choco Chips Chocolate", "Pineapple", "Blueberry",
+    "Red Velvet Cheese Cream", "Dutch Cakes", "Truffle Chocolate", "Fresh Strawberry", "Fresh Mango"
+  ],
+  beverages: [
+    "Hot Bournvita", "Hot Coffee", "Black Coffee", "Black Tea", "Green Tea", "Hot Chocolate",
+    "Hot Chocolate With Crush", "Cold Coffee", "Cold Coffee With Crush", "Strawberry Milkshake",
+    "Blueberry Milkshake", "Classic Chocolate Milkshake", "Rose Milkshake", "Mixed Berry Milkshake",
+    "Strawberry Oreo Milkshake", "Crunchy Cookie Hazelnut", "Butterscotch Milkshake", "Mango Milkshake", "American Nuts"
+  ],
+  softDrinks: ["Sprite", "Fanta", "Coke", "ThumsUp"],
+  alkalineWater: ["Alkaline Ionized Water"],
+  combos: [
+    { name: "Veggie Delight Maxi", items: ["Corn / Paneer / Exotic Veg Pizza (Binch) - 1", "Aloo Tikki Cheese Burger - 2", "Schezwan Manchurian Burger - 1", "Medium Fries - 1", "Mojito - 3"] },
+    { name: "Veggie Delight Mini", items: ["Corn / Paneer / Exotic Veg Pizza (Binch) - 1", "Aloo Tikki Cheese Burger - 1", "Medium Fries - 1", "Mojito - 2"] },
+    { name: "Crazy Box", items: ["Crispy Chicken Popcorn - 13pcs", "Chicken Strips - 2pcs", "Crispy Wings - 2pcs", "Crispy Chicken Burger - 1"] },
+    { name: "Happy Meal Combo", items: ["Crispy Chicken Burger - 3", "Mint Mojito - 3", "Large Fries - 1"] },
+    { name: "Chicken Spicy Meal", items: ["Mexican Chicken Burger - 1", "Crispy Chicken Cheese Burger - 1", "Magic Masala Fries - 1", "Chocolate Milkshake - 1"] },
+    { name: "Made For Couple", items: ["Mexican Chicken Burger - 1", "Chicken Cheese Burger - 1", "Magic Masala Fries - 1", "Chocolate Milkshake - 1"] },
+    { name: "Crazy Family Meal", items: ["Tandoori Chicken Pizza 8\" - 1", "Crispy Chicken Popcorn With Dip - 1", "Spicy Chicken Burger - 1", "Crispy Chicken Strips - 6pcs", "Crispy Chicken Wings - 6pcs", "Large Peri Peri Fries - 1", "Chocolate Milkshake - 3"] }
+  ]
+};
