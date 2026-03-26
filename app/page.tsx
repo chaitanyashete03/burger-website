@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { siteInfo, aboutText, whyChooseUs, specialOffers, faqData } from "@/lib/constants";
+import { siteInfo, aboutText, whyChooseUs, specialOffers, faqData, kangenClub } from "@/lib/constants";
 import SectionReveal from "@/components/SectionReveal";
 import GlassCard from "@/components/GlassCard";
 import BurgerScroll from "@/components/BurgerScroll";
@@ -150,6 +150,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Kangen Club CTA ────────────────────────────── */}
+      <section className="relative py-28 lg:py-36 px-6 sm:px-10 lg:px-20"
+               style={{ background: "var(--page-bg)" }}>
+        <div className="max-w-7xl mx-auto">
+          <SectionReveal>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+                  <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>Join the Club</span>
+                </div>
+                <h2 className="text-4xl sm:text-5xl font-black leading-tight tracking-tight mb-6" style={{ color: "var(--text-primary)" }}>
+                  Eat More. Save More.<br />
+                  Join the <span style={{ color: "#FF6B35" }}>Kangen Club</span>
+                </h2>
+                <p className="text-lg leading-relaxed mb-10" style={{ color: "var(--text-secondary)" }}>
+                  Our loyalty program rewards you for every bite. Buy 5 burgers and get the 6th one free! 
+                  Earn points, celebrate with birthday discounts, and unlock exclusive member-only perks.
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                  {kangenClub.perks.slice(0, 2).map((perk, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <span className="text-2xl">{perk.icon}</span>
+                      <div>
+                        <h4 className="font-bold mb-1" style={{ color: "var(--text-primary)" }}>{perk.title}</h4>
+                        <p className="text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>{perk.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <Link href="/kangen-club" 
+                      className="inline-block px-10 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105"
+                      style={{ background: "#FF6B35" }}>
+                  Join Kangen Club Now
+                </Link>
+              </div>
+              <div className="order-1 lg:order-2 relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+                <Image src="/images/scroll-laptop/ezgif-frame-001.jpg" alt="Kangen Club" fill className="object-cover" />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+                  <div className="text-center p-8 rounded-full border-2 border-dashed border-white/40 aspect-square flex flex-col items-center justify-center animate-pulse">
+                    <span className="text-5xl mb-2">🎁</span>
+                    <span className="text-white font-black text-xl tracking-widest uppercase">Member Gifts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SectionReveal>
+        </div>
+      </section>
+
       {/* ── Kangen Water — Themed ──────────────────────── */}
       <section
         className="relative overflow-hidden py-32 lg:py-44 px-6 sm:px-10 flex items-center justify-center"
@@ -267,6 +317,29 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SectionReveal>
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 -mt-10 mb-20 relative z-20">
+          <div className="p-8 sm:p-12 rounded-3xl text-center relative overflow-hidden" 
+               style={{ background: "rgba(255,107,53,0.1)", border: "1px solid rgba(255,107,53,0.2)", backdropFilter: "blur(10px)" }}>
+            <div className="absolute top-0 right-0 p-6 text-6xl opacity-10 rotate-12 select-none">🍔</div>
+            <div className="absolute bottom-0 left-0 p-6 text-6xl opacity-10 -rotate-12 select-none">🍟</div>
+            
+            <h3 className="text-2xl sm:text-3xl font-black mb-4" style={{ color: "var(--text-primary)" }}>
+              Build Your Own <span style={{ color: "#FF6B35" }}>Custom Combo</span>
+            </h3>
+            <p className="text-base max-w-xl mx-auto mb-8" style={{ color: "var(--text-secondary)" }}>
+              Craving something specific? Mix and match your favorite burger, fries, and drink 
+              to create your perfect meal and <span className="font-black text-[#FF6B35]">save 15% instantly!</span>
+            </p>
+            <Link href="/combo-builder" 
+                  className="inline-block px-10 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105"
+                  style={{ background: "#FF6B35" }}>
+              Launch Combo Builder
+            </Link>
+          </div>
+        </div>
+      </SectionReveal>
 
       {/* ── Why Choose Us ──────────────────────────────── */}
       <section className="relative overflow-hidden py-28 lg:py-36 px-6 sm:px-10 lg:px-20"

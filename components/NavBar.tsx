@@ -13,10 +13,11 @@ import { useIsDarkMode } from "@/hooks/useIsDarkMode";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Menu", href: "/menu" },
+  { name: "Combo Builder", href: "/combo-builder" },
+  { name: "Kangen Club", href: "/kangen-club" },
   { name: "Franchise", href: "/franchise" },
   { name: "Kangen Water", href: "/kangen-water" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
 ];
 
 export default function NavBar() {
