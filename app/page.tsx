@@ -21,7 +21,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <SectionReveal>
             <div className="relative h-[420px] rounded-3xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.15)]">
-              <Image src="/images/about-cafe.jpeg" alt="Our Kitchen" fill className="object-cover" />
+              <Image src="/images/about-cafe.jpg" alt="Our Kitchen" fill className="object-cover" />
               <div className="absolute inset-0"
                    style={{ background: "linear-gradient(135deg, rgba(255,107,53,0.15) 0%, transparent 60%)" }} />
             </div>
@@ -111,7 +111,7 @@ export default function Home() {
           <SectionReveal>
             <div className="relative h-[420px] sm:h-[500px] rounded-3xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.5)] bg-black/20">
               <Image 
-                src="/images/about-cafe.jpeg" 
+                src="/images/about-cafe.jpg" 
                 alt="About Kangen Burgers Cafe Front" 
                 fill 
                 className="object-cover"
