@@ -3,10 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { siteInfo } from "@/lib/constants";
-import { useIsDarkMode } from "@/hooks/useIsDarkMode";
+
 
 export default function Footer() {
-  const isDark = useIsDarkMode();
+
 
   return (
     <footer style={{ background: "var(--footer-bg)", borderTop: "1px solid var(--footer-border)" }} className="pt-16 pb-10">
@@ -18,15 +18,7 @@ export default function Footer() {
           {/* brand */}
           <div>
             <Link href="/" className="font-black text-xl tracking-tight mb-5 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden border border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
-                <Image 
-                  src={isDark ? "/logo-white.png" : "/logo-black.png"} 
-                  alt="Kangen Burgers Logo" 
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+
               <div className="flex flex-col">
                 <span className="leading-none text-[#FF6B35]">KANGEN</span>
                 <span className="leading-none text-white/90">BURGERS</span>
