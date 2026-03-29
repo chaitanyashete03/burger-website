@@ -39,6 +39,8 @@ function buildMenuJsonLd() {
     { name: "Snacks (Non-Veg)", items: menuData.snacks.nonVeg },
     { name: "Sandwiches (Veg)", items: menuData.sandwiches.veg },
     { name: "Sandwiches (Non-Veg)", items: menuData.sandwiches.nonVeg },
+    { name: "Frankies (Veg)", items: menuData.frankies.veg },
+    { name: "Frankies (Non-Veg)", items: menuData.frankies.nonVeg },
     { name: "Cakes", items: menuData.cakes },
     { name: "Mojitos", items: menuData.mojitos },
     { name: "Beverages", items: menuData.beverages },
@@ -127,6 +129,15 @@ export default function Menu() {
         items: [
           ...menuData.sandwiches.veg.map((n) => ({ id: `sand-v-${n.name}`, name: n.name, description: n.description, price: n.price, type: "veg" as DietType })),
           ...menuData.sandwiches.nonVeg.map((n) => ({ id: `sand-nv-${n.name}`, name: n.name, description: n.description, price: n.price, type: "nonVeg" as DietType })),
+        ],
+      },
+      {
+        id: "frankies",
+        label: "Frankies",
+        accentColor: "#f59e0b",
+        items: [
+          ...menuData.frankies.veg.map((n) => ({ id: `frankie-v-${n.name}`, name: n.name, description: n.description, price: n.price, type: "veg" as DietType })),
+          ...menuData.frankies.nonVeg.map((n) => ({ id: `frankie-nv-${n.name}`, name: n.name, description: n.description, price: n.price, type: "nonVeg" as DietType })),
         ],
       },
       {

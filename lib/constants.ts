@@ -1,11 +1,11 @@
 export const siteInfo = {
   name: "Kangen Burgers",
   headline: "Enjoy healthy and tasty burgers with a twist of alkaline goodness",
-  address: "Chatrapati Shivaji Maharaj Chowk, 409, Station Road, Yashwant Nagar, Talegaon Dabhade, Maharashtra 410507",
+  address: "Chatrapati Shivaji Maharaj Chowk, 409, Station Road, Yashwant Nagar, Talegaon, Dabhade, Maharashtra 410507",
   mapUrl: "https://www.google.com/maps/place/Kangen+Burger's+cafe+%7C+Best+cafe+in+Yashwant+Nagar+%7C+Talegaon+Dabhade/@18.7365386,73.6713141,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2b163be0c7683:0x9cc4c420bc6b6587!8m2!3d18.7365386!4d73.673889!16s%2Fg%2F11kbq2nlg6?entry=ttu&g_ep=EgoyMDI2MDMyMi4wIKXMDSoASAFQAw%3D%3D",
-  phone: "+91 9112738490",
+  phone: "+91 8805174783 / 9850094220",
   email: "kagenburgers@gmail.com",
-  whatsappNumber: "919112738490",
+  whatsappNumber: "918805174783",
   social: {
     facebook: "https://www.facebook.com/people/Kangen-Burger/61558688043249/",
     instagram: "https://www.instagram.com/kangen_burgers_/",
@@ -133,103 +133,138 @@ export const menuData = {
   burgers: {
     veg: [
       { name: "Crunchy Burger", price: "₹69", description: "A crispy vegetable patty served with lettuce and tomatoes that are soaked in 11.5 pH Strong Kangen Water to strip away oil-based pesticides, resulting in an incredibly crisp and naturally sweet bite." },
-      { name: "Veg Tikki Burger", price: "₹79", description: "Our traditional spiced potato tikki is paired with a signature bun kneaded using 9.5 pH Kangen Water, producing a softer, airier crumb structure that aids in digestion." },
+      { name: "Veg Tikki Burger", price: "₹89", description: "Our traditional spiced potato tikki is paired with a signature bun kneaded using 9.5 pH Kangen Water, producing a softer, airier crumb structure that aids in digestion." },
       { name: "Schezwan Burger", price: "₹89", description: "A fiery Schezwan patty balanced with fresh greens washed in 11.5 pH water. The micro-clustered 9.5 pH water in the sauce allows the deep Schezwan spices to bloom instantly." },
       { name: "Aloo Tikki Cheese Burger", price: "₹99", description: "Golden aloo tikki topped with melted cheese. The potatoes are boiled in 9.5 pH water to draw out their natural flavors, requiring less salt while maintaining maximum taste." },
-      { name: "Corn Cheese Burger", price: "₹109", description: "Sweet corn kernels revitalized in Kangen Water before being mixed with creamy cheese, ensuring the corn retains its natural bright antioxidants and crunch." },
-      { name: "Mushroom Burger", price: "₹119", description: "Earthy mushrooms sautéed to perfection. We clean them with 11.5 pH Strong Kangen water to effortlessly remove dirt and pull out their deep umami richness without soaking up tap water chemicals." },
+      { name: "Corn Cheese Burger", price: "₹99", description: "Sweet corn kernels revitalized in Kangen Water before being mixed with creamy cheese, ensuring the corn retains its natural bright antioxidants and crunch." },
+      { name: "Mushroom Burger", price: "₹129", description: "Earthy mushrooms sautéed to perfection. We clean them with 11.5 pH Strong Kangen water to effortlessly remove dirt and pull out their deep umami richness without soaking up tap water chemicals." },
       { name: "Paneer Cheese Burger", price: "₹129", description: "Soft, dairy-fresh paneer marinated with Indian spices mixed into 9.5 pH Kangen Water. The micro-clustering allows the marinade to penetrate the cottage cheese deeply in minutes." },
       { name: "Paneer Tandoori Burger", price: "₹139", description: "Smoky tandoori paneer enveloped in our custom airy bun. The tandoori spices are emulsified with 9.5 pH water to ensure a robust, evenly distributed flavor profile." },
-      { name: "Paneer Mexican Burger", price: "₹139", description: "Zesty Mexican flavors blended with soft paneer. Jalapenos and veggies are pre-washed in 11.5 pH water to ensure zero chemical aftertastes clash with the vibrant Mexican spices." },
-      { name: "Paneer Cheese Monster Burger", price: "₹169", description: "A towering stack of paneer and cheese. The heavy dairy is offset by our bun, which is alkalized at 9.5 pH to naturally neutralize acidic properties and prevent bloating." }
+      { name: "Paneer Maxican Burger", price: "₹139", description: "Zesty Mexican flavors blended with soft paneer. Jalapenos and veggies are pre-washed in 11.5 pH water to ensure zero chemical aftertastes clash with the vibrant Mexican spices." },
+      { name: "Paneer Cheese Monster Burger", price: "₹309", description: "A towering stack of paneer and cheese. The heavy dairy is offset by our bun, which is alkalized at 9.5 pH to naturally neutralize acidic properties and prevent bloating." }
     ],
     nonVeg: [
-      { name: "Super Duper Burger", price: "₹89", description: "A fully loaded non-veg patty. The raw meat is first sanitized with 2.5 pH Strong Acidic Water, then soaked in 11.5 pH to effortlessly draw out blood and gaminess before grilling." },
-      { name: "Half Fry Egg Burger", price: "₹79", description: "A perfectly half-fried egg served on our signature fluffy bun, beautifully neutralizing the egg's natural acidity through our 9.5 pH Kangen-kneaded dough." },
-      { name: "Egg Burger", price: "₹89", description: "A classic egg patty made extraordinarily fluffy. We add a tiny splash of 9.5 pH Kangen Water to the premium eggs before beating, creating a steam-lifted, airy texture." },
-      { name: "Crispy Chicken Burger", price: "₹119", description: "Golden fried chicken coated in a batter mixed with 6.0 pH Beauty Water. This slightly acidic water ensures the gluten breaks down perfectly to yield an incredibly crunchy, non-greasy crust." },
-      { name: "Spicy Chicken Burger", price: "₹129", description: "A fiery chicken patty deeply tenderized in a 9.5 pH Kangen Water marinade, which micro-clusters the spicy chilies to penetrate the meat down to the bone." },
+      { name: "Super Duper Burger", price: "₹99", description: "A fully loaded non-veg patty. The raw meat is first sanitized with 2.5 pH Strong Acidic Water, then soaked in 11.5 pH to effortlessly draw out blood and gaminess before grilling." },
+      { name: "Half Fry Egg Burger", price: "₹109", description: "A perfectly half-fried egg served on our signature fluffy bun, beautifully neutralizing the egg's natural acidity through our 9.5 pH Kangen-kneaded dough." },
+      { name: "Egg Burger", price: "₹109", description: "A classic egg patty made extraordinarily fluffy. We add a tiny splash of 9.5 pH Kangen Water to the premium eggs before beating, creating a steam-lifted, airy texture." },
+      { name: "Crispy Chicken Burger", price: "₹129", description: "Golden fried chicken coated in a batter mixed with 6.0 pH Beauty Water. This slightly acidic water ensures the gluten breaks down perfectly to yield an incredibly crunchy, non-greasy crust." },
+      { name: "Spicy Chicken Burger", price: "₹139", description: "A fiery chicken patty deeply tenderized in a 9.5 pH Kangen Water marinade, which micro-clusters the spicy chilies to penetrate the meat down to the bone." },
       { name: "Mexican Chicken Burger", price: "₹139", description: "Zesty Mexican chicken balanced cleanly with freshly cut iceberg lettuce soaked in 11.5 pH water to maximize crispness and remove agricultural chemicals." },
-      { name: "Pizza Chicken Burger", price: "₹149", description: "A unique fusion of a juicy chicken patty and pizza toppings. Our pizza sauce is simmered with 9.5 pH water to naturally reduce tomato acidity without added sugar." },
-      { name: "Tandoori Chicken Burger", price: "₹149", description: "Authentic tandoori chicken where the raw meat's strong odors are stripped via an 11.5 pH wash, then marinated in 9.5 pH water to instantly lock in the charcoal-smoked flavors." },
-      { name: "Butter Chicken Burger", price: "₹159", description: "Rich butter chicken sauce emulsified smoothly using 9.5 pH Kangen Water, preventing the butter and cream from separating while layered over our Kangen-washed lettuce." },
+      { name: "Pizza Chicken Burger", price: "₹139", description: "A unique fusion of a juicy chicken patty and pizza toppings. Our pizza sauce is simmered with 9.5 pH water to naturally reduce tomato acidity without added sugar." },
+      { name: "Tandoori Chicken Burger", price: "₹139", description: "Authentic tandoori chicken where the raw meat's strong odors are stripped via an 11.5 pH wash, then marinated in 9.5 pH water to instantly lock in the charcoal-smoked flavors." },
+      { name: "Butter Chicken Burger", price: "₹149", description: "Rich butter chicken sauce emulsified smoothly using 9.5 pH Kangen Water, preventing the butter and cream from separating while layered over our Kangen-washed lettuce." },
       { name: "Chicken Cheese Smash Burger", price: "₹169", description: "A beautiful smashed chicken patty with melted cheese, seared on the grill after a deep 11.5 pH prep wash that ensures a pristine, clean meat flavor profile." },
-      { name: "Roasted Barbecue Tender", price: "₹179", description: "Slow-roasted chicken tenders that retain maximum juiciness due to our specialized 9.5 pH alkaline brine, preventing the white meat from drying out." },
-      { name: "Three Cheese Monster Burger", price: "₹199", description: "An absolute beast of a chicken burger with triple cheese, kept shockingly light through alkaline baking techniques that ensure the gigantic meal remains easily digestible." }
+      { name: "Roasted Barbecue Tender", price: "₹289", description: "Slow-roasted chicken tenders that retain maximum juiciness due to our specialized 9.5 pH alkaline brine, preventing the white meat from drying out." },
+      { name: "Three Cheese Monster Burger", price: "₹299", description: "An absolute beast of a chicken burger with triple cheese, kept shockingly light through alkaline baking techniques that ensure the gigantic meal remains easily digestible." }
     ]
   },
   friesAndPizza: {
     fries: [
-      { name: "Regular", price: "₹49", description: "Classic salted fries, cut from local potatoes that are pre-soaked in 11.5 pH Kangen water to vigorously wash away excess surface starch, resulting in a significantly crisper finish." },
-      { name: "Medium", price: "₹69", description: "Our golden medium fries. The 11.5 pH starch-removal process ensures they absorb less oil in the fryer, creating a healthier, lighter fry." },
-      { name: "Large", price: "₹89", description: "A large serving of completely starch-stripped fries, keeping you fulfilled without the heavy grease thanks to our Kangen water preparation." },
-      { name: "Peri peri magic", price: "₹99", description: "Spicy peri peri fries where the dry spice mix is bound to the potato flawlessly without excess oil, preserving a sharp, vivid peri peri kick." },
-      { name: "Tandoori", price: "₹99", description: "Tandoori flavored fries tossed in Indian spices. Our starch-washing process allows the tandoori masala to coat the golden crust perfectly." },
-      { name: "Cheesy Barbeque", price: "₹119", description: "Loaded with cheese and BBQ sauce over flawlessly Kangen-treated potatoes that stay crispy much longer under the heavy toppings." }
+      { name: "Regular Fries (Normal)", price: "₹69", description: "Classic salted fries, cut from local potatoes that are pre-soaked in 11.5 pH Kangen water to vigorously wash away excess surface starch, resulting in a significantly crisper finish." },
+      { name: "Regular Fries (Peri Peri)", price: "₹89", description: "Classic fries and peri peri seasoning prepared with Kangen starch-removal for a healthier, lighter fry." },
+      { name: "Medium Fries (Normal)", price: "₹109", description: "Our golden medium fries. The 11.5 pH starch-removal process ensures they absorb less oil in the fryer, creating a healthier, lighter fry." },
+      { name: "Medium Fries (Peri Peri)", price: "₹129", description: "Medium fries with peri peri seasoning, meticulously starch-stripped using our Kangen water system." },
+      { name: "Large Fries (Normal)", price: "₹129", description: "A large serving of completely starch-stripped fries, keeping you fulfilled without the heavy grease thanks to our Kangen water preparation." },
+      { name: "Large Fries (Peri Peri)", price: "₹149", description: "Large fries with peri peri seasoning, prepared flawlessly with Kangen water for ultimate crispness." },
+      { name: "Peri peri magic", price: "₹159", description: "Spicy peri peri fries where the dry spice mix is bound to the potato flawlessly without excess oil, preserving a sharp, vivid peri peri kick." },
+      { name: "Tandoori fries", price: "₹159", description: "Tandoori flavored fries tossed in Indian spices. Our starch-washing process allows the tandoori masala to coat the golden crust perfectly." },
+      { name: "Cheesy fries", price: "₹179", description: "Loaded with cheese over flawlessly Kangen-treated potatoes that stay crispy much longer under the heavy toppings." },
+      { name: "Barbeque fries", price: "₹189", description: "BBQ flavored fries with our signature 11.5 pH Kangen starch-washing process for maximum crunch." }
     ],
     pizza: [
-      { name: "BBQ Chicken Pizza", price: "₹199", description: "Smoky BBQ chicken on a light, airy dough kneaded exclusively with 9.5 pH Kangen Water to accelerate yeast activation without excess proofing time." },
-      { name: "Chicken Cheese Pizza", price: "₹199", description: "Loaded with chicken and cheese. The chicken is pre-washed in 11.5 pH to remove gaminess, laid on an antioxidant-rich, highly digestible pizza base." },
-      { name: "Tandoori Chicken Pizza", price: "₹219", description: "Spicy tandoori chunks baked on a crust prepared with micro-clustered water, allowing the crust to bake beautifully golden without heavily acidic yeast." },
-      { name: "Peri Peri Chicken Pizza", price: "₹219", description: "Zesty peri peri chicken harmonized by a pH-balanced crust. The tomato base is cooked with 9.5 pH water to naturally neutralize acidity." }
+      { name: "Margherita Pizza (8\")", price: "₹199", description: "Fresh mozzarella, tangy tomato sauce on an alkaline crust. 8 inch size." },
+      { name: "Margherita Pizza (10\")", price: "₹309", description: "Fresh mozzarella, tangy tomato sauce on an alkaline crust. 10 inch size." },
+      { name: "Chilly Cheese Pizza (8\")", price: "₹229", description: "Spicy chili and cheese pizza. 8 inch size." },
+      { name: "Chilly Cheese Pizza (10\")", price: "₹329", description: "Spicy chili and cheese pizza. 10 inch size." },
+      { name: "Corn Cheese Pizza (8\")", price: "₹229", description: "Sweet corn and cheese pizza. 8 inch size." },
+      { name: "Corn Cheese Pizza (10\")", price: "₹329", description: "Sweet corn and cheese pizza. 10 inch size." },
+      { name: "Exotic Veggie Pizza (8\")", price: "₹239", description: "Loaded with premium exotic vegetables. 8 inch size." },
+      { name: "Exotic Veggie Pizza (10\")", price: "₹339", description: "Loaded with premium exotic vegetables. 10 inch size." },
+      { name: "Paneer Tandoori Pizza (8\")", price: "₹249", description: "Smoky tandoori paneer pizza. 8 inch size." },
+      { name: "Paneer Tandoori Pizza (10\")", price: "₹339", description: "Smoky tandoori paneer pizza. 10 inch size." },
+      { name: "Mushroom Pizza (8\")", price: "₹259", description: "Earthy mushroom pizza. 8 inch size." },
+      { name: "Mushroom Pizza (10\")", price: "₹339", description: "Earthy mushroom pizza. 10 inch size." },
+      { name: "BBQ Chicken Pizza (8\")", price: "₹239", description: "Smoky BBQ chicken on a light, airy dough. 8 inch size." },
+      { name: "BBQ Chicken Pizza (10\")", price: "₹339", description: "Smoky BBQ chicken on a light, airy dough. 10 inch size." },
+      { name: "Chicken Cheese Pizza (8\")", price: "₹239", description: "Loaded with chicken and cheese. 8 inch size." },
+      { name: "Chicken Cheese Pizza (10\")", price: "₹339", description: "Loaded with chicken and cheese. 10 inch size." },
+      { name: "Tandoori Chicken Pizza (8\")", price: "₹239", description: "Spicy tandoori chunks baked on a crust prepared with micro-clustered water. 8 inch size." },
+      { name: "Tandoori Chicken Pizza (10\")", price: "₹339", description: "Spicy tandoori chunks baked on a crust prepared with micro-clustered water. 10 inch size." },
+      { name: "Peri Peri Chicken Pizza (8\")", price: "₹239", description: "Zesty peri peri chicken. 8 inch size." },
+      { name: "Peri Peri Chicken Pizza (10\")", price: "₹339", description: "Zesty peri peri chicken. 10 inch size." }
     ]
   },
   pasta: {
     veg: [
-      { name: "White Sauce", price: "₹129", description: "Creamy white sauce pasta boiled carefully in 9.0 pH Kangen Water to perfectly gelatinize the starch for a true al dente bite in record time." },
-      { name: "Red Sauce", price: "₹129", description: "Tangy red tomato sauce over pasta. We use 9.5 pH water in the sauce to completely neutralize the tomatoes' harsh natural acidity, eliminating the need for added sugar." },
-      { name: "Pink Sauce", price: "₹139", description: "A perfect blend of red and white sauces mixed with alkaline water for a silky, smooth consistency that emulsifies the dairy and acid seamlessly." }
+      { name: "White Sauce", price: "₹189", description: "Creamy white sauce pasta boiled carefully in 9.0 pH Kangen Water to perfectly gelatinize the starch for a true al dente bite in record time." },
+      { name: "Red Sauce", price: "₹189", description: "Tangy red tomato sauce over pasta. We use 9.5 pH water in the sauce to completely neutralize the tomatoes' harsh natural acidity, eliminating the need for added sugar." },
+      { name: "Pink Sauce", price: "₹189", description: "A perfect blend of red and white sauces mixed with alkaline water for a silky, smooth consistency that emulsifies the dairy and acid seamlessly." }
     ],
     nonVeg: [
-      { name: "Ch. White Sa", price: "₹159", description: "Chicken in white sauce. The meat is sanitized with 2.5 pH water before cooking, ensuring a pristine flavor alongside pasta boiled perfectly in 9.0 pH water." },
-      { name: "Ch. Red Sau", price: "₹159", description: "Chicken infused red sauce pasta, utilizing micro-clustered water to naturally emulsify the rich sauce and deeply penetrate the diced chicken." },
-      { name: "Ch. Pink Sau", price: "₹169", description: "Chicken pink sauce pasta, prepared cleanly with our proprietary Kangen water techniques to keep the heavy cream perfectly balanced." },
-      { name: "Prawns Past", price: "₹219", description: "Premium prawns thoroughly sanitized with 2.5 pH Strong Acidic water to terminate bacteria, then soaked in 11.5 pH to eliminate all fishy odors before being tossed in pasta." }
+      { name: "Ch. White Sauce", price: "₹209", description: "Chicken in white sauce. The meat is sanitized with 2.5 pH water before cooking, ensuring a pristine flavor alongside pasta boiled perfectly in 9.0 pH water." },
+      { name: "Ch. Red Sauce", price: "₹209", description: "Chicken infused red sauce pasta, utilizing micro-clustered water to naturally emulsify the rich sauce and deeply penetrate the diced chicken." },
+      { name: "Ch. Pink Sauce", price: "₹209", description: "Chicken pink sauce pasta, prepared cleanly with our proprietary Kangen water techniques to keep the heavy cream perfectly balanced." },
+      { name: "Prawns Pasta", price: "₹249", description: "Premium prawns thoroughly sanitized with 2.5 pH Strong Acidic water to terminate bacteria, then soaked in 11.5 pH to eliminate all fishy odors before being tossed in pasta." }
     ]
   },
   garlicBread: [
-    { name: "Bread & Butter Regular (4pcs)", price: "₹79", description: "Freshly baked garlic bread, kneaded with 9.5 pH Kangen water to ensure a light, fluffy interior that flawlessly absorbs our house garlic butter." }
+    { name: "Bread & Butter", price: "₹59", description: "Simple bread and butter prepared with Kangen water." },
+    { name: "Regular (4pcs)", price: "₹139", description: "Freshly baked garlic bread, kneaded with 9.5 pH Kangen water to ensure a light, fluffy interior that flawlessly absorbs our house garlic butter." }
   ],
+  frankies: {
+    veg: [
+      { name: "Chatpata Aloo Roll", price: "₹89", description: "Tangy and spicy potato roll prepared with Kangen water." },
+      { name: "Tandoori Aloo Roll", price: "₹109", description: "Smoky tandoori potato roll prepared with Kangen water." },
+      { name: "Peri Peri Paneer Frankie", price: "₹119", description: "Zesty peri peri paneer frankie prepared with Kangen water." },
+      { name: "Tandoori Paneer Frankie", price: "₹119", description: "Smoky tandoori paneer frankie prepared with Kangen water." }
+    ],
+    nonVeg: [
+      { name: "Tandoori Chicken Frankie", price: "₹119", description: "Authentic tandoori chicken frankie prepared with Kangen water." },
+      { name: "Crispy Chicken Frankie", price: "₹119", description: "Crispy fried chicken frankie prepared with Kangen water." },
+      { name: "Spicy Chipotle Frankie", price: "₹119", description: "Fiery chipotle chicken frankie prepared with Kangen water." },
+      { name: "Egg Frankie", price: "₹129", description: "Classic egg frankie prepared with Kangen water." }
+    ]
+  },
   snacks: {
     veg: [
       { name: "Veg Masala Maggie", price: "₹69", description: "Classic masala maggie boiled purely in 9.5 pH Kangen Water, which drastically improves heat conduction and extracts the intense flavor of the masala perfectly." },
       { name: "Veg Cheese Masala Maggie", price: "₹89", description: "Cheesy maggie cooked flawlessly using our signature pH-balanced water, melting the cheese into a perfectly smooth emulsion." },
       { name: "Veg Nachos", price: "₹129", description: "Crisp nachos topped with veggies freshly cleaned in 11.5 pH Strong Kangen Water, locking in their natural antioxidant crunch." },
       { name: "Mushroom Popcorn", price: "₹149", description: "Bite-sized mushrooms bathed in 11.5 pH water to remove dirt instantly without them turning soggy, creating the perfect earthy popcorn." },
-      { name: "Paneer Popcorn", price: "₹149", description: "Crispy paneer bites marinated deeply. The micro-clustered 9.5 pH water shrinks the marinade molecules to lock intense flavor deep inside the paneer." }
+      { name: "Paneer Popcorn", price: "₹259", description: "Crispy paneer bites marinated deeply. The micro-clustered 9.5 pH water shrinks the marinade molecules to lock intense flavor deep inside the paneer." }
     ],
     nonVeg: [
       { name: "Egg Cheese Masala Maggie", price: "₹99", description: "A rich egg and cheese maggie cooked in purely filtered 9.5 pH Kangen water for an incredibly clean, elevated instant noodle experience." },
-      { name: "Ch. Cheese Masala Maggie", price: "₹119", description: "Chicken chunks and cheese mixed in maggie. The chicken's impurities are completely washed out before boiling, leaving a pristine broth." },
-      { name: "Egg Nachos", price: "₹139", description: "Nachos topped with eggs and fresh ingredients cleaned thoroughly with 11.5 pH Strong Alkaline water to strip unnatural wax from the jalapeños." },
-      { name: "Chicken Nachos", price: "₹159", description: "Loaded chicken nachos where the minced chicken is tenderized using our health-first alkaline marinades." },
-      { name: "Chicken Nuggets (7pcs)", price: "₹139", description: "Crispy chicken nuggets. The batter is mixed with 6.0 pH Beauty Water to ensure an astoundingly crispy, non-oily fry." },
-      { name: "Chicken Popcorn (15pcs)", price: "₹169", description: "Bite-sized chicken popcorn that retains perfect moisture due to being brined in 9.5 pH Kangen water prior to battering." },
-      { name: "Crispy Chicken Strips (3pcs)", price: "₹149", description: "Golden strips of chicken sanitized in 2.5 pH water, then battered in 6.0 pH water for the ultimate crunch and supreme hygiene." },
-      { name: "Chicken Wings (4pcs)", price: "₹159", description: "Juicy chicken wings with gaminess entirely removed by an 11.5 pH cold soak, allowing the pure chicken flavor to shine." },
-      { name: "Chicken Popcorn (20pcs) with Cheese Dips", price: "₹249", description: "A large serving of perfectly moist, 6.0 pH battered chicken popcorn paired with a rich creamy cheese dip." },
-      { name: "Prawn Popcorn", price: "₹249", description: "Crispy premium prawns strictly washed in 11.5 pH water to remove ocean odours, leaving a sweet, pristine seafood bite." },
-      { name: "Chicken Wings (6pcs)", price: "₹219", description: "A six-piece serving of deeply marinated wings. The micro-clustered water drives the spices straight to the bone." },
-      { name: "Crispy Chicken Fingers", price: "₹169", description: "Crispy batter-fried chicken fingers ensuring optimal tenderization without chemical tenderizers." },
-      { name: "Spicy Ch. Wings (6pcs)", price: "₹229", description: "Spicy wings perfectly balanced. The 9.5 pH marinade utilizes the chili oils flawlessly without excessive heat masking the flavor." },
-      { name: "BBQ Ch. Wings (6pcs)", price: "₹229", description: "Smoky BBQ wings kept incredibly juicy inside through alkaline water brine treatments." },
-      { name: "Tandoori Ch. Wings", price: "₹229", description: "Traditional tandoori wings enhanced by alkaline water for a remarkably softer, more flavorful meat texture." },
-      { name: "Crispy Ch. Strips 6pcs", price: "₹249", description: "Perfect crispy strips made with chicken thoroughly cleaned and fried to a golden crunch using 6.0 pH batter techniques." }
+      { name: "Ch. Cheese Masala Maggie", price: "₹129", description: "Chicken chunks and cheese mixed in maggie. The chicken's impurities are completely washed out before boiling, leaving a pristine broth." },
+      { name: "Egg Nachos", price: "₹129", description: "Nachos topped with eggs and fresh ingredients cleaned thoroughly with 11.5 pH Strong Alkaline water to strip unnatural wax from the jalapeños." },
+      { name: "Chicken Nachos", price: "₹149", description: "Loaded chicken nachos where the minced chicken is tenderized using our health-first alkaline marinades." },
+      { name: "Chicken Nuggets (7pcs)", price: "₹149", description: "Crispy chicken nuggets. The batter is mixed with 6.0 pH Beauty Water to ensure an astoundingly crispy, non-oily fry." },
+      { name: "Chicken Popcorn (15pcs)", price: "₹149", description: "Bite-sized chicken popcorn that retains perfect moisture due to being brined in 9.5 pH Kangen water prior to battering." },
+      { name: "Crispy Chicken Strips (3pcs)", price: "₹199", description: "Golden strips of chicken sanitized in 2.5 pH water, then battered in 6.0 pH water for the ultimate crunch and supreme hygiene." },
+      { name: "Chicken Wings (4pcs)", price: "₹199", description: "Juicy chicken wings with gaminess entirely removed by an 11.5 pH cold soak, allowing the pure chicken flavor to shine." },
+      { name: "Chicken Popcorn (20pcs) With Cheese Dips", price: "₹209", description: "A large serving of perfectly moist, 6.0 pH battered chicken popcorn paired with a rich creamy cheese dip." },
+      { name: "Prawn Popcorn", price: "₹229", description: "Crispy premium prawns strictly washed in 11.5 pH water to remove ocean odours, leaving a sweet, pristine seafood bite." },
+      { name: "Chicken Wings (6pcs)", price: "₹239", description: "A six-piece serving of deeply marinated wings. The micro-clustered water drives the spices straight to the bone." },
+      { name: "Crispy Chicken Fingers", price: "₹249", description: "Crispy batter-fried chicken fingers ensuring optimal tenderization without chemical tenderizers." },
+      { name: "Spicy Ch. Wings (6pcs)", price: "₹249", description: "Spicy wings perfectly balanced. The 9.5 pH marinade utilizes the chili oils flawlessly without excessive heat masking the flavor." },
+      { name: "BBQ Ch. Wings (6pcs)", price: "₹249", description: "Smoky BBQ wings kept incredibly juicy inside through alkaline water brine treatments." },
+      { name: "Tandoori Ch. Wings", price: "₹249", description: "Traditional tandoori wings enhanced by alkaline water for a remarkably softer, more flavorful meat texture." },
+      { name: "Crispy Ch. Strips 6pcs", price: "₹269", description: "Perfect crispy strips made with chicken thoroughly cleaned and fried to a golden crunch using 6.0 pH batter techniques." }
     ]
   },
   sandwiches: {
     veg: [
-      { name: "Veggie Sandwich", price: "₹69", description: "Packed with fresh tomatoes, cucumbers, and greens that are soaked in 11.5 pH Strong Kangen Water to strip away pesticides and revive their field-fresh crunch." },
-      { name: "Corn Cheese Sandwich", price: "₹89", description: "Sweet corn and cheese inside bread baked uniquely with alkaline water for easy digestion, preventing the heavy feeling of dense gluten." },
-      { name: "Club Sandwich", price: "₹99", description: "A triple-layered classic made exceptionally refreshing. Every vegetable layer is thoroughly sanitized and rehydrated with our Kangen systems." },
-      { name: "Paneer Sandwich", price: "₹99", description: "Hearty paneer sandwich, where the cottage cheese is prepared cleanly and sliced thick, paired with pH-neutral breads." }
+      { name: "Veggie Sandwich", price: "₹109", description: "Packed with fresh tomatoes, cucumbers, and greens that are soaked in 11.5 pH Strong Kangen Water to strip away pesticides and revive their field-fresh crunch." },
+      { name: "Corn Cheese Sandwich", price: "₹129", description: "Sweet corn and cheese inside bread baked uniquely with alkaline water for easy digestion, preventing the heavy feeling of dense gluten." },
+      { name: "Club Sandwich", price: "₹149", description: "A triple-layered classic made exceptionally refreshing. Every vegetable layer is thoroughly sanitized and rehydrated with our Kangen systems." },
+      { name: "Paneer Sandwich", price: "₹159", description: "Hearty paneer sandwich, where the cottage cheese is prepared cleanly and sliced thick, paired with pH-neutral breads." }
     ],
     nonVeg: [
-      { name: "Egg Toast Sandwich", price: "₹69", description: "A classic egg sandwich pressed inside our softly baked alkaline water bread to perfectly balance the protein's natural acidity." },
-      { name: "Bread Egg Sandwich", price: "₹59", description: "Simple yet fulfilling egg sandwich prepared flawlessly with fresh, clean ingredients and Kangen-prepared loaves." },
-      { name: "Chicken Mayo Sandwich", price: "₹109", description: "Creamy chicken mayo filling. The chicken is boiled in 9.5 pH water to ensure a melt-in-the-mouth, ultra-soft texture." },
-      { name: "Chicken Tikka Sandwich", price: "₹119", description: "Spicy chicken tikka beautifully balanced within our Kangen water-kneaded bread slices, locking the fierce spices in perfectly." },
-      { name: "Peri Peri Sandwich", price: "₹119", description: "Zesty peri peri chicken sandwich, delivering robust flavor and uncompromising ingredient purity through intensive 11.5 pH prep." }
+      { name: "Egg Toast Sandwich", price: "₹129", description: "A classic egg sandwich pressed inside our softly baked alkaline water bread to perfectly balance the protein's natural acidity." },
+      { name: "Bread Egg Sandwich", price: "₹139", description: "Simple yet fulfilling egg sandwich prepared flawlessly with fresh, clean ingredients and Kangen-prepared loaves." },
+      { name: "Chicken Mayo Sandwich", price: "₹149", description: "Creamy chicken mayo filling. The chicken is boiled in 9.5 pH water to ensure a melt-in-the-mouth, ultra-soft texture." },
+      { name: "Chicken Tikka Sandwich", price: "₹169", description: "Spicy chicken tikka beautifully balanced within our Kangen water-kneaded bread slices, locking the fierce spices in perfectly." },
+      { name: "Peri Peri Sandwich", price: "₹179", description: "Zesty peri peri chicken sandwich, delivering robust flavor and uncompromising ingredient purity through intensive 11.5 pH prep." }
     ]
   },
   cakes: [
@@ -241,8 +276,8 @@ export const menuData = {
     { name: "Red Velvet Cheese Cream", price: "₹450", description: "Decadent red velvet harmonized with cheese cream. The high pH water interacts perfectly with the cocoa to create authentic red tones without severe food coloring." },
     { name: "Dutch Cakes", price: "₹450", description: "Premium Dutch cake utilizing micro-clustered water to violently deepen the chocolate's natural flavor profile and aroma." },
     { name: "Truffle Chocolate", price: "₹500", description: "A dense, rich truffle cake elegantly balanced for digestion through our signature alkaline baking method." },
-    { name: "Fresh Strawberry (Seasonal)", price: "₹450", description: "Loaded with freshly-picked strawberries practically glowing red after being cleansed in Kangen 11.5 pH antioxidant water." },
-    { name: "Fresh Mango (Seasonal)", price: "₹500", description: "Seasonal mango cake retaining exceptional fruit freshness through our proprietary 11.5 pH wax-stripping wash." }
+    { name: "Fresh Strawberry", price: "₹450", description: "Loaded with freshly-picked strawberries practically glowing red after being cleansed in Kangen 11.5 pH antioxidant water. (Seasonal)" },
+    { name: "Fresh Mango", price: "₹500", description: "Seasonal mango cake retaining exceptional fruit freshness through our proprietary 11.5 pH wax-stripping wash. (Seasonal)" }
   ],
   mojitos: [
     { name: "Spicy Mango", price: "₹99", description: "A fiery yet sweet mango mojito mixed perfectly." },
@@ -264,7 +299,7 @@ export const menuData = {
     { name: "Black Tea", price: "₹39", description: "A deeply colored robust black tea, steeped in our pure 9.5 pH Kangen water. The smaller water clusters pull out vivid color and flavor in half the normal brewing time." },
     { name: "Green Tea", price: "₹39", description: "Naturally detoxifying green tea flawlessly paired with antioxidant-rich Kangen water, doubling the health benefits and preventing the leaves from tasting burnt." },
     { name: "Hot Chocolate", price: "₹49", description: "Rich, creamy hot chocolate blended with pure alkaline water to ensure a silky smooth, comforting texture that won't curdle the dairy." },
-    { name: "Hot Chocolate With Crush", price: "₹89", description: "Our signature hot chocolate enhanced further with a perfectly extracted flavor crush, brought alive by micro-clustered water." },
+    { name: "Hot Chocolate With Crush", price: "₹79", description: "Our signature hot chocolate enhanced further with a perfectly extracted flavor crush, brought alive by micro-clustered water." },
     { name: "Cold Coffee", price: "₹99", description: "Classic chilled coffee rapidly shaken with our pure ice blocks derived straight from 8.5 pH Kangen water, ensuring zero chlorine taints the drink." },
     { name: "Cold Coffee With Crush", price: "₹129", description: "Cold coffee leveled up with sweet crushes, flawlessly emulsified using our proprietary water techniques." },
     { name: "Strawberry Milkshake", price: "₹129", description: "A sweet strawberry shake crafted with fruits perfectly washed in 11.5 pH water to remove all waxy agricultural sprays, offering a clean, pure taste." },
@@ -283,9 +318,9 @@ export const menuData = {
     { name: "Sprite, Fanta Coke, thumbsup, etc", price: "₹30", description: "Chilled soft drinks served directly from the bottle." }
   ],
   alkalineWater: [
-    { name: "Alkaline Ionized Water (250ml)", price: "₹10", description: "Our signature 100% pure Kangen Alkaline Ionized Water. Micro-clustered to hydrate you 6x faster than regular water, actively detoxifying your system and completely neutralizing your body's acidity." },
-    { name: "Alkaline Ionized Water (500ml)", price: "₹20", description: "Our signature 100% pure Kangen Alkaline Ionized Water." },
-    { name: "Alkaline Ionized Water (1L)", price: "₹30", description: "Our signature 100% pure Kangen Alkaline Ionized Water." }
+    { name: "Alkaline Ionized Water (250ml)", price: "₹10", description: "Our signature 100% pure Kangen Alkaline Ionized Water. Micro-clustered to hydrate you 6x faster than regular water, actively detoxifying your system and completely neutralizing your body's acidity. Cell-level hydration for peak energy." },
+    { name: "Alkaline Ionized Water (500ml)", price: "₹20", description: "Our signature 100% pure Kangen Alkaline Ionized Water. Perfect on-the-go hydration balance." },
+    { name: "Alkaline Ionized Water (1L)", price: "₹30", description: "Our signature 100% pure Kangen Alkaline Ionized Water. Complete daily detox support in a 1L serving." }
   ],
   combos: [
     { name: "Veggie Delight Maxi", price: "₹939", originalPrice: "₹1105", items: ["Corn / Paneer / Exotic Veg Pizza (8inch) - 1", "Aloo Tikki Cheese Burger - 2", "Schezwan Manchurian Burger - 1", "Medium Fries - 1", "Mojito - 3"] },
@@ -428,37 +463,41 @@ export const kangenClub = {
 export const comboBuilderOptions = {
   burgers: [
     { name: "Crunchy Burger", price: 69, type: "veg" as const },
-    { name: "Veg Tikki Burger", price: 79, type: "veg" as const },
+    { name: "Veg Tikki Burger", price: 89, type: "veg" as const },
+    { name: "Schezwan Burger", price: 89, type: "veg" as const },
     { name: "Aloo Tikki Cheese Burger", price: 99, type: "veg" as const },
-    { name: "Corn Cheese Burger", price: 109, type: "veg" as const },
-    { name: "Mushroom Burger", price: 119, type: "veg" as const },
+    { name: "Corn Cheese Burger", price: 99, type: "veg" as const },
+    { name: "Mushroom Burger", price: 129, type: "veg" as const },
     { name: "Paneer Cheese Burger", price: 129, type: "veg" as const },
     { name: "Paneer Tandoori Burger", price: 139, type: "veg" as const },
-    { name: "Super Duper Burger", price: 89, type: "nonVeg" as const },
-    { name: "Egg Burger", price: 89, type: "nonVeg" as const },
-    { name: "Crispy Chicken Burger", price: 119, type: "nonVeg" as const },
-    { name: "Spicy Chicken Burger", price: 129, type: "nonVeg" as const },
+    { name: "Super Duper Burger", price: 99, type: "nonVeg" as const },
+    { name: "Egg Burger", price: 109, type: "nonVeg" as const },
+    { name: "Crispy Chicken Burger", price: 129, type: "nonVeg" as const },
+    { name: "Spicy Chicken Burger", price: 139, type: "nonVeg" as const },
     { name: "Mexican Chicken Burger", price: 139, type: "nonVeg" as const },
-    { name: "Tandoori Chicken Burger", price: 149, type: "nonVeg" as const },
-    { name: "Butter Chicken Burger", price: 159, type: "nonVeg" as const },
+    { name: "Tandoori Chicken Burger", price: 139, type: "nonVeg" as const },
+    { name: "Butter Chicken Burger", price: 149, type: "nonVeg" as const },
   ],
   fries: [
-    { name: "Regular Fries", price: 49 },
-    { name: "Medium Fries", price: 69 },
-    { name: "Large Fries", price: 89 },
-    { name: "Peri Peri Fries", price: 99 },
-    { name: "Tandoori Fries", price: 99 },
-    { name: "Cheesy Barbeque Fries", price: 119 },
+    { name: "Regular Fries (Normal)", price: 69 },
+    { name: "Regular Fries (Peri Peri)", price: 89 },
+    { name: "Medium Fries (Normal)", price: 109 },
+    { name: "Medium Fries (Peri Peri)", price: 129 },
+    { name: "Large Fries (Normal)", price: 129 },
+    { name: "Large Fries (Peri Peri)", price: 149 },
+    { name: "Peri Peri Magic", price: 159 },
+    { name: "Tandoori Fries", price: 159 },
+    { name: "Cheesy Fries", price: 179 },
   ],
   drinks: [
-    { name: "Alkaline Water", price: 30 },
-    { name: "Sprite / Coke / Fanta", price: 40 },
-    { name: "Hot Coffee", price: 49 },
-    { name: "Cold Coffee", price: 89 },
-    { name: "Classic Chocolate Milkshake", price: 109 },
-    { name: "Strawberry Milkshake", price: 119 },
+    { name: "Alkaline Water (1L)", price: 30 },
+    { name: "Sprite / Coke / Fanta", price: 30 },
+    { name: "Hot Coffee", price: 39 },
+    { name: "Cold Coffee", price: 99 },
+    { name: "Classic Chocolate Milkshake", price: 129 },
+    { name: "Strawberry Milkshake", price: 129 },
     { name: "Blueberry Milkshake", price: 129 },
-    { name: "Mango Milkshake", price: 119 },
+    { name: "Mango Milkshake", price: 149 },
   ],
   comboDiscount: 15, // 15% off when making a combo
 };
