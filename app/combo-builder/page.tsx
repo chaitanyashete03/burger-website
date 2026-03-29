@@ -5,52 +5,63 @@ import SectionReveal from "../../components/SectionReveal";
 import { comboBuilderOptions, siteInfo } from "../../lib/constants";
 
 type SelectedItems = {
-  burger: number | null;
-  fries: number | null;
+  main: number | null;
+  side: number | null;
   drink: number | null;
 };
 
 export default function ComboBuilder() {
   const [selected, setSelected] = useState<SelectedItems>({
-    burger: null,
-    fries: null,
+    main: null,
+    side: null,
     drink: null,
   });
 
   const [phone, setPhone] = useState("");
 
-  const { burgers, fries, drinks, comboDiscount } = comboBuilderOptions;
+  const { mains, sides, drinks, comboDiscount } = comboBuilderOptions;
 
   const computed = useMemo(() => {
-    // ... same as before
-    const burgerPrice = selected.burger !== null ? burgers[selected.burger].price : 0;
-    const friesPrice = selected.fries !== null ? fries[selected.fries].price : 0;
+    const mainPrice = selected.main !== null ? mains[selected.main].price : 0;
+    const sidePrice = selected.side !== null ? sides[selected.side].price : 0;
     const drinkPrice = selected.drink !== null ? drinks[selected.drink].price : 0;
-    const total = burgerPrice + friesPrice + drinkPrice;
-    const allSelected = selected.burger !== null && selected.fries !== null && selected.drink !== null;
+    const total = mainPrice + sidePrice + drinkPrice;
+    const allSelected = selected.main !== null && selected.side !== null && selected.drink !== null;
     const discount = allSelected ? Math.round(total * comboDiscount / 100) : 0;
     const comboPrice = total - discount;
-    return { burgerPrice, friesPrice, drinkPrice, total, discount, comboPrice, allSelected };
-  }, [selected, burgers, fries, drinks, comboDiscount]);
+    return { mainPrice, sidePrice, drinkPrice, total, discount, comboPrice, allSelected };
+  }, [selected, mains, sides, drinks, comboDiscount]);
 
   const handleOrder = async () => {
     if (!computed.allSelected || phone.length < 10) return;
-    const burger = burgers[selected.burger!];
-    const fry = fries[selected.fries!];
+    const main = mains[selected.main!];
+    const side = sides[selected.side!];
     const drink = drinks[selected.drink!];
-    const msg = `Hi! I'd like to order my custom combo:\n🍔 ${burger.name} (₹${burger.price})\n🍟 ${fry.name} (₹${fry.price})\n🥤 ${drink.name} (₹${drink.price})\n\n💰 Combo Price: ₹${computed.comboPrice} (saved ₹${computed.discount})`;
+
+    const getMainEmoji = (cat: string) => {
+      if (cat === "Burger") return "🍔";
+      if (cat === "Frankie") return "🥙";
+      if (cat === "Sandwich") return "🥪";
+      return "🍽️";
+    };
+
+    const getSideEmoji = (cat: string) => {
+      if (cat === "Fries") return "🍟";
+      return "🍗";
+    };
+
+    const msg = `Hi! I'd like to order my custom combo:\n${getMainEmoji(main.category)} ${main.name} (₹${main.price})\n${getSideEmoji(side.category)} ${side.name} (₹${side.price})\n🥤 ${drink.name} (₹${drink.price})\n\n💰 Combo Price: ₹${computed.comboPrice} (saved ₹${computed.discount})`;
     
     // Capture to Google Sheets if webhook is configured
     if (siteInfo.googleSheetsWebhookUrl) {
       try {
-        // Send as plain text to avoid CORS preflight issues with Google Apps Script
         fetch(siteInfo.googleSheetsWebhookUrl, {
           method: "POST",
           mode: "no-cors",
           body: JSON.stringify({
             source: "Combo Builder",
             phone: phone,
-            details: `Combo: ${burger.name} + ${fry.name} + ${drink.name}`,
+            details: `Combo: ${main.name} + ${side.name} + ${drink.name}`,
             price: `₹${computed.comboPrice}`,
           }),
         });
@@ -67,27 +78,54 @@ export default function ComboBuilder() {
 
   const categories = [
     {
-      key: "burger" as const,
-      label: "Pick Your Burger",
+      key: "main" as const,
+      label: "The Main Attraction",
       emoji: "🍔",
       step: "01",
-      items: burgers.map((b) => ({ name: b.name, price: b.price, badge: b.type === "veg" ? "🟢" : "🔴" })),
+      items: mains.map((m) => ({ 
+        name: m.name, 
+        price: m.price, 
+        badge: m.type === "veg" ? "🟢" : "🔴",
+        category: m.category 
+      })),
     },
     {
-      key: "fries" as const,
-      label: "Add Fries",
+      key: "side" as const,
+      label: "The Perfect Side",
       emoji: "🍟",
       step: "02",
-      items: fries.map((f) => ({ name: f.name, price: f.price, badge: "🟢" })),
+      items: sides.map((s) => ({ 
+        name: s.name, 
+        price: s.price, 
+        badge: "🟢",
+        category: s.category
+      })),
     },
     {
       key: "drink" as const,
-      label: "Choose a Drink",
+      label: "The Refreshment",
       emoji: "🥤",
       step: "03",
-      items: drinks.map((d) => ({ name: d.name, price: d.price, badge: "" })),
+      items: drinks.map((d) => ({ 
+        name: d.name, 
+        price: d.price, 
+        badge: "",
+        category: d.category
+      })),
     },
   ];
+
+  const getMainEmoji = (cat: string) => {
+    if (cat === "Burger") return "🍔";
+    if (cat === "Frankie") return "🥙";
+    if (cat === "Sandwich") return "🥪";
+    return "🍽️";
+  };
+
+  const getSideEmoji = (cat: string) => {
+    if (cat === "Fries") return "🍟";
+    return "🍗";
+  };
 
   return (
     <div style={{ background: "var(--page-bg)" }} className="min-h-screen pt-28 pb-20 px-6 sm:px-10 lg:px-16">
@@ -106,7 +144,7 @@ export default function ComboBuilder() {
           </h1>
           <div className="w-8 h-[2px] rounded-full mb-5 mx-auto" style={{ background: "#3B82F6" }} />
           <p className="text-base max-w-xl mx-auto leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-            Pick a burger + fries + drink and get <span className="font-black text-[#3B82F6]">{comboDiscount}% OFF</span> your total! Build your perfect meal below.
+            Pick a main + side + drink and get <span className="font-black text-[#3B82F6]">{comboDiscount}% OFF</span> your total! Build your perfect meal below.
           </p>
         </SectionReveal>
 
@@ -114,7 +152,7 @@ export default function ComboBuilder() {
           {/* Selection Columns */}
           {categories.map((cat) => (
             <SectionReveal key={cat.key}>
-              <div>
+              <div className="flex flex-col h-[600px]">
                 <div className="flex items-center gap-3 mb-5">
                   <span className="text-3xl">{cat.emoji}</span>
                   <div>
@@ -126,7 +164,7 @@ export default function ComboBuilder() {
                     </h2>
                   </div>
                 </div>
-                <div className="space-y-2">
+                <div className="flex-1 overflow-y-auto pr-2 space-y-2 custom-scrollbar">
                   {cat.items.map((item, idx) => {
                     const isSelected = selected[cat.key] === idx;
                     return (
@@ -146,15 +184,20 @@ export default function ComboBuilder() {
                         }}
                       >
                         <div className="flex items-center gap-2 min-w-0">
-                          {cat.key !== "drink" && (
+                          {cat.key === "main" && (
                             <span className="text-xs flex-shrink-0">{item.badge}</span>
                           )}
-                          <span
-                            className="text-sm font-bold truncate"
-                            style={{ color: isSelected ? "#3B82F6" : "var(--text-primary)" }}
-                          >
-                            {item.name}
-                          </span>
+                          <div className="flex flex-col min-w-0">
+                             <span className="text-[9px] uppercase font-black opacity-30 leading-none mb-1">
+                               {item.category}
+                             </span>
+                             <span
+                              className="text-sm font-bold truncate leading-tight"
+                              style={{ color: isSelected ? "#3B82F6" : "var(--text-primary)" }}
+                            >
+                              {item.name}
+                            </span>
+                          </div>
                         </div>
                         <span
                           className="text-sm font-black flex-shrink-0"
@@ -179,38 +222,39 @@ export default function ComboBuilder() {
               background: "var(--card-bg)",
               border: computed.allSelected ? "2px solid #3B82F6" : "1px solid var(--card-border)",
               boxShadow: "0 -8px 40px rgba(0,0,0,0.15)",
+              backdropFilter: "blur(20px)",
             }}
           >
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
               {/* Summary */}
               <div className="flex-1 w-full">
                 <div className="text-[10px] font-black tracking-widest uppercase mb-3" style={{ color: "var(--text-muted)" }}>
-                  Your Combo
+                  Your Custom Combo
                 </div>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm" style={{ color: "var(--text-secondary)" }}>
-                  <span>
-                    🍔{" "}
-                    <span className="font-bold" style={{ color: selected.burger !== null ? "var(--text-primary)" : "var(--text-muted)" }}>
-                      {selected.burger !== null ? burgers[selected.burger].name : "Pick a burger"}
+                <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm" style={{ color: "var(--text-secondary)" }}>
+                  <span className="flex items-center gap-1">
+                    {selected.main !== null ? getMainEmoji(mains[selected.main].category) : "🍔"}{" "}
+                    <span className="font-bold" style={{ color: selected.main !== null ? "var(--text-primary)" : "var(--text-muted)" }}>
+                      {selected.main !== null ? mains[selected.main].name : "Pick a Main"}
                     </span>
                   </span>
-                  <span>
-                    🍟{" "}
-                    <span className="font-bold" style={{ color: selected.fries !== null ? "var(--text-primary)" : "var(--text-muted)" }}>
-                      {selected.fries !== null ? fries[selected.fries].name : "Pick fries"}
+                  <span className="flex items-center gap-1">
+                    {selected.side !== null ? getSideEmoji(sides[selected.side].category) : "🍟"}{" "}
+                    <span className="font-bold" style={{ color: selected.side !== null ? "var(--text-primary)" : "var(--text-muted)" }}>
+                      {selected.side !== null ? sides[selected.side].name : "Pick a Side"}
                     </span>
                   </span>
-                  <span>
+                  <span className="flex items-center gap-1">
                     🥤{" "}
                     <span className="font-bold" style={{ color: selected.drink !== null ? "var(--text-primary)" : "var(--text-muted)" }}>
-                      {selected.drink !== null ? drinks[selected.drink].name : "Pick a drink"}
+                      {selected.drink !== null ? drinks[selected.drink].name : "Pick a Drink"}
                     </span>
                   </span>
                 </div>
               </div>
 
               {/* Price */}
-              <div className="flex flex-col sm:flex-row items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto">
                 {computed.allSelected && (
                   <div className="w-full sm:w-64">
                     <input
@@ -224,7 +268,7 @@ export default function ComboBuilder() {
                     />
                   </div>
                 )}
-                <div className="text-right">
+                <div className="text-right flex flex-col items-center sm:items-end">
                   {computed.allSelected && (
                     <div className="flex items-center gap-2 mb-1">
                       <span className="text-sm line-through" style={{ color: "var(--text-muted)" }}>
@@ -245,7 +289,7 @@ export default function ComboBuilder() {
                 <button
                   onClick={handleOrder}
                   disabled={!computed.allSelected || (computed.allSelected && phone.length < 10)}
-                  className="px-8 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 shadow-xl shadow-blue-500/20"
                   style={{ background: "#3B82F6" }}
                 >
                   Order on WhatsApp
