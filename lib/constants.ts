@@ -264,7 +264,7 @@ export const menuData = {
     { name: "Black Tea", price: "₹39", description: "A deeply colored robust black tea, steeped in our pure 9.5 pH Kangen water. The smaller water clusters pull out vivid color and flavor in half the normal brewing time." },
     { name: "Green Tea", price: "₹39", description: "Naturally detoxifying green tea flawlessly paired with antioxidant-rich Kangen water, doubling the health benefits and preventing the leaves from tasting burnt." },
     { name: "Hot Chocolate", price: "₹49", description: "Rich, creamy hot chocolate blended with pure alkaline water to ensure a silky smooth, comforting texture that won't curdle the dairy." },
-    { name: "Hot Chocolate With Crush", price: "₹99", description: "Our signature hot chocolate enhanced further with a perfectly extracted flavor crush, brought alive by micro-clustered water." },
+    { name: "Hot Chocolate With Crush", price: "₹89", description: "Our signature hot chocolate enhanced further with a perfectly extracted flavor crush, brought alive by micro-clustered water." },
     { name: "Cold Coffee", price: "₹99", description: "Classic chilled coffee rapidly shaken with our pure ice blocks derived straight from 8.5 pH Kangen water, ensuring zero chlorine taints the drink." },
     { name: "Cold Coffee With Crush", price: "₹129", description: "Cold coffee leveled up with sweet crushes, flawlessly emulsified using our proprietary water techniques." },
     { name: "Strawberry Milkshake", price: "₹129", description: "A sweet strawberry shake crafted with fruits perfectly washed in 11.5 pH water to remove all waxy agricultural sprays, offering a clean, pure taste." },
@@ -276,10 +276,11 @@ export const menuData = {
     { name: "Crunchy Cookie Hazelnut", price: "₹149", description: "A nutty, crunchy delight beautifully bound together with our pure water-based ice." },
     { name: "Butterscotch Milkshake", price: "₹149", description: "A golden butterscotch shake, incredibly smooth, rich, and perfectly digestible due to our alkaline balancing techniques." },
     { name: "Mango Milkshake", price: "₹149", description: "Thick, fresh mango shake. We wash the mangoes in 11.5 pH water to safely remove artificial ripening chemicals from the skin before slicing." },
-    { name: "American Nuts", price: "₹149", description: "A loaded nutty milkshake delivering tremendous energy and naturally clean hydration through our signature pH-optimized base." }
+    { name: "American Nuts", price: "₹149", description: "A loaded nutty milkshake delivering tremendous energy and naturally clean hydration through our signature pH-optimized base." },
+    { name: "Extra Ice-Cream", price: "₹50", description: "Add ₹50 for extra Ice-Cream to your shakes or cold beverages." }
   ],
   softDrinks: [
-    { name: "Sprite, Fanta, Coke, thumbsup, etc", price: "₹30", description: "Chilled soft drinks served directly from the bottle." }
+    { name: "Sprite, Fanta Coke, thumbsup, etc", price: "₹30", description: "Chilled soft drinks served directly from the bottle." }
   ],
   alkalineWater: [
     { name: "Alkaline Ionized Water (250ml)", price: "₹10", description: "Our signature 100% pure Kangen Alkaline Ionized Water. Micro-clustered to hydrate you 6x faster than regular water, actively detoxifying your system and completely neutralizing your body's acidity." },
