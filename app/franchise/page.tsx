@@ -34,6 +34,11 @@ export default function FranchisePage() {
             price: formData.capital
           }),
         });
+        
+        if (!res.ok) {
+           throw new Error("Server responded with error");
+        }
+
         const data = await res.json();
         if (data && data.success === false) {
            setErrorMsg(data.error || "This phone number is already registered!");
@@ -42,6 +47,9 @@ export default function FranchisePage() {
         }
       } catch (err) {
         console.error("Franchise sheet capture failed", err);
+        setErrorMsg("Could not verify your application status. Please try again later.");
+        setIsSubmitting(false);
+        return; // STOP - don't let it bypass the check
       }
       setIsSubmitting(false);
     }

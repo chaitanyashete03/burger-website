@@ -26,6 +26,11 @@ export default function KangenClub() {
               price: "-",
             }),
           });
+          
+          if (!res.ok) {
+             throw new Error("Server responded with error");
+          }
+
           const data = await res.json();
           if (data && data.success === false) {
              setErrorMsg(data.error || "This phone number is already registered!");
@@ -34,6 +39,11 @@ export default function KangenClub() {
           }
         } catch (err) {
           console.error("Sheet capture failed", err);
+          // If the script is the old one or CORS fails, we still assume a check is needed.
+          // For now, let's show a generic error to help the user identify the integration issue.
+          setErrorMsg("Could not verify your membership status. Please try again later.");
+          setIsSubmitting(false);
+          return; // STOP MISSION - don't let it bypass the check
         }
         setIsSubmitting(false);
       }
