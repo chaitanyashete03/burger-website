@@ -7,17 +7,18 @@ import { kangenClub, siteInfo } from "../../lib/constants";
 export default function KangenClub() {
   const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleJoin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (phone.length >= 10) {
-      // Capture to Google Sheets if webhook is configured
       if (siteInfo.googleSheetsWebhookUrl) {
+        setIsSubmitting(true);
+        setErrorMsg("");
         try {
-          // Send as plain text to avoid CORS preflight issues with Google Apps Script
-          fetch(siteInfo.googleSheetsWebhookUrl, {
+          const res = await fetch(siteInfo.googleSheetsWebhookUrl, {
             method: "POST",
-            mode: "no-cors",
             body: JSON.stringify({
               source: "Kangen Club",
               phone: phone,
@@ -25,9 +26,16 @@ export default function KangenClub() {
               price: "-",
             }),
           });
+          const data = await res.json();
+          if (data && data.success === false) {
+             setErrorMsg(data.error || "This phone number is already registered!");
+             setIsSubmitting(false);
+             return; // Stop submission
+          }
         } catch (err) {
           console.error("Sheet capture failed", err);
         }
+        setIsSubmitting(false);
       }
 
       // Open WhatsApp with pre-filled message
@@ -83,25 +91,37 @@ export default function KangenClub() {
               Register with your phone number and start earning rewards instantly.
             </p>
             {!submitted ? (
-              <form onSubmit={handleJoin} className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="tel"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
-                  placeholder="Enter your 10-digit phone number"
-                  required
-                  minLength={10}
-                  maxLength={10}
-                  className="flex-1 px-5 py-3.5 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
-                  style={{ background: "var(--page-bg)", border: "1px solid var(--card-border)", color: "var(--text-primary)" }}
-                />
-                <button
-                  type="submit"
-                  className="px-8 py-3.5 rounded-full font-black text-sm tracking-wide text-white transition-all hover:scale-105 active:scale-[0.98]"
-                  style={{ background: "#3B82F6" }}
-                >
-                  Join Now
-                </button>
+              <form onSubmit={handleJoin} className="flex flex-col gap-3">
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <input
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => {
+                      setPhone(e.target.value.replace(/\D/g, "").slice(0, 10));
+                      setErrorMsg(""); // Clear error when typing
+                    }}
+                    placeholder="Enter your 10-digit phone number"
+                    required
+                    minLength={10}
+                    maxLength={10}
+                    disabled={isSubmitting}
+                    className="flex-1 px-5 py-3.5 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#3B82F6] disabled:opacity-50"
+                    style={{ background: "var(--page-bg)", border: "1px solid var(--card-border)", color: "var(--text-primary)" }}
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="px-8 py-3.5 rounded-full font-black text-sm tracking-wide text-white transition-all hover:scale-105 active:scale-[0.98] disabled:opacity-50 disabled:hover:scale-100"
+                    style={{ background: "#3B82F6" }}
+                  >
+                    {isSubmitting ? "Checking..." : "Join Now"}
+                  </button>
+                </div>
+                {errorMsg && (
+                   <div className="text-red-500 text-sm font-bold text-left px-4 animate-in fade-in">
+                     {errorMsg}
+                   </div>
+                )}
               </form>
             ) : (
               <div className="py-4">

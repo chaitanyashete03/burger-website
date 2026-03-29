@@ -6,6 +6,8 @@ import { franchiseBenefits, siteInfo } from "../../lib/constants";
 
 export default function FranchisePage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,10 +22,11 @@ export default function FranchisePage() {
     
     // Capture to Google Sheets if webhook is configured
     if (siteInfo.googleFranchiseWebhookUrl) {
+      setIsSubmitting(true);
+      setErrorMsg("");
       try {
-        fetch(siteInfo.googleFranchiseWebhookUrl, {
+        const res = await fetch(siteInfo.googleFranchiseWebhookUrl, {
           method: "POST",
-          mode: "no-cors",
           body: JSON.stringify({
             source: "Franchise Inquiry",
             ...formData,
@@ -31,9 +34,16 @@ export default function FranchisePage() {
             price: formData.capital
           }),
         });
+        const data = await res.json();
+        if (data && data.success === false) {
+           setErrorMsg(data.error || "This phone number is already registered!");
+           setIsSubmitting(false);
+           return; // Stop here, don't show success
+        }
       } catch (err) {
         console.error("Franchise sheet capture failed", err);
       }
+      setIsSubmitting(false);
     }
 
     setIsSubmitted(true);
@@ -194,10 +204,15 @@ export default function FranchisePage() {
                             className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none resize-none" style={fieldStyle} />
                 </div>
                 <div className="pt-2 text-center">
-                  <button type="submit" className="px-12 py-4 rounded-full font-black text-base tracking-wide transition-all hover:scale-105"
+                  <button type="submit" disabled={isSubmitting} className="px-12 py-4 rounded-full font-black text-base tracking-wide transition-all hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
                           style={{ background: "#3B82F6", color: "#fff" }}>
-                    Submit Inquiry
+                    {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                   </button>
+                  {errorMsg && (
+                    <div className="text-red-500 text-sm font-bold mt-4 animate-in fade-in">
+                      {errorMsg}
+                    </div>
+                  )}
                   <p className="text-xs mt-4" style={{ color: "var(--text-muted)" }}>We respond within 48–72 hours.</p>
                 </div>
               </form>
