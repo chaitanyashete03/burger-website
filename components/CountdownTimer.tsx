@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { offerEndDate } from "@/lib/constants";
+import { offerEndDate } from "../lib/constants";
 
 interface TimeLeft {
   days: number;
@@ -59,11 +59,11 @@ export default function CountdownTimer() {
   return (
     <div className="my-8">
       <div className="flex items-center justify-center gap-2 mb-4">
-        <div className="w-5 h-px" style={{ background: "#FF6B35" }} />
-        <span className="text-[9px] font-black tracking-[0.35em] uppercase" style={{ color: "#FF6B35" }}>
+        <div className="w-5 h-px" style={{ background: "#3B82F6" }} />
+        <span className="text-[9px] font-black tracking-[0.35em] uppercase" style={{ color: "#3B82F6" }}>
           Offer Ends In
         </span>
-        <div className="w-5 h-px" style={{ background: "#FF6B35" }} />
+        <div className="w-5 h-px" style={{ background: "#3B82F6" }} />
       </div>
       <div className="flex items-center justify-center gap-3 sm:gap-4">
         {blocks.map(({ label, value }) => (
@@ -75,16 +75,16 @@ export default function CountdownTimer() {
             style={{
               background: "rgba(255,255,255,0.03)",
               border: isUrgent
-                ? "1px solid rgba(255,107,53,0.4)"
+                ? "1px solid rgba(59,130,246,0.4)"
                 : "1px solid rgba(255,255,255,0.08)",
               boxShadow: isUrgent
-                ? "0 0 20px rgba(255,107,53,0.15)"
+                ? "0 0 20px rgba(59,130,246,0.15)"
                 : "0 4px 20px rgba(0,0,0,0.1)",
             }}
           >
             <span
               className="text-2xl sm:text-3xl font-black leading-none tabular-nums"
-              style={{ color: isUrgent ? "#FF6B35" : "#fff" }}
+              style={{ color: isUrgent ? "#3B82F6" : "#fff" }}
             >
               {String(value).padStart(2, "0")}
             </span>

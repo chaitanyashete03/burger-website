@@ -1,7 +1,7 @@
 import Link from "next/link";
-import SectionReveal from "@/components/SectionReveal";
-import { blogPosts } from "@/lib/constants";
-import { generatePageMetadata } from "@/lib/seo";
+import SectionReveal from "../../components/SectionReveal";
+import { blogPosts } from "../../lib/constants";
+import { generatePageMetadata } from "../../lib/seo";
 
 export const metadata = generatePageMetadata("blog");
 
@@ -12,14 +12,14 @@ export default function Blog() {
 
         <SectionReveal className="mb-20">
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>Stories & Insights</span>
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#3B82F6" }}>Stories & Insights</span>
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tight mb-5"
               style={{ color: "var(--text-primary)" }}>
-            Our <span style={{ color: "#FF6B35" }}>Blog</span>
+            Our <span style={{ color: "#3B82F6" }}>Blog</span>
           </h1>
-          <div className="w-8 h-[2px] rounded-full mb-5" style={{ background: "#FF6B35" }} />
+          <div className="w-8 h-[2px] rounded-full mb-5" style={{ background: "#3B82F6" }} />
           <p className="text-base max-w-xl leading-relaxed" style={{ color: "var(--text-secondary)" }}>
             Insights, news, and mouth-watering stories from the Kangen Burgers kitchen.
           </p>
@@ -35,7 +35,7 @@ export default function Blog() {
                 {/* hover glow */}
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{ background: "radial-gradient(circle at top left, rgba(255,107,53,0.07), transparent 60%)" }}
+                  style={{ background: "radial-gradient(circle at top left, rgba(59,130,246,0.07), transparent 60%)" }}
                 />
                 {/* thumbnail placeholder */}
                 <div className="h-44 relative overflow-hidden flex-shrink-0"
@@ -48,18 +48,18 @@ export default function Blog() {
                 {/* content */}
                 <div className="p-6 flex flex-col flex-1">
                   <span className="text-[10px] font-black tracking-widest uppercase mb-3"
-                        style={{ color: "#FF6B35" }}>{post.date}</span>
+                        style={{ color: "#3B82F6" }}>{post.date}</span>
                   <h2 className="text-lg font-black mb-3 leading-tight line-clamp-2" style={{ color: "var(--text-primary)" }}>
-                    <Link href={`/blog/${post.slug}`} className="hover:text-[#FF6B35] transition-colors">
+                    <Link href={`/blog/${post.slug}`} className="hover:text-[#3B82F6] transition-colors">
                       {post.title}
                     </Link>
                   </h2>
-                  <div className="w-6 h-[1px] mb-3" style={{ background: "#FF6B35" }} />
+                  <div className="w-6 h-[1px] mb-3" style={{ background: "#3B82F6" }} />
                   <p className="text-sm leading-relaxed flex-1 line-clamp-3"
                      style={{ color: "var(--text-secondary)" }}>{post.excerpt}</p>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="mt-5 inline-flex items-center gap-2 text-xs font-black tracking-wide uppercase transition-colors hover:text-[#FF6B35]"
+                    className="mt-5 inline-flex items-center gap-2 text-xs font-black tracking-wide uppercase transition-colors hover:text-[#3B82F6]"
                     style={{ color: "var(--text-muted)" }}
                   >
                     Read More <span>→</span>

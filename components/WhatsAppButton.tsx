@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { siteInfo } from "@/lib/constants";
+import { siteInfo } from "../lib/constants";
 
 export default function WhatsAppButton() {
   const waUrl = `https://wa.me/${siteInfo.whatsappNumber}?text=${encodeURIComponent(

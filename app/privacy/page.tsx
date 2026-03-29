@@ -1,5 +1,5 @@
-import SectionReveal from "@/components/SectionReveal";
-import GlassCard from "@/components/GlassCard";
+import SectionReveal from "../../components/SectionReveal";
+import GlassCard from "../../components/GlassCard";
 
 export const metadata = { title: "Privacy Policy | Kangen Burgers" };
 

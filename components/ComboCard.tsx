@@ -8,6 +8,7 @@ interface ComboCardProps {
   name: string;
   items: string[];
   price?: string;
+  originalPrice?: string;
   accentColor?: string;
 }
 
@@ -15,7 +16,8 @@ export default function ComboCard({
   name,
   items,
   price,
-  accentColor = "#FF6B35",
+  originalPrice,
+  accentColor = "#3B82F6",
 }: ComboCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -35,9 +37,16 @@ export default function ComboCard({
         >
           {name}
         </h3>
-        <span className="font-black text-lg ml-3 shrink-0" style={{ color: accentColor }}>
-          {price || "—"}
-        </span>
+        <div className="flex flex-col items-end shrink-0 ml-3">
+          <span className="font-black text-lg" style={{ color: accentColor }}>
+            {price || "—"}
+          </span>
+          {originalPrice && (
+            <span className="text-sm line-through opacity-60" style={{ color: "var(--text-secondary)" }}>
+              {originalPrice}
+            </span>
+          )}
+        </div>
       </div>
       <div className="w-6 h-[1px] mb-4" style={{ background: accentColor }} />
       

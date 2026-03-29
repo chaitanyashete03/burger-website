@@ -1,8 +1,8 @@
-import { blogPosts } from "@/lib/constants";
-import SectionReveal from "@/components/SectionReveal";
+import { blogPosts } from "../../../lib/constants";
+import SectionReveal from "../../../components/SectionReveal";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { generateBlogMetadata } from "@/lib/seo";
+import { generateBlogMetadata } from "../../../lib/seo";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -24,15 +24,15 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
         <SectionReveal>
           {/* back link */}
           <Link href="/blog"
-            className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase mb-12 transition-colors hover:text-[#FF6B35]"
+            className="inline-flex items-center gap-2 text-xs font-black tracking-widest uppercase mb-12 transition-colors hover:text-[#3B82F6]"
             style={{ color: "var(--text-muted)" }}>
             ← Back to Blog
           </Link>
 
           {/* header */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#3B82F6" }}>
               {post!.date}
             </span>
           </div>
@@ -42,7 +42,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             {post!.title}
           </h1>
 
-          <div className="w-8 h-[2px] rounded-full mb-10" style={{ background: "#FF6B35" }} />
+          <div className="w-8 h-[2px] rounded-full mb-10" style={{ background: "#3B82F6" }} />
 
           {/* article */}
           <article>
@@ -85,7 +85,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
             </p>
             <Link href="/menu"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-black text-sm tracking-wide transition-all hover:scale-105"
-              style={{ background: "#FF6B35", color: "#fff" }}>
+              style={{ background: "#3B82F6", color: "#fff" }}>
               Explore Our Menu →
             </Link>
           </div>

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import SectionReveal from "@/components/SectionReveal";
-import { siteInfo } from "@/lib/constants";
-import { generatePageMetadata } from "@/lib/seo";
+import SectionReveal from "../../components/SectionReveal";
+import { siteInfo } from "../../lib/constants";
+import { generatePageMetadata } from "../../lib/seo";
 
 const fieldStyle = {
   background: "var(--input-bg)",
@@ -21,14 +21,14 @@ export default function Contact() {
 
         <SectionReveal className="mb-20">
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>Get in Touch</span>
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#3B82F6" }}>Get in Touch</span>
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tight mb-5"
               style={{ color: "var(--text-primary)" }}>
-            Contact <span style={{ color: "#FF6B35" }}>Us</span>
+            Contact <span style={{ color: "#3B82F6" }}>Us</span>
           </h1>
-          <div className="w-8 h-[2px] rounded-full mb-5" style={{ background: "#FF6B35" }} />
+          <div className="w-8 h-[2px] rounded-full mb-5" style={{ background: "#3B82F6" }} />
           <p className="text-base max-w-xl leading-relaxed" style={{ color: "var(--text-secondary)" }}>
             We'd love to hear from you — always ready to answer questions or receive feedback.
           </p>
@@ -41,7 +41,7 @@ export default function Contact() {
             <div className="flex flex-col gap-6">
               {/* store details */}
               <div className="rounded-2xl p-8" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
-                <div className="w-6 h-[2px] mb-4 rounded-full" style={{ background: "#FF6B35" }} />
+                <div className="w-6 h-[2px] mb-4 rounded-full" style={{ background: "#3B82F6" }} />
                 <h3 className="text-xl font-black mb-6" style={{ color: "var(--text-primary)" }}>Store Details</h3>
                 <div className="space-y-5">
                   {[
@@ -53,7 +53,7 @@ export default function Contact() {
                       <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
                             style={{ color: "var(--text-muted)" }}>{label}</span>
                       {href ? (
-                        <a href={href} target={label === "Address" ? "_blank" : undefined} rel={label === "Address" ? "noopener noreferrer" : undefined} className="text-sm hover:text-[#FF6B35] transition-colors"
+                        <a href={href} target={label === "Address" ? "_blank" : undefined} rel={label === "Address" ? "noopener noreferrer" : undefined} className="text-sm hover:text-[#3B82F6] transition-colors"
                            style={{ color: "var(--text-secondary)" }}>{value}</a>
                       ) : (
                         <p className="text-sm" style={{ color: "var(--text-secondary)" }}>{value}</p>
@@ -81,13 +81,13 @@ export default function Contact() {
           <SectionReveal delay={0.2}>
             <div className="rounded-2xl p-8 md:p-10 h-full"
                  style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
-              <div className="w-6 h-[2px] mb-4 rounded-full" style={{ background: "#FF6B35" }} />
+              <div className="w-6 h-[2px] mb-4 rounded-full" style={{ background: "#3B82F6" }} />
               <h2 className="text-2xl font-black mb-8" style={{ color: "var(--text-primary)" }}>Send a Message</h2>
               
               {isSubmitted ? (
                 <div className="py-12 text-center animate-in fade-in zoom-in duration-500">
-                  <div className="w-20 h-20 rounded-full bg-[#FF6B35]/10 flex items-center justify-center mx-auto mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF6B35" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                  <div className="w-20 h-20 rounded-full bg-[#3B82F6]/10 flex items-center justify-center mx-auto mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                   </div>
                   <h3 className="text-2xl font-black mb-3" style={{ color: "var(--text-primary)" }}>Message Sent!</h3>
                   <p className="text-base leading-relaxed max-w-sm mx-auto" style={{ color: "var(--text-secondary)" }}>
@@ -95,7 +95,7 @@ export default function Contact() {
                   </p>
                   <button 
                     onClick={() => setIsSubmitted(false)}
-                    className="mt-8 text-xs font-black tracking-widest uppercase hover:text-[#FF6B35] transition-colors"
+                    className="mt-8 text-xs font-black tracking-widest uppercase hover:text-[#3B82F6] transition-colors"
                     style={{ color: "var(--text-muted)" }}
                   >
                     Send Another Message
@@ -119,7 +119,7 @@ export default function Contact() {
                     <textarea rows={5} required className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none resize-none" style={fieldStyle} />
                   </div>
                   <button type="submit" className="w-full py-4 rounded-xl font-black text-base tracking-wide transition-all hover:opacity-90 active:scale-[0.98]"
-                          style={{ background: "#FF6B35", color: "#fff" }}>
+                          style={{ background: "#3B82F6", color: "#fff" }}>
                     Send Message
                   </button>
                 </form>

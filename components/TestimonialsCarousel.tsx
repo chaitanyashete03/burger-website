@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, type PanInfo } from "framer-motion";
-import { testimonials } from "@/lib/constants";
+import { testimonials } from "../lib/constants";
 
 const AUTOPLAY_INTERVAL = 5000;
 
@@ -59,7 +59,7 @@ export default function TestimonialsCarousel() {
       <div
         className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(255,107,53,0.08) 0%, transparent 60%)",
+          background: "radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 60%)",
         }}
       />
 
@@ -67,18 +67,18 @@ export default function TestimonialsCarousel() {
         {/* Section header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-5">
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
             <span
               className="text-[10px] font-black tracking-[0.4em] uppercase"
-              style={{ color: "#FF6B35" }}
+              style={{ color: "#3B82F6" }}
             >
               Testimonials
             </span>
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight"
               style={{ color: "var(--text-primary)" }}>
-            What Our <span style={{ color: "#FF6B35" }}>Customers</span> Say
+            What Our <span style={{ color: "#3B82F6" }}>Customers</span> Say
           </h2>
         </div>
 
@@ -127,8 +127,8 @@ export default function TestimonialsCarousel() {
                       width="18"
                       height="18"
                       viewBox="0 0 24 24"
-                      fill={i < item.rating ? "#FF6B35" : "none"}
-                      stroke={i < item.rating ? "#FF6B35" : "var(--card-border)"}
+                      fill={i < item.rating ? "#3B82F6" : "none"}
+                      stroke={i < item.rating ? "#3B82F6" : "var(--card-border)"}
                       strokeWidth="2"
                     >
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -150,9 +150,9 @@ export default function TestimonialsCarousel() {
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-black"
                     style={{
-                      background: "rgba(255,107,53,0.08)",
-                      color: "#FF6B35",
-                      border: "1px solid rgba(255,107,53,0.15)",
+                      background: "rgba(59,130,246,0.08)",
+                      color: "#3B82F6",
+                      border: "1px solid rgba(59,130,246,0.15)",
                     }}
                   >
                     {item.name
@@ -216,7 +216,7 @@ export default function TestimonialsCarousel() {
               style={{
                 width: idx === current ? "24px" : "8px",
                 height: "8px",
-                background: idx === current ? "#FF6B35" : "var(--card-border)",
+                background: idx === current ? "#3B82F6" : "var(--card-border)",
               }}
             />
           ))}

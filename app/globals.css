@@ -7,42 +7,42 @@
    ══════════════════════════════════════════════════════════ */
 :root {
   /* Page backgrounds */
-  --page-bg: #faf7f2;
-  --page-bg-alt: #f4efe7;
-  --section-dark-bg: #1a1410;
+  --page-bg: #f0f4fa;
+  --page-bg-alt: #e8edf5;
+  --section-dark-bg: #0f1629;
   --section-kangen-bg: #e8f6f8;
 
   /* Cards & surfaces */
   --card-bg: rgba(0, 0, 0, 0.03);
   --card-border: rgba(0, 0, 0, 0.08);
-  --card-hover: rgba(255, 107, 53, 0.06);
+  --card-hover: rgba(59, 130, 246, 0.06);
   --card-bg-solid: #ffffff;
   --card-border-solid: rgba(0, 0, 0, 0.07);
 
   /* Text */
-  --text-primary: #1a1410;
-  --text-secondary: #5a5247;
-  --text-muted: #9a8e82;
-  --text-accent: #FF6B35;
+  --text-primary: #0f1629;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-accent: #3B82F6;
 
   /* Input fields */
   --input-bg: rgba(0, 0, 0, 0.04);
   --input-border: rgba(0, 0, 0, 0.10);
-  --input-text: #1a1410;
+  --input-text: #0f1629;
 
   /* Navbar */
-  --nav-bg: rgba(250, 247, 242, 0.92);
+  --nav-bg: rgba(240, 244, 250, 0.92);
   --nav-border: rgba(0, 0, 0, 0.06);
   --nav-text: rgba(0, 0, 0, 0.55);
-  --nav-text-hover: #1a1410;
+  --nav-text-hover: #0f1629;
 
   /* Footer */
-  --footer-bg: #1a1410;
+  --footer-bg: #0f1629;
   --footer-border: rgba(255, 255, 255, 0.05);
 
   /* Overlays & glows */
   --overlay-light: rgba(255, 255, 255, 0.6);
-  --glow-accent: rgba(255, 107, 53, 0.08);
+  --glow-accent: rgba(59, 130, 246, 0.08);
   --divider: rgba(0, 0, 0, 0.08);
 
   /* Kangen Water accents */
@@ -51,47 +51,47 @@
   --kangen-card-border: rgba(0, 200, 220, 0.15);
 
   /* Big number decorative */
-  --number-color: rgba(255, 107, 53, 0.10);
+  --number-color: rgba(59, 130, 246, 0.10);
 }
 
 html.dark {
-  --page-bg: #0f0a08;
-  --page-bg-alt: #0a0604;
-  --section-dark-bg: #0f0a08;
+  --page-bg: #0a0f1a;
+  --page-bg-alt: #060b14;
+  --section-dark-bg: #0a0f1a;
   --section-kangen-bg: #040d14;
 
   --card-bg: rgba(255, 255, 255, 0.03);
   --card-border: rgba(255, 255, 255, 0.07);
-  --card-hover: rgba(255, 107, 53, 0.08);
+  --card-hover: rgba(59, 130, 246, 0.08);
   --card-bg-solid: rgba(255, 255, 255, 0.03);
   --card-border-solid: rgba(255, 255, 255, 0.07);
 
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.55);
   --text-muted: rgba(255, 255, 255, 0.35);
-  --text-accent: #FF6B35;
+  --text-accent: #3B82F6;
 
   --input-bg: rgba(255, 255, 255, 0.04);
   --input-border: rgba(255, 255, 255, 0.10);
   --input-text: #ffffff;
 
-  --nav-bg: rgba(15, 10, 8, 0.92);
+  --nav-bg: rgba(10, 15, 26, 0.92);
   --nav-border: rgba(255, 255, 255, 0.06);
   --nav-text: rgba(255, 255, 255, 0.60);
   --nav-text-hover: #ffffff;
 
-  --footer-bg: #0a0604;
+  --footer-bg: #060b14;
   --footer-border: rgba(255, 255, 255, 0.05);
 
   --overlay-light: rgba(0, 0, 0, 0.4);
-  --glow-accent: rgba(255, 107, 53, 0.08);
+  --glow-accent: rgba(59, 130, 246, 0.08);
   --divider: rgba(255, 255, 255, 0.07);
 
   --kangen-accent: #00c8dc;
   --kangen-card-bg: rgba(0, 200, 220, 0.04);
   --kangen-card-border: rgba(0, 200, 220, 0.10);
 
-  --number-color: rgba(255, 107, 53, 0.12);
+  --number-color: rgba(59, 130, 246, 0.12);
 }
 
 /* Smooth theme transition */
@@ -109,35 +109,37 @@ body {
 /* ── Premium Glass Utilities ─────────────────────────────── */
 @layer utilities {
   .glass {
-    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-lg;
+    @apply bg-white/20 backdrop-blur-xl border border-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
   }
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-lg;
+    @apply bg-black/50 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
   }
   .glass-card {
-    @apply bg-white/70 backdrop-blur-lg border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-2xl;
+    @apply bg-white/60 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] rounded-2xl;
   }
   .dark .glass-card {
-    @apply bg-black/40 border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+    @apply bg-black/40 border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)];
   }
   .glass-premium {
     background: var(--card-bg);
     backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--card-border);
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.06),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      0 8px 32px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
   .glass-glow {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 107, 53, 0.15);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
     box-shadow:
-      0 0 30px rgba(255, 107, 53, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      0 0 40px rgba(59, 130, 246, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
   .text-glow {
-    text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+    text-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
   }
 }
 
@@ -154,15 +156,15 @@ body {
 /* ── Premium Button Glow ─────────────────────────────────── */
 .btn-glow {
   position: relative;
-  background: #FF6B35;
+  background: #3B82F6;
   color: #fff;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
 }
 .btn-glow:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(255, 107, 53, 0.5);
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
 }
 .btn-glow::after {
   content: '';
@@ -170,7 +172,7 @@ body {
   inset: -2px;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(135deg, #FF6B35, #c8a96b, #FF6B35);
+  background: linear-gradient(135deg, #3B82F6, #60A5FA, #3B82F6);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -205,7 +207,7 @@ body {
   background: rgba(0, 0, 0, 0.05);
 }
 ::-webkit-scrollbar-thumb {
-  background: #FF6B35;
+  background: #3B82F6;
   border-radius: 4px;
 }
 
@@ -218,6 +220,6 @@ body {
 
 /* ── Countdown urgency ───────────────────────────────────── */
 .countdown-urgent {
-  border-color: rgba(255, 107, 53, 0.5) !important;
-  box-shadow: 0 0 24px rgba(255, 107, 53, 0.25) !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+  box-shadow: 0 0 24px rgba(59, 130, 246, 0.25) !important;
 }

@@ -11,8 +11,16 @@ import {
 import Link from "next/link";
 import NextImage from "next/image";
 
-const TOTAL_FRAMES = 200;
 const MOBILE_BREAKPOINT = 768;
+
+/* ── Image config per device ─────────────────────────────── */
+function getImageConfig(device: "scroll-mobile" | "scroll-laptop") {
+  if (device === "scroll-mobile") {
+    return { prefix: "ezgif-frame-", start: 1, end: 200, ext: "jpg", totalFrames: 200 };
+  } else {
+    return { prefix: "ezgif-frame-", start: 2, end: 200, ext: "jpg", totalFrames: 199 };
+  }
+}
 
 function frameUrl(folder: string, index: number): string {
   const padded = String(index).padStart(3, "0");
@@ -107,6 +115,10 @@ export default function BurgerScroll() {
   const [ready, setReady]         = useState(false);
   const [heroGone, setHeroGone]   = useState(false);
 
+  // Dynamic frame config based on device
+  const config = getImageConfig(folder);
+  const TOTAL_FRAMES = config.totalFrames;
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -138,9 +150,10 @@ export default function BurgerScroll() {
 
   // preload
   useEffect(() => {
+    const cfg = getImageConfig(folder);
     // Determine the frame corresponding to current scroll progress
     const currentP = scrollYProgress.get();
-    const initialFrame = Math.min(TOTAL_FRAMES - 1, Math.floor(currentP * TOTAL_FRAMES));
+    const initialFrame = Math.min(cfg.totalFrames - 1, Math.floor(currentP * cfg.totalFrames));
 
     // Clear canvas on folder pivot to avoid flickering previous folder's frames
     const c = canvasRef.current;
@@ -155,14 +168,16 @@ export default function BurgerScroll() {
     frameRef.current = initialFrame;
 
     let cancelled = false, loaded = 0;
-    const imgs = Array.from({ length: TOTAL_FRAMES }, (_, i) => {
+    const imgs = Array.from({ length: cfg.totalFrames }, (_, i) => {
       const img = new Image();
-      img.src = frameUrl(folder, i + 1);
+      // Build filename using the config start index
+      const frameIndex = cfg.start + i;
+      img.src = frameUrl(folder, frameIndex);
       img.onload = () => {
         if (cancelled) return;
         loaded++;
         setLoaded(loaded);
-        if (loaded === TOTAL_FRAMES) setReady(true);
+        if (loaded === cfg.totalFrames) setReady(true);
         // Draw only if it is the current frame
         if (i === frameRef.current) draw(img);
       };
@@ -191,7 +206,7 @@ export default function BurgerScroll() {
       rafRef.current = requestAnimationFrame(() => { const img = imagesRef.current[idx]; if (img) draw(img); });
     });
     return () => { u(); if (rafRef.current) cancelAnimationFrame(rafRef.current); };
-  }, [scrollYProgress, draw]);
+  }, [scrollYProgress, draw, TOTAL_FRAMES]);
 
   // resize
   useEffect(() => {
@@ -231,7 +246,7 @@ export default function BurgerScroll() {
   const pct = Math.round((loadedCount / TOTAL_FRAMES) * 100);
 
   return (
-    <section ref={containerRef} className="relative w-full" style={{ height: "700vh", background: "#0d0000" }}>
+    <section ref={containerRef} className="relative w-full" style={{ height: "700vh", background: "#000a1a" }}>
       <motion.div
         className="sticky top-0 h-screen w-full overflow-hidden"
         style={{ scale: exitS, transformOrigin: "center top" }}
@@ -250,12 +265,12 @@ export default function BurgerScroll() {
         {/* loading */}
         {!ready && (
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-6"
-               style={{ background: "#0d0000" }}>
+               style={{ background: "#000a1a" }}>
             <div className="text-center">
               <p className="text-white/25 text-[9px] tracking-[0.5em] uppercase mb-8">Kangen Burgers</p>
               <div className="w-48 h-px bg-white/10 overflow-hidden mx-auto">
                 <div className="h-full transition-all duration-200"
-                     style={{ width: `${pct}%`, background: "#FF6B35" }} />
+                     style={{ width: `${pct}%`, background: "#3B82F6" }} />
               </div>
               <p className="text-white/20 text-[10px] mt-3 tracking-widest">{pct}%</p>
             </div>
@@ -270,10 +285,10 @@ export default function BurgerScroll() {
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.7, ease: [0.25,0.4,0.25,1] }}
               className="flex items-center gap-3 mb-8">
-              <div className="h-px w-8" style={{ background: "#FF6B35" }} />
+              <div className="h-px w-8" style={{ background: "#3B82F6" }} />
               <span className="text-[10px] font-black tracking-[0.4em] uppercase"
-                    style={{ color: "#FF6B35" }}>Fresh · Alkaline · Handcrafted</span>
-              <div className="h-px w-8" style={{ background: "#FF6B35" }} />
+                    style={{ color: "#3B82F6" }}>Fresh · Alkaline · Handcrafted</span>
+              <div className="h-px w-8" style={{ background: "#3B82F6" }} />
             </motion.div>
 
             <motion.h1
@@ -283,7 +298,7 @@ export default function BurgerScroll() {
                          text-5xl sm:text-6xl md:text-7xl lg:text-8xl max-w-4xl"
               style={{ textShadow: "0 4px 48px rgba(0,0,0,0.8)" }}>
               Enjoy Healthy &amp;<br />
-              <em className="not-italic" style={{ color: "#FF6B35" }}>Tasty Burgers</em>
+              <em className="not-italic" style={{ color: "#3B82F6" }}>Tasty Burgers</em>
             </motion.h1>
 
             <motion.p
@@ -300,8 +315,8 @@ export default function BurgerScroll() {
               className="mt-10 flex flex-col sm:flex-row gap-4 pointer-events-auto">
               <Link href="/menu"
                 className="px-10 py-4 rounded-full font-bold text-base tracking-wide
-                           shadow-2xl transition-all hover:scale-105 hover:shadow-orange-500/30"
-                style={{ background: "#FF6B35", color: "#fff" }}>
+                           shadow-2xl transition-all hover:scale-105 hover:shadow-blue-500/30"
+                style={{ background: "#3B82F6", color: "#fff" }}>
                 Explore Menu
               </Link>
               <Link href="/order-online"
@@ -317,12 +332,12 @@ export default function BurgerScroll() {
         )}
 
         {/* ── 5 EDITORIAL OVERLAYS ─────────────────────────────────────────── */}
-        <Overlay opacity={o1} chapter="01" accent="#FF6B35"
+        <Overlay opacity={o1} chapter="01" accent="#3B82F6"
           label="The Beginning"
           headline={<>Every Bite<br />Tells a Story</>}
           sub="Each ingredient sourced with passion. Assembled with craft. Delivered with pride." />
 
-        <Overlay opacity={o2} chapter="02" accent="#c8a96b"
+        <Overlay opacity={o2} chapter="02" accent="#60A5FA"
           label="The Foundation"
           headline={<>Built on the<br />Perfect Base</>}
           sub="A golden sesame bun — pillowy soft, lightly toasted, holding it all together." />
@@ -337,14 +352,14 @@ export default function BurgerScroll() {
           headline={<>Layered Fresh,<br />Every Time</>}
           sub="Crisp lettuce, vine-ripe tomatoes, sweet onion — stacked order by order." />
 
-        <Overlay opacity={o5} chapter="05" accent="#FFB830"
+        <Overlay opacity={o5} chapter="05" accent="#1E3A8A"
           label="The Grand Finale"
           headline={<>The Ultimate<br />Kangen Burger</>}
           sub="Molten cheese, succulent patty, our signature Kangen sauce. Perfection served." />
 
         {/* ── progress bar ──────────────────────────────────────────────────── */}
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/5 z-30">
-          <motion.div className="h-full" style={{ width: barW, background: "#FF6B35" }} />
+          <motion.div className="h-full" style={{ width: barW, background: "#3B82F6" }} />
         </div>
 
         {/* ── exit dissolve ─────────────────────────────────────────────────── */}
@@ -357,7 +372,7 @@ export default function BurgerScroll() {
           <span className="text-white/25 text-[9px] tracking-[0.4em] uppercase">Scroll</span>
           <div className="w-4 h-7 rounded-full border border-white/15 flex justify-center pt-1">
             <motion.div className="w-0.5 h-1.5 rounded-full"
-              style={{ background: "#FF6B35" }}
+              style={{ background: "#3B82F6" }}
               animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }} />
           </div>

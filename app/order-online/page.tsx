@@ -1,8 +1,8 @@
-import SectionReveal from "@/components/SectionReveal";
+import SectionReveal from "../../components/SectionReveal";
 import Link from "next/link";
 import { Utensils, ShoppingBag, PhoneCall } from "lucide-react";
-import { siteInfo } from "@/lib/constants";
-import { generatePageMetadata } from "@/lib/seo";
+import { siteInfo } from "../../lib/constants";
+import { generatePageMetadata } from "../../lib/seo";
 
 export const metadata = generatePageMetadata("orderOnline");
 
@@ -15,16 +15,16 @@ export default function OrderOnline() {
         {/* header */}
         <div className="text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-5">
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>Delivery & Pickup</span>
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#3B82F6" }}>Delivery & Pickup</span>
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
           </div>
           <h1 className="text-4xl sm:text-5xl font-black tracking-tight leading-tight mb-4"
               style={{ color: "var(--text-primary)" }}>
-            Order <span style={{ color: "#FF6B35" }}>Online</span>
+            Order <span style={{ color: "#3B82F6" }}>Online</span>
           </h1>
           <div className="flex justify-center mb-5">
-            <div className="w-8 h-[2px] rounded-full" style={{ background: "#FF6B35" }} />
+            <div className="w-8 h-[2px] rounded-full" style={{ background: "#3B82F6" }} />
           </div>
           <p className="text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>
             Enjoy our delicious, healthy burgers right at your door — choose your preferred platform.
@@ -73,7 +73,7 @@ export default function OrderOnline() {
           <a
             href={`tel:${siteInfo.phone}`}
             className="inline-flex items-center gap-3 px-10 py-4 rounded-full font-black text-base tracking-wide transition-all hover:scale-105"
-            style={{ background: "#FF6B35", color: "#fff" }}
+            style={{ background: "#3B82F6", color: "#fff" }}
           >
             <PhoneCall size={20} />
             {siteInfo.phone}

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import SectionReveal from "@/components/SectionReveal";
-import { comboBuilderOptions, siteInfo } from "@/lib/constants";
+import SectionReveal from "../../components/SectionReveal";
+import { comboBuilderOptions, siteInfo } from "../../lib/constants";
 
 type SelectedItems = {
   burger: number | null;
@@ -95,18 +95,18 @@ export default function ComboBuilder() {
         {/* Hero */}
         <SectionReveal className="mb-16 text-center">
           <div className="flex items-center justify-center gap-3 mb-5">
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#3B82F6" }}>
               Build Your Own
             </span>
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tight mb-5" style={{ color: "var(--text-primary)" }}>
-            Combo <span style={{ color: "#FF6B35" }}>Builder</span>
+            Combo <span style={{ color: "#3B82F6" }}>Builder</span>
           </h1>
-          <div className="w-8 h-[2px] rounded-full mb-5 mx-auto" style={{ background: "#FF6B35" }} />
+          <div className="w-8 h-[2px] rounded-full mb-5 mx-auto" style={{ background: "#3B82F6" }} />
           <p className="text-base max-w-xl mx-auto leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-            Pick a burger + fries + drink and get <span className="font-black text-[#FF6B35]">{comboDiscount}% OFF</span> your total! Build your perfect meal below.
+            Pick a burger + fries + drink and get <span className="font-black text-[#3B82F6]">{comboDiscount}% OFF</span> your total! Build your perfect meal below.
           </p>
         </SectionReveal>
 
@@ -140,8 +140,8 @@ export default function ComboBuilder() {
                         }
                         className="w-full flex items-center justify-between gap-3 px-4 py-3 rounded-xl text-left transition-all duration-200 group"
                         style={{
-                          background: isSelected ? "rgba(255,107,53,0.1)" : "var(--card-bg)",
-                          border: isSelected ? "2px solid #FF6B35" : "1px solid var(--card-border)",
+                          background: isSelected ? "rgba(59,130,246,0.1)" : "var(--card-bg)",
+                          border: isSelected ? "2px solid #3B82F6" : "1px solid var(--card-border)",
                           transform: isSelected ? "scale(1.01)" : "scale(1)",
                         }}
                       >
@@ -151,14 +151,14 @@ export default function ComboBuilder() {
                           )}
                           <span
                             className="text-sm font-bold truncate"
-                            style={{ color: isSelected ? "#FF6B35" : "var(--text-primary)" }}
+                            style={{ color: isSelected ? "#3B82F6" : "var(--text-primary)" }}
                           >
                             {item.name}
                           </span>
                         </div>
                         <span
                           className="text-sm font-black flex-shrink-0"
-                          style={{ color: isSelected ? "#FF6B35" : "var(--text-muted)" }}
+                          style={{ color: isSelected ? "#3B82F6" : "var(--text-muted)" }}
                         >
                           ₹{item.price}
                         </span>
@@ -177,7 +177,7 @@ export default function ComboBuilder() {
             className="sticky bottom-6 z-30 rounded-2xl p-6 sm:p-8 transition-all duration-300"
             style={{
               background: "var(--card-bg)",
-              border: computed.allSelected ? "2px solid #FF6B35" : "1px solid var(--card-border)",
+              border: computed.allSelected ? "2px solid #3B82F6" : "1px solid var(--card-border)",
               boxShadow: "0 -8px 40px rgba(0,0,0,0.15)",
             }}
           >
@@ -219,7 +219,7 @@ export default function ComboBuilder() {
                       onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
                       placeholder="Enter Phone Number"
                       required
-                      className="w-full px-4 py-3 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6B35]"
+                      className="w-full px-4 py-3 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
                       style={{ background: "var(--page-bg)", border: "1px solid var(--card-border)", color: "var(--text-primary)" }}
                     />
                   </div>
@@ -232,13 +232,13 @@ export default function ComboBuilder() {
                       </span>
                       <span
                         className="text-[10px] font-black px-2 py-0.5 rounded-full text-white"
-                        style={{ background: "#FF6B35" }}
+                        style={{ background: "#3B82F6" }}
                       >
                         SAVE ₹{computed.discount}
                       </span>
                     </div>
                   )}
-                  <div className="text-3xl font-black" style={{ color: computed.allSelected ? "#FF6B35" : "var(--text-muted)" }}>
+                  <div className="text-3xl font-black" style={{ color: computed.allSelected ? "#3B82F6" : "var(--text-muted)" }}>
                     ₹{computed.allSelected ? computed.comboPrice : computed.total || 0}
                   </div>
                 </div>
@@ -246,7 +246,7 @@ export default function ComboBuilder() {
                   onClick={handleOrder}
                   disabled={!computed.allSelected || (computed.allSelected && phone.length < 10)}
                   className="px-8 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105 active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
-                  style={{ background: "#FF6B35" }}
+                  style={{ background: "#3B82F6" }}
                 >
                   Order on WhatsApp
                 </button>

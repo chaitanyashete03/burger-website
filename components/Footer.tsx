@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { siteInfo } from "@/lib/constants";
+import { siteInfo } from "../lib/constants";
 
 
 export default function Footer() {
@@ -20,7 +20,7 @@ export default function Footer() {
             <Link href="/" className="font-black text-xl tracking-tight mb-5 flex items-center gap-3">
 
               <div className="flex flex-col">
-                <span className="leading-none text-[#FF6B35]">KANGEN</span>
+                <span className="leading-none text-[#3B82F6]">KANGEN</span>
                 <span className="leading-none text-white/90">BURGERS</span>
               </div>
             </Link>
@@ -55,7 +55,7 @@ export default function Footer() {
                 return (
                   <li key={href}>
                     <Link href={href}
-                      className="text-sm transition-colors hover:text-[#FF6B35]"
+                      className="text-sm transition-colors hover:text-[#3B82F6]"
                       style={{ color: "rgba(255,255,255,0.45)" }}>
                       {labels[i]}
                     </Link>
@@ -72,19 +72,19 @@ export default function Footer() {
               <li>
                 <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
                       style={{ color: "rgba(255,255,255,0.3)" }}>Address</span>
-                <a href={siteInfo.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#FF6B35] transition-colors inline-block">
+                <a href={siteInfo.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-[#3B82F6] transition-colors inline-block">
                   {siteInfo.address}
                 </a>
               </li>
               <li>
                 <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
                       style={{ color: "rgba(255,255,255,0.3)" }}>Phone</span>
-                <a href={`tel:${siteInfo.phone}`} className="hover:text-[#FF6B35] transition-colors">{siteInfo.phone}</a>
+                <a href={`tel:${siteInfo.phone}`} className="hover:text-[#3B82F6] transition-colors">{siteInfo.phone}</a>
               </li>
               <li>
                 <span className="block text-[10px] font-black tracking-widest uppercase mb-1"
                       style={{ color: "rgba(255,255,255,0.3)" }}>Email</span>
-                <a href={`mailto:${siteInfo.email}`} className="hover:text-[#FF6B35] transition-colors">{siteInfo.email}</a>
+                <a href={`mailto:${siteInfo.email}`} className="hover:text-[#3B82F6] transition-colors">{siteInfo.email}</a>
               </li>
             </ul>
           </div>
@@ -104,7 +104,7 @@ export default function Footer() {
               <button
                 type="submit"
                 className="px-4 py-2.5 rounded-lg font-bold text-sm transition-all hover:opacity-90"
-                style={{ background: "#FF6B35", color: "#fff" }}
+                style={{ background: "#3B82F6", color: "#fff" }}
               >
                 Subscribe
               </button>
@@ -118,7 +118,7 @@ export default function Footer() {
           <p>&copy; {new Date().getFullYear()} Kangen Burgers. All rights reserved.</p>
           <div className="flex gap-6">
             {[["Privacy Policy", "/privacy"], ["Terms", "/terms"], ["Refund Policy", "/refund-policy"]].map(([label, href]) => (
-              <Link key={href} href={href} className="hover:text-[#FF6B35] transition-colors">{label}</Link>
+              <Link key={href} href={href} className="hover:text-[#3B82F6] transition-colors">{label}</Link>
             ))}
           </div>
         </div>

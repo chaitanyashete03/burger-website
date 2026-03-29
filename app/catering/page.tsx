@@ -1,7 +1,7 @@
 import Link from "next/link";
-import SectionReveal from "@/components/SectionReveal";
-import { cateringPackages, siteInfo } from "@/lib/constants";
-import { generatePageMetadata } from "@/lib/seo";
+import SectionReveal from "../../components/SectionReveal";
+import { cateringPackages, siteInfo } from "../../lib/constants";
+import { generatePageMetadata } from "../../lib/seo";
 
 export const metadata = generatePageMetadata("catering");
 
@@ -15,10 +15,10 @@ export default function Catering() {
         {/* Header */}
         <SectionReveal className="mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
             <span
               className="text-[10px] font-black tracking-[0.4em] uppercase"
-              style={{ color: "#FF6B35" }}
+              style={{ color: "#3B82F6" }}
             >
               Parties & Events
             </span>
@@ -27,11 +27,11 @@ export default function Catering() {
             className="text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tight mb-5"
             style={{ color: "var(--text-primary)" }}
           >
-            Catering & <span style={{ color: "#FF6B35" }}>Party Orders</span>
+            Catering & <span style={{ color: "#3B82F6" }}>Party Orders</span>
           </h1>
           <div
             className="w-8 h-[2px] rounded-full mb-5"
-            style={{ background: "#FF6B35" }}
+            style={{ background: "#3B82F6" }}
           />
           <p
             className="text-base max-w-xl leading-relaxed"
@@ -52,10 +52,10 @@ export default function Catering() {
                 style={{
                   background: "var(--card-bg)",
                   border: pkg.popular
-                    ? "2px solid #FF6B35"
+                    ? "2px solid #3B82F6"
                     : "1px solid var(--card-border)",
                   boxShadow: pkg.popular
-                    ? "0 8px 32px rgba(255,107,53,0.15)"
+                    ? "0 8px 32px rgba(59,130,246,0.15)"
                     : "none",
                 }}
               >
@@ -63,7 +63,7 @@ export default function Catering() {
                 {pkg.popular && (
                   <div
                     className="absolute -top-3 left-8 px-4 py-1 rounded-full text-[10px] font-black tracking-widest uppercase text-white"
-                    style={{ background: "#FF6B35" }}
+                    style={{ background: "#3B82F6" }}
                   >
                     Most Popular
                   </div>
@@ -72,12 +72,12 @@ export default function Catering() {
                   className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   style={{
                     background:
-                      "radial-gradient(circle at top left, rgba(255,107,53,0.06), transparent 60%)",
+                      "radial-gradient(circle at top left, rgba(59,130,246,0.06), transparent 60%)",
                   }}
                 />
                 {/* Header */}
                 <div className="mb-6">
-                  <div className="w-6 h-[2px] mb-3 rounded-full" style={{ background: "#FF6B35" }} />
+                  <div className="w-6 h-[2px] mb-3 rounded-full" style={{ background: "#3B82F6" }} />
                   <h3
                     className="text-2xl font-black mb-1"
                     style={{ color: "var(--text-primary)" }}
@@ -86,7 +86,7 @@ export default function Catering() {
                   </h3>
                   <p
                     className="text-xs font-bold tracking-wide uppercase"
-                    style={{ color: "#FF6B35" }}
+                    style={{ color: "#3B82F6" }}
                   >
                     {pkg.subtitle}
                   </p>
@@ -112,7 +112,7 @@ export default function Catering() {
                     <li key={i} className="flex items-start gap-3">
                       <span
                         className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full"
-                        style={{ background: "#FF6B35" }}
+                        style={{ background: "#3B82F6" }}
                       />
                       <span
                         className="text-sm"
@@ -132,7 +132,7 @@ export default function Catering() {
                   rel="noopener noreferrer"
                   className="block text-center py-3.5 rounded-xl font-bold text-sm tracking-wide transition-all hover:opacity-90 active:scale-[0.98]"
                   style={{
-                    background: pkg.popular ? "#FF6B35" : "transparent",
+                    background: pkg.popular ? "#3B82F6" : "transparent",
                     color: pkg.popular ? "#fff" : "var(--text-primary)",
                     border: pkg.popular
                       ? "none"
@@ -172,7 +172,7 @@ export default function Catering() {
               <Link
                 href="/contact"
                 className="px-8 py-3 rounded-full font-bold text-sm tracking-wide text-white transition-all hover:scale-105"
-                style={{ background: "#FF6B35" }}
+                style={{ background: "#3B82F6" }}
               >
                 Contact Us
               </Link>

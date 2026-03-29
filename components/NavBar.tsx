@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { cn } from "@/components/GlassCard";
-import DarkModeToggle from "@/components/DarkModeToggle";
+import { cn } from "../components/GlassCard";
+import DarkModeToggle from "../components/DarkModeToggle";
 
 
 
@@ -65,7 +65,7 @@ export default function NavBar() {
           <Link href="/" className="z-50 font-black text-xl tracking-tight flex items-center gap-3">
 
             <div className="flex flex-col md:flex-row md:items-baseline md:gap-1 leading-none">
-              <span style={{ color: "#FF6B35" }}>KANGEN</span>
+              <span style={{ color: "#3B82F6" }}>KANGEN</span>
               <span style={{ color: "var(--text-primary)" }}>BURGERS</span>
             </div>
           </Link>
@@ -80,7 +80,7 @@ export default function NavBar() {
                   href={link.href}
                   className="text-[13px] font-semibold tracking-wide transition-colors duration-200"
                   style={{
-                    color: isActive ? "#FF6B35" : "var(--nav-text)",
+                    color: isActive ? "#3B82F6" : "var(--nav-text)",
                   }}
                   onMouseEnter={(e) => {
                     if (!isActive) (e.target as HTMLElement).style.color = "var(--nav-text-hover)";
@@ -129,8 +129,8 @@ export default function NavBar() {
             key={link.name}
             href={link.href}
             onClick={() => setIsOpen(false)}
-            className="text-2xl font-black tracking-tight transition-colors hover:text-[#FF6B35]"
-            style={{ color: pathname === link.href ? "#FF6B35" : "var(--text-primary)" }}
+            className="text-2xl font-black tracking-tight transition-colors hover:text-[#3B82F6]"
+            style={{ color: pathname === link.href ? "#3B82F6" : "var(--text-primary)" }}
           >
             {link.name}
           </Link>

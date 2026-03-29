@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
-import { blogPosts } from "@/lib/constants";
+import { blogPosts } from "../lib/constants";
 
-import { siteInfo } from "@/lib/constants";
+import { siteInfo } from "../lib/constants";
 
 const BASE_URL = siteInfo.siteUrl;
 

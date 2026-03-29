@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { Outfit } from 'next/font/google';
 import './globals.css';
-import { defaultSEO } from '@/lib/seo';
-import { siteInfo } from '@/lib/constants';
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import { defaultSEO } from '../lib/seo';
+import { siteInfo } from '../lib/constants';
+import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
+import WhatsAppButton from '../components/WhatsAppButton';
+import SmoothScrolling from '../components/SmoothScrolling';
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Kangen Burgers",
     images: [
       {
-        url: "/images/scroll-laptop/ezgif-frame-001.jpg",
+        url: "/images/scroll-laptop/ezgif-frame-002.jpg",
         width: 1200,
         height: 630,
         alt: "Kangen Burgers – Healthy Burgers in Pune",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: defaultSEO.title,
     description: defaultSEO.description,
-    images: ["/images/scroll-laptop/ezgif-frame-001.jpg"],
+    images: ["/images/scroll-laptop/ezgif-frame-002.jpg"],
   },
   robots: {
     index: true,
@@ -71,8 +72,8 @@ const jsonLd = {
   url: siteInfo.siteUrl,
   telephone: siteInfo.phone,
   email: siteInfo.email,
-  image: `${siteInfo.siteUrl}/images/scroll-laptop/ezgif-frame-001.jpg`,
-  logo: `${siteInfo.siteUrl}/images/scroll-laptop/ezgif-frame-001.jpg`,
+  image: `${siteInfo.siteUrl}/images/scroll-laptop/ezgif-frame-002.jpg`,
+  logo: `${siteInfo.siteUrl}/images/scroll-laptop/ezgif-frame-002.jpg`,
   priceRange: "₹₹",
   servesCuisine: ["Burgers", "Pizzas", "Fast Food", "Healthy Food", "Sandwiches", "Pasta"],
   acceptsReservations: "True",
@@ -123,7 +124,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={outfit.variable}>
       <head>
-        <meta name="theme-color" content="#FF6B35" />
+        <meta name="theme-color" content="#3B82F6" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
         {/* Dark mode init – prevent FOUC */}
@@ -141,7 +142,9 @@ export default function RootLayout({
       <body className="font-sans antialiased selection:bg-accent selection:text-white flex flex-col min-h-screen">
         <NavBar />
         <main className="flex-grow">
-          {children}
+          <SmoothScrolling>
+            {children}
+          </SmoothScrolling>
         </main>
         <Footer />
         <WhatsAppButton />

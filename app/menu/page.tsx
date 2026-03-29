@@ -2,11 +2,11 @@
 
 import React, { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import SectionReveal from "@/components/SectionReveal";
-import { menuData } from "@/lib/constants";
-import MenuItemCard, { DietType } from "@/components/MenuItemCard";
-import ComboCard from "@/components/ComboCard";
-import MenuFilterBar from "@/components/MenuFilterBar";
+import SectionReveal from "../../components/SectionReveal";
+import { menuData } from "../../lib/constants";
+import MenuItemCard, { DietType } from "../../components/MenuItemCard";
+import ComboCard from "../../components/ComboCard";
+import MenuFilterBar from "../../components/MenuFilterBar";
 import { X } from "lucide-react";
 
 // Map structure for easier iteration and rendering
@@ -22,7 +22,7 @@ interface ProcessedCategory {
   id: string;
   label: string;
   items: CategorizedItem[];
-  combos?: { name: string; price?: string; items: string[] }[];
+  combos?: { name: string; price?: string; originalPrice?: string; items: string[] }[];
   accentColor: string;
 }
 
@@ -40,6 +40,7 @@ function buildMenuJsonLd() {
     { name: "Sandwiches (Veg)", items: menuData.sandwiches.veg },
     { name: "Sandwiches (Non-Veg)", items: menuData.sandwiches.nonVeg },
     { name: "Cakes", items: menuData.cakes },
+    { name: "Mojitos", items: menuData.mojitos },
     { name: "Beverages", items: menuData.beverages },
     { name: "Soft Drinks", items: menuData.softDrinks },
     { name: "Alkaline Water", items: menuData.alkalineWater },
@@ -80,7 +81,7 @@ export default function Menu() {
       {
         id: "burgers",
         label: "Burgers",
-        accentColor: "#FF6B35",
+        accentColor: "#3B82F6",
         items: [
           ...menuData.burgers.veg.map((n) => ({ id: `burger-v-${n.name}`, name: n.name, description: n.description, price: n.price, type: "veg" as DietType })),
           ...menuData.burgers.nonVeg.map((n) => ({ id: `burger-nv-${n.name}`, name: n.name, description: n.description, price: n.price, type: "nonVeg" as DietType })),
@@ -133,6 +134,12 @@ export default function Menu() {
         label: "Cakes",
         accentColor: "#ec4899",
         items: menuData.cakes.map((n) => ({ id: `cake-${n.name}`, name: n.name, description: n.description, price: n.price, type: "none" as DietType })),
+      },
+      {
+        id: "mojitos",
+        label: "Mojitos",
+        accentColor: "#fbbf24",
+        items: menuData.mojitos.map((n) => ({ id: `mojito-${n.name}`, name: n.name, description: n.description, price: n.price, type: "none" as DietType })),
       },
       {
         id: "beverages",
@@ -231,16 +238,16 @@ export default function Menu() {
       <div className="max-w-7xl mx-auto">
         <SectionReveal className="mb-0">
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#3B82F6" }}>
               What We Serve
             </span>
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tight mb-5"
               style={{ color: "var(--text-primary)" }}>
-            Our <span style={{ color: "#FF6B35" }}>Menu</span>
+            Our <span style={{ color: "#3B82F6" }}>Menu</span>
           </h1>
-          <div className="w-8 h-[2px] rounded-full mb-6" style={{ background: "#FF6B35" }} />
+          <div className="w-8 h-[2px] rounded-full mb-6" style={{ background: "#3B82F6" }} />
           <p className="text-base max-w-xl leading-relaxed" style={{ color: "var(--text-secondary)" }}>
             Discover our wide range of offerings — perfectly blended with our signature Kangen Water twist.
           </p>
@@ -289,6 +296,8 @@ export default function Menu() {
                       <ComboCard
                         key={`combo-${idx}`}
                         name={combo.name}
+                        price={combo.price}
+                        originalPrice={combo.originalPrice}
                         items={combo.items}
                         accentColor={category.accentColor}
                       />

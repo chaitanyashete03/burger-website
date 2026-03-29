@@ -1,6 +1,6 @@
 import Link from "next/link";
-import SectionReveal from "@/components/SectionReveal";
-import { generatePageMetadata } from "@/lib/seo";
+import SectionReveal from "../../components/SectionReveal";
+import { generatePageMetadata } from "../../lib/seo";
 
 export const metadata = generatePageMetadata("kangenWater");
 

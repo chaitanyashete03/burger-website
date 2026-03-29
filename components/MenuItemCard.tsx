@@ -19,7 +19,7 @@ export default function MenuItemCard({
   name,
   price,
   type,
-  accentColor = "#FF6B35",
+  accentColor = "#3B82F6",
   onClick,
 }: MenuItemCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);

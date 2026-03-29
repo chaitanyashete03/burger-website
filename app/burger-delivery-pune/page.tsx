@@ -1,7 +1,7 @@
 import Link from "next/link";
-import SectionReveal from "@/components/SectionReveal";
-import { siteInfo } from "@/lib/constants";
-import { generatePageMetadata } from "@/lib/seo";
+import SectionReveal from "../../components/SectionReveal";
+import { siteInfo } from "../../lib/constants";
+import { generatePageMetadata } from "../../lib/seo";
 
 export const metadata = generatePageMetadata("burgerDeliveryPune");
 
@@ -15,15 +15,15 @@ export default function BurgerDeliveryPune() {
         {/* Hero */}
         <SectionReveal className="mb-16">
           <div className="flex items-center gap-3 mb-5">
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#3B82F6" }}>
               Fast Delivery
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-5" style={{ color: "var(--text-primary)" }}>
-            Burger Delivery in <span style={{ color: "#FF6B35" }}>Pune</span>
+            Burger Delivery in <span style={{ color: "#3B82F6" }}>Pune</span>
           </h1>
-          <div className="w-8 h-[2px] rounded-full mb-6" style={{ background: "#FF6B35" }} />
+          <div className="w-8 h-[2px] rounded-full mb-6" style={{ background: "#3B82F6" }} />
           <p className="text-base sm:text-lg max-w-2xl leading-relaxed" style={{ color: "var(--text-secondary)" }}>
             Get Kangen Burgers delivered fresh to your doorstep across Talegaon Dabhade and Pune. 
             Order via Zomato, Swiggy, or call us directly for the fastest delivery and takeaway experience.
@@ -33,7 +33,7 @@ export default function BurgerDeliveryPune() {
         {/* How to Order */}
         <SectionReveal className="mb-16">
           <h2 className="text-3xl font-black mb-8" style={{ color: "var(--text-primary)" }}>
-            How to <span style={{ color: "#FF6B35" }}>Order</span>
+            How to <span style={{ color: "#3B82F6" }}>Order</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
@@ -46,8 +46,8 @@ export default function BurgerDeliveryPune() {
                 className="rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1"
                 style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}
               >
-                <div className="text-[3rem] font-black leading-none mb-3 select-none" style={{ color: "rgba(255,107,53,0.12)" }}>{item.step}</div>
-                <div className="w-6 h-[2px] mb-3 rounded-full" style={{ background: "#FF6B35" }} />
+                <div className="text-[3rem] font-black leading-none mb-3 select-none" style={{ color: "rgba(59,130,246,0.12)" }}>{item.step}</div>
+                <div className="w-6 h-[2px] mb-3 rounded-full" style={{ background: "#3B82F6" }} />
                 <h3 className="text-lg font-black mb-2" style={{ color: "var(--text-primary)" }}>{item.title}</h3>
                 <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{item.desc}</p>
               </div>
@@ -58,13 +58,13 @@ export default function BurgerDeliveryPune() {
         {/* Delivery Platforms */}
         <SectionReveal className="mb-16">
           <h2 className="text-3xl font-black mb-8" style={{ color: "var(--text-primary)" }}>
-            Order on Your <span style={{ color: "#FF6B35" }}>Favourite Platform</span>
+            Order on Your <span style={{ color: "#3B82F6" }}>Favourite Platform</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               { name: "Zomato", desc: "Order on Zomato for exclusive deals and fast delivery.", color: "#E23744" },
               { name: "Swiggy", desc: "Get your Kangen Burgers delivered via Swiggy.", color: "#FC8019" },
-              { name: "Direct Call", desc: `Call ${siteInfo.phone} for direct orders and special requests.`, color: "#FF6B35" },
+              { name: "Direct Call", desc: `Call ${siteInfo.phone} for direct orders and special requests.`, color: "#3B82F6" },
             ].map((platform, i) => (
               <div
                 key={i}
@@ -93,7 +93,7 @@ export default function BurgerDeliveryPune() {
                 "Malavli", "Lonavala Road", "Dehu Road", "Talegaon Station Area",
               ].map((area, i) => (
                 <div key={i} className="flex items-center gap-2 py-2">
-                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#FF6B35" }} />
+                  <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#3B82F6" }} />
                   <span className="text-sm" style={{ color: "var(--text-secondary)" }}>{area}</span>
                 </div>
               ))}
@@ -111,7 +111,7 @@ export default function BurgerDeliveryPune() {
               Fresh, healthy, and delivered fast across Pune.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link href="/order-online" className="px-10 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105" style={{ background: "#FF6B35" }}>
+              <Link href="/order-online" className="px-10 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105" style={{ background: "#3B82F6" }}>
                 Order Online
               </Link>
               <a href={`tel:${siteInfo.phone}`} className="px-10 py-4 rounded-full font-black text-base transition-all hover:scale-105" style={{ color: "var(--text-primary)", border: "1px solid var(--card-border)", background: "var(--card-bg)" }}>

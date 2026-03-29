@@ -1,0 +1,48 @@
+﻿  Γû▓ Next.js 14.2.3
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Skipping linting
+   Checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/24) ...
+   Generating static pages (6/24) 
+   Generating static pages (12/24) 
+   Generating static pages (18/24) 
+ Γ£ô Generating static pages (24/24)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                        Size     First Load JS
+Γöî Γùï /                                              15.2 kB         162 kB
+Γö£ Γùï /_not-found                                    871 B            88 kB
+Γö£ Γùï /blog                                          825 B           136 kB
+Γö£ ΓùÅ /blog/[slug]                                   825 B           136 kB
+Γö£   Γö£ /blog/benefits-of-alkaline-water-in-cooking
+Γö£   Γö£ /blog/why-we-source-local
+Γö£   Γöö /blog/franchise-success-story
+Γö£ Γùï /burger-delivery-pune                          825 B           136 kB
+Γö£ Γùï /burgers-in-talegaon-dabhade                   825 B           136 kB
+Γö£ Γùï /catering                                      825 B           136 kB
+Γö£ Γùï /combo-builder                                 3.02 kB         143 kB
+Γö£ Γùï /contact                                       2.64 kB         142 kB
+Γö£ Γùï /faq                                           3.04 kB         149 kB
+Γö£ Γùï /franchise                                     2.88 kB         142 kB
+Γö£ Γùï /kangen-club                                   2.63 kB         142 kB
+Γö£ Γùï /kangen-water                                  825 B           136 kB
+Γö£ Γùï /menu                                          8.4 kB          148 kB
+Γö£ Γùï /order-online                                  1.51 kB         130 kB
+Γö£ Γùï /privacy                                       802 B           130 kB
+Γö£ Γùï /refund-policy                                 802 B           130 kB
+Γö£ Γùï /robots.txt                                    0 B                0 B
+Γö£ Γùï /sitemap.xml                                   0 B                0 B
+Γöö Γùï /terms                                         802 B           130 kB
++ First Load JS shared by all                      87.1 kB
+  Γö£ chunks/23-852fefedd72fed74.js                  31.6 kB
+  Γö£ chunks/fd9d1056-844a5cc198651369.js            53.6 kB
+  Γöö other shared chunks (total)                    1.95 kB
+
+
+Γùï  (Static)  prerendered as static content
+ΓùÅ  (SSG)     prerendered as static HTML (uses getStaticProps)
+

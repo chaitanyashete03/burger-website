@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import SectionReveal from "@/components/SectionReveal";
-import { faqData } from "@/lib/constants";
+import SectionReveal from "../../components/SectionReveal";
+import { faqData } from "../../lib/constants";
 import { ChevronDown } from "lucide-react";
 
 const faqJsonLd = {
@@ -35,10 +35,10 @@ export default function FAQ() {
         <div className="max-w-4xl mx-auto">
           <SectionReveal className="mb-16">
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+              <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
               <span
                 className="text-[10px] font-black tracking-[0.4em] uppercase"
-                style={{ color: "#FF6B35" }}
+                style={{ color: "#3B82F6" }}
               >
                 Got Questions?
               </span>
@@ -48,11 +48,11 @@ export default function FAQ() {
               style={{ color: "var(--text-primary)" }}
             >
               Frequently Asked{" "}
-              <span style={{ color: "#FF6B35" }}>Questions</span>
+              <span style={{ color: "#3B82F6" }}>Questions</span>
             </h1>
             <div
               className="w-8 h-[2px] rounded-full mb-5"
-              style={{ background: "#FF6B35" }}
+              style={{ background: "#3B82F6" }}
             />
             <p
               className="text-base max-w-xl leading-relaxed"
@@ -92,7 +92,7 @@ export default function FAQ() {
                         size={20}
                         className="flex-shrink-0 transition-transform duration-300"
                         style={{
-                          color: "#FF6B35",
+                          color: "#3B82F6",
                           transform: isOpen
                             ? "rotate(180deg)"
                             : "rotate(0deg)",
@@ -148,7 +148,7 @@ export default function FAQ() {
                 <Link
                   href="/contact"
                   className="px-8 py-3 rounded-full font-bold text-sm tracking-wide text-white transition-all hover:scale-105"
-                  style={{ background: "#FF6B35" }}
+                  style={{ background: "#3B82F6" }}
                 >
                   Contact Us
                 </Link>

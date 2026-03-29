@@ -50,7 +50,7 @@ export default function MenuFilterBar({
           </div>
           <input
             type="text"
-            className="block w-full pl-10 pr-3 py-2.5 border border-[var(--card-border)] rounded-full leading-5 bg-[var(--card-bg)] text-[var(--text-primary)] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6B35] focus:border-[#FF6B35] sm:text-sm transition-colors duration-300"
+            className="block w-full pl-10 pr-3 py-2.5 border border-[var(--card-border)] rounded-full leading-5 bg-[var(--card-bg)] text-[var(--text-primary)] placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] focus:border-[#3B82F6] sm:text-sm transition-colors duration-300"
             placeholder="Search our menu..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -69,7 +69,7 @@ export default function MenuFilterBar({
                     ? "bg-green-600/10 text-green-600"
                     : type === "nonVeg"
                     ? "bg-red-600/10 text-red-600"
-                    : "bg-[#FF6B35]/10 text-[#FF6B35]"
+                    : "bg-[#3B82F6]/10 text-[#3B82F6]"
                   : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
               }`}
             >
@@ -105,7 +105,7 @@ export default function MenuFilterBar({
             }}
             className={`whitespace-nowrap px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
               activeCategory === category.id
-                ? "bg-[#FF6B35] text-white shadow-lg shadow-[#FF6B35]/20"
+                ? "bg-[#3B82F6] text-white shadow-lg shadow-[#3B82F6]/20"
                 : "bg-[var(--card-bg)] text-[var(--text-secondary)] border border-[var(--card-border)] hover:bg-[var(--card-border)] hover:text-[var(--text-primary)]"
             }`}
           >

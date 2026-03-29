@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import SectionReveal from "@/components/SectionReveal";
-import { kangenClub, siteInfo } from "@/lib/constants";
+import SectionReveal from "../../components/SectionReveal";
+import { kangenClub, siteInfo } from "../../lib/constants";
 
 export default function KangenClub() {
   const [phone, setPhone] = useState("");
@@ -50,16 +50,16 @@ export default function KangenClub() {
         {/* Hero */}
         <SectionReveal className="mb-16 text-center">
           <div className="flex items-center justify-center gap-3 mb-5">
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
-            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#FF6B35" }}>
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
+            <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#3B82F6" }}>
               Loyalty Program
             </span>
-            <div className="w-8 h-px" style={{ background: "#FF6B35" }} />
+            <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
           </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tight mb-5" style={{ color: "var(--text-primary)" }}>
-            Kangen <span style={{ color: "#FF6B35" }}>Club</span>
+            Kangen <span style={{ color: "#3B82F6" }}>Club</span>
           </h1>
-          <div className="w-8 h-[2px] rounded-full mb-5 mx-auto" style={{ background: "#FF6B35" }} />
+          <div className="w-8 h-[2px] rounded-full mb-5 mx-auto" style={{ background: "#3B82F6" }} />
           <p className="text-lg max-w-xl mx-auto leading-relaxed" style={{ color: "var(--text-secondary)" }}>
             {kangenClub.tagline}
           </p>
@@ -71,8 +71,8 @@ export default function KangenClub() {
             className="max-w-lg mx-auto rounded-2xl p-8 sm:p-10 text-center"
             style={{
               background: "var(--card-bg)",
-              border: "2px solid #FF6B35",
-              boxShadow: "0 8px 40px rgba(255,107,53,0.12)",
+              border: "2px solid #3B82F6",
+              boxShadow: "0 8px 40px rgba(59,130,246,0.12)",
             }}
           >
             <div className="text-5xl mb-4">🏆</div>
@@ -92,13 +92,13 @@ export default function KangenClub() {
                   required
                   minLength={10}
                   maxLength={10}
-                  className="flex-1 px-5 py-3.5 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#FF6B35]"
+                  className="flex-1 px-5 py-3.5 rounded-full text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#3B82F6]"
                   style={{ background: "var(--page-bg)", border: "1px solid var(--card-border)", color: "var(--text-primary)" }}
                 />
                 <button
                   type="submit"
                   className="px-8 py-3.5 rounded-full font-black text-sm tracking-wide text-white transition-all hover:scale-105 active:scale-[0.98]"
-                  style={{ background: "#FF6B35" }}
+                  style={{ background: "#3B82F6" }}
                 >
                   Join Now
                 </button>
@@ -106,7 +106,7 @@ export default function KangenClub() {
             ) : (
               <div className="py-4">
                 <div className="text-3xl mb-2">✅</div>
-                <p className="font-bold text-lg" style={{ color: "#FF6B35" }}>Welcome to Kangen Club!</p>
+                <p className="font-bold text-lg" style={{ color: "#3B82F6" }}>Welcome to Kangen Club!</p>
                 <p className="text-sm mt-1" style={{ color: "var(--text-secondary)" }}>
                   Complete your registration on WhatsApp to start earning rewards.
                 </p>
@@ -119,7 +119,7 @@ export default function KangenClub() {
         <SectionReveal className="mb-20">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "var(--text-primary)" }}>
-              Member <span style={{ color: "#FF6B35" }}>Perks</span>
+              Member <span style={{ color: "#3B82F6" }}>Perks</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -131,12 +131,12 @@ export default function KangenClub() {
                 >
                   <div
                     className="relative w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
-                    style={{ background: "rgba(255,107,53,0.08)" }}
+                    style={{ background: "rgba(59,130,246,0.08)" }}
                   >
                     {perk.icon}
                     <div
                       className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{ background: "rgba(255,107,53,0.15)" }}
+                      style={{ background: "rgba(59,130,246,0.15)" }}
                     />
                   </div>
                   <h3 className="text-lg font-black mb-2" style={{ color: "var(--text-primary)" }}>
@@ -155,7 +155,7 @@ export default function KangenClub() {
         <SectionReveal className="mb-20">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-black" style={{ color: "var(--text-primary)" }}>
-              How It <span style={{ color: "#FF6B35" }}>Works</span>
+              How It <span style={{ color: "#3B82F6" }}>Works</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -164,11 +164,11 @@ export default function KangenClub() {
                 <div className="text-center">
                   <div
                     className="text-[4rem] font-black leading-none mb-3 select-none"
-                    style={{ color: "rgba(255,107,53,0.1)" }}
+                    style={{ color: "rgba(59,130,246,0.1)" }}
                   >
                     {step.step}
                   </div>
-                  <div className="w-6 h-[2px] mx-auto mb-3 rounded-full" style={{ background: "#FF6B35" }} />
+                  <div className="w-6 h-[2px] mx-auto mb-3 rounded-full" style={{ background: "#3B82F6" }} />
                   <h3 className="text-xl font-black mb-2" style={{ color: "var(--text-primary)" }}>
                     {step.title}
                   </h3>
@@ -188,7 +188,7 @@ export default function KangenClub() {
             style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}
           >
             <h2 className="text-3xl font-black mb-3" style={{ color: "var(--text-primary)" }}>
-              Start Earning <span style={{ color: "#FF6B35" }}>Today</span>
+              Start Earning <span style={{ color: "#3B82F6" }}>Today</span>
             </h2>
             <p className="text-sm mb-6 max-w-md mx-auto" style={{ color: "var(--text-secondary)" }}>
               Visit Kangen Burgers, give us your phone number, and your first order starts earning points!
@@ -198,7 +198,7 @@ export default function KangenClub() {
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105 inline-block"
-              style={{ background: "#FF6B35" }}
+              style={{ background: "#3B82F6" }}
             >
               Join on WhatsApp
             </a>

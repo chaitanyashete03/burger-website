@@ -13,6 +13,8 @@ export const siteInfo = {
   },
   siteUrl: "https://kangenburgers.vercel.app",
   googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbx3tXZw4eZlJhtVsVv5re4opsJ5tRNyoANlADHSbZUfOG_tRSbmuVZfKpnLi-ilVyd5/exec",
+  googleFranchiseWebhookUrl: "https://script.google.com/macros/s/AKfycbx3tXZw4eZlJhtVsVv5re4opsJ5tRNyoANlADHSbZUfOG_tRSbmuVZfKpnLi-ilVyd5/exec",
+  googleReviewUrl: "https://www.google.com/search?sca_esv=314db17b76bb14ae&rlz=1C1GCEA_enIN1168IN1168&sxsrf=ANbL-n5PMrl5HcjVPP87napXMtxnkaX-jg:1774693788158&q=kangen+burgers&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOVtqP3pZzLSaETvHPjgbCPG-_25_aYggXa7dSS0p7Sfrl2OElR-0y5tJkc24NLCr7ejYUrpUPJWkWfyRWVdbCWG8zXGk5Uh20EqSoycUgYILESPA5-mofOuDtysatFIwBKOzGEIqZ7euZTIwJ8pndzShsOgWVgo2ZPkc4SyyC2Eo7NLRZA%3D%3D&sa=X&ved=2ahUKEwjq5s_GscKTAxXEr1YBHXn-Bo0QrrQLegQIGxAB&biw=1536&bih=776&dpr=1.25#lrd=0x3bc2b163be0c7683:0x9cc4c420bc6b6587,3,,,,",
 };
 
 export const aboutText = {
@@ -231,55 +233,67 @@ export const menuData = {
     ]
   },
   cakes: [
-    { name: "ButterScotch", price: "₹349", description: "A smooth butterscotch cake mixed utilizing 9.5 pH Kangen water, which incredibly hydrates the flour protein to create an immensely moist sponge." },
-    { name: "Simple Chocolate", price: "₹349", description: "Classic chocolate cake enriched naturally. The alkaline water brilliantly darkens the cocoa powder without requiring artificial Dutch processing." },
-    { name: "Choco Chips Chocolate", price: "₹399", description: "Rich chocolate cake loaded with chips and kept delightfully airy by our custom water baking techniques." },
-    { name: "Pineapple", price: "₹349", description: "Refreshing pineapple cake layered with fresh tropical fruit purely washed in 11.5 pH Kangen strong water to remove acidic preservatives." },
-    { name: "Blueberry", price: "₹399", description: "A sweet blueberry cake bursting with antioxidant flavors, naturally amplified as 9.5 pH water extracts maximum color and taste from the berries." },
-    { name: "Red Velvet Cheese Cream", price: "₹449", description: "Decadent red velvet harmonized with cheese cream. The high pH water interacts perfectly with the cocoa to create authentic red tones without severe food coloring." },
-    { name: "Dutch Cakes", price: "₹399", description: "Premium Dutch cake utilizing micro-clustered water to violently deepen the chocolate's natural flavor profile and aroma." },
-    { name: "Truffle Chocolate", price: "₹449", description: "A dense, rich truffle cake elegantly balanced for digestion through our signature alkaline baking method." },
-    { name: "Fresh Strawberry", price: "₹399", description: "Loaded with freshly-picked strawberries practically glowing red after being cleansed in Kangen 11.5 pH antioxidant water." },
-    { name: "Fresh Mango", price: "₹399", description: "Seasonal mango cake retaining exceptional fruit freshness through our proprietary 11.5 pH wax-stripping wash." }
+    { name: "Butterscotch", price: "₹350", description: "A smooth butterscotch cake mixed utilizing 9.5 pH Kangen water, which incredibly hydrates the flour protein to create an immensely moist sponge." },
+    { name: "Simple Chocolate", price: "₹400", description: "Classic chocolate cake enriched naturally. The alkaline water brilliantly darkens the cocoa powder without requiring artificial Dutch processing." },
+    { name: "Choco Chips Chocolate", price: "₹400", description: "Rich chocolate cake loaded with chips and kept delightfully airy by our custom water baking techniques." },
+    { name: "Pineapple", price: "₹400", description: "Refreshing pineapple cake layered with fresh tropical fruit purely washed in 11.5 pH Kangen strong water to remove acidic preservatives." },
+    { name: "Blueberry", price: "₹400", description: "A sweet blueberry cake bursting with antioxidant flavors, naturally amplified as 9.5 pH water extracts maximum color and taste from the berries." },
+    { name: "Red Velvet Cheese Cream", price: "₹450", description: "Decadent red velvet harmonized with cheese cream. The high pH water interacts perfectly with the cocoa to create authentic red tones without severe food coloring." },
+    { name: "Dutch Cakes", price: "₹450", description: "Premium Dutch cake utilizing micro-clustered water to violently deepen the chocolate's natural flavor profile and aroma." },
+    { name: "Truffle Chocolate", price: "₹500", description: "A dense, rich truffle cake elegantly balanced for digestion through our signature alkaline baking method." },
+    { name: "Fresh Strawberry (Seasonal)", price: "₹450", description: "Loaded with freshly-picked strawberries practically glowing red after being cleansed in Kangen 11.5 pH antioxidant water." },
+    { name: "Fresh Mango (Seasonal)", price: "₹500", description: "Seasonal mango cake retaining exceptional fruit freshness through our proprietary 11.5 pH wax-stripping wash." }
+  ],
+  mojitos: [
+    { name: "Spicy Mango", price: "₹99", description: "A fiery yet sweet mango mojito mixed perfectly." },
+    { name: "Peach", price: "₹99", description: "Sweet peach classic mojito." },
+    { name: "Green Apple", price: "₹99", description: "Crisp green apple flavored mojito." },
+    { name: "Chili Guava", price: "₹99", description: "Sweet guava with a nice chili kick." },
+    { name: "Blue Caribbean", price: "₹99", description: "Vibrant blue curacao infused mojito." },
+    { name: "Strawberry", price: "₹99", description: "Fresh strawberry mojito." },
+    { name: "Watermelon", price: "₹99", description: "Refreshing watermelon cooler." },
+    { name: "Mint", price: "₹99", description: "Classic fresh mint and lime mojito." },
+    { name: "Lemon Ice Tea", price: "₹99", description: "Chilled lemon iced tea." },
+    { name: "Peach Ice Tea", price: "₹99", description: "Chilled peach iced tea." },
+    { name: "Fresh Lime Soda", price: "₹99", description: "Sparkling fresh lime soda." }
   ],
   beverages: [
-    { name: "Hot Bournvita", price: "₹49", description: "Nostalgic hot Bournvita mixed seamlessly with pure, heated 9.5 pH Kangen water, allowing the malt powders to dissolve instantly without clumping." },
-    { name: "Hot Coffee", price: "₹49", description: "A rich brew where micro-clustered 9.5 pH Kangen water extracts maximum aroma and essential coffee bean oils, naturally neutralizing the bean's harsh acidity." },
-    { name: "Black Coffee", price: "₹49", description: "Pure black coffee intensely brewed with alkaline water. You'll experience a shockingly smooth cup with completely reduced bitter acidic aftertastes." },
+    { name: "Hot Bournvita", price: "₹39", description: "Nostalgic hot Bournvita mixed seamlessly with pure, heated 9.5 pH Kangen water, allowing the malt powders to dissolve instantly without clumping." },
+    { name: "Hot Coffee", price: "₹39", description: "A rich brew where micro-clustered 9.5 pH Kangen water extracts maximum aroma and essential coffee bean oils, naturally neutralizing the bean's harsh acidity." },
+    { name: "Black Coffee", price: "₹39", description: "Pure black coffee intensely brewed with alkaline water. You'll experience a shockingly smooth cup with completely reduced bitter acidic aftertastes." },
     { name: "Black Tea", price: "₹39", description: "A deeply colored robust black tea, steeped in our pure 9.5 pH Kangen water. The smaller water clusters pull out vivid color and flavor in half the normal brewing time." },
-    { name: "Green Tea", price: "₹49", description: "Naturally detoxifying green tea flawlessly paired with antioxidant-rich Kangen water, doubling the health benefits and preventing the leaves from tasting burnt." },
-    { name: "Hot Chocolate", price: "₹69", description: "Rich, creamy hot chocolate blended with pure alkaline water to ensure a silky smooth, comforting texture that won't curdle the dairy." },
-    { name: "Hot Chocolate With Crush", price: "₹89", description: "Our signature hot chocolate enhanced further with a perfectly extracted flavor crush, brought alive by micro-clustered water." },
-    { name: "Cold Coffee", price: "₹89", description: "Classic chilled coffee rapidly shaken with our pure ice blocks derived straight from 8.5 pH Kangen water, ensuring zero chlorine taints the drink." },
-    { name: "Cold Coffee With Crush", price: "₹109", description: "Cold coffee leveled up with sweet crushes, flawlessly emulsified using our proprietary water techniques." },
-    { name: "Strawberry Milkshake", price: "₹119", description: "A sweet strawberry shake crafted with fruits perfectly washed in 11.5 pH water to remove all waxy agricultural sprays, offering a clean, pure taste." },
+    { name: "Green Tea", price: "₹39", description: "Naturally detoxifying green tea flawlessly paired with antioxidant-rich Kangen water, doubling the health benefits and preventing the leaves from tasting burnt." },
+    { name: "Hot Chocolate", price: "₹49", description: "Rich, creamy hot chocolate blended with pure alkaline water to ensure a silky smooth, comforting texture that won't curdle the dairy." },
+    { name: "Hot Chocolate With Crush", price: "₹99", description: "Our signature hot chocolate enhanced further with a perfectly extracted flavor crush, brought alive by micro-clustered water." },
+    { name: "Cold Coffee", price: "₹99", description: "Classic chilled coffee rapidly shaken with our pure ice blocks derived straight from 8.5 pH Kangen water, ensuring zero chlorine taints the drink." },
+    { name: "Cold Coffee With Crush", price: "₹129", description: "Cold coffee leveled up with sweet crushes, flawlessly emulsified using our proprietary water techniques." },
+    { name: "Strawberry Milkshake", price: "₹129", description: "A sweet strawberry shake crafted with fruits perfectly washed in 11.5 pH water to remove all waxy agricultural sprays, offering a clean, pure taste." },
     { name: "Blueberry Milkshake", price: "₹129", description: "Antioxidant-rich blueberries blended into a rich shake. The 9.5 pH water base boosts the berry's natural antioxidants exponentially." },
-    { name: "Classic Chocolate Milkshake", price: "₹109", description: "A universally loved chocolate shake made exceptionally creamy. The cocoa blooms spectacularly when mixed with our structured water." },
-    { name: "Rose Milkshake", price: "₹109", description: "A floral rose shake carefully crafted. The subtle rose notes are never masked by heavy tap water minerals, thanks to our pure Kangen system." },
+    { name: "Classic Chocolate Milkshake", price: "₹129", description: "A universally loved chocolate shake made exceptionally creamy. The cocoa blooms spectacularly when mixed with our structured water." },
+    { name: "Rose Milkshake", price: "₹129", description: "A floral rose shake carefully crafted. The subtle rose notes are never masked by heavy tap water minerals, thanks to our pure Kangen system." },
     { name: "Mixed Berry Milkshake", price: "₹139", description: "A super-shake of mixed berries naturally washed in Kangen strong water to unlock maximum nutrients and vibrant colors." },
-    { name: "Strawberry Oreo Milkshake", price: "₹139", description: "The crunch of Oreo meets phenomenally clean, 11.5 pH washed fresh strawberries in a perfectly blended icy treat." },
+    { name: "Strawberry Oreo Milkshake", price: "₹149", description: "The crunch of Oreo meets phenomenally clean, 11.5 pH washed fresh strawberries in a perfectly blended icy treat." },
     { name: "Crunchy Cookie Hazelnut", price: "₹149", description: "A nutty, crunchy delight beautifully bound together with our pure water-based ice." },
-    { name: "Butterscotch Milkshake", price: "₹109", description: "A golden butterscotch shake, incredibly smooth, rich, and perfectly digestible due to our alkaline balancing techniques." },
-    { name: "Mango Milkshake", price: "₹119", description: "Thick, fresh mango shake. We wash the mangoes in 11.5 pH water to safely remove artificial ripening chemicals from the skin before slicing." },
+    { name: "Butterscotch Milkshake", price: "₹149", description: "A golden butterscotch shake, incredibly smooth, rich, and perfectly digestible due to our alkaline balancing techniques." },
+    { name: "Mango Milkshake", price: "₹149", description: "Thick, fresh mango shake. We wash the mangoes in 11.5 pH water to safely remove artificial ripening chemicals from the skin before slicing." },
     { name: "American Nuts", price: "₹149", description: "A loaded nutty milkshake delivering tremendous energy and naturally clean hydration through our signature pH-optimized base." }
   ],
   softDrinks: [
-    { name: "Sprite", price: "₹40", description: "Chilled Sprite served directly from the bottle." },
-    { name: "Fanta", price: "₹40", description: "Chilled Fanta served directly from the bottle." },
-    { name: "Coke", price: "₹40", description: "Chilled Coke served directly from the bottle." },
-    { name: "ThumsUp", price: "₹40", description: "Chilled ThumsUp served directly from the bottle." }
+    { name: "Sprite, Fanta, Coke, thumbsup, etc", price: "₹30", description: "Chilled soft drinks served directly from the bottle." }
   ],
   alkalineWater: [
-    { name: "Alkaline Ionized Water", price: "₹30", description: "Our signature 100% pure Kangen Alkaline Ionized Water. Micro-clustered to hydrate you 6x faster than regular water, actively detoxifying your system and completely neutralizing your body's acidity." }
+    { name: "Alkaline Ionized Water (250ml)", price: "₹10", description: "Our signature 100% pure Kangen Alkaline Ionized Water. Micro-clustered to hydrate you 6x faster than regular water, actively detoxifying your system and completely neutralizing your body's acidity." },
+    { name: "Alkaline Ionized Water (500ml)", price: "₹20", description: "Our signature 100% pure Kangen Alkaline Ionized Water." },
+    { name: "Alkaline Ionized Water (1L)", price: "₹30", description: "Our signature 100% pure Kangen Alkaline Ionized Water." }
   ],
   combos: [
-    { name: "Veggie Delight Maxi", price: "₹449", items: ["Corn / Paneer / Exotic Veg Pizza (Binch) - 1", "Aloo Tikki Cheese Burger - 2", "Schezwan Manchurian Burger - 1", "Medium Fries - 1", "Mojito - 3"] },
-    { name: "Veggie Delight Mini", price: "₹299", items: ["Corn / Paneer / Exotic Veg Pizza (Binch) - 1", "Aloo Tikki Cheese Burger - 1", "Medium Fries - 1", "Mojito - 2"] },
-    { name: "Crazy Box", price: "₹349", items: ["Crispy Chicken Popcorn - 13pcs", "Chicken Strips - 2pcs", "Crispy Wings - 2pcs", "Crispy Chicken Burger - 1"] },
-    { name: "Happy Meal Combo", price: "₹399", items: ["Crispy Chicken Burger - 3", "Mint Mojito - 3", "Large Fries - 1"] },
-    { name: "Chicken Spicy Meal", price: "₹449", items: ["Mexican Chicken Burger - 1", "Crispy Chicken Cheese Burger - 1", "Magic Masala Fries - 1", "Chocolate Milkshake - 1"] },
-    { name: "Made For Couple", price: "₹449", items: ["Mexican Chicken Burger - 1", "Chicken Cheese Burger - 1", "Magic Masala Fries - 1", "Chocolate Milkshake - 1"] },
-    { name: "Crazy Family Meal", price: "₹999", items: ["Tandoori Chicken Pizza 8\" - 1", "Crispy Chicken Popcorn With Dip - 1", "Spicy Chicken Burger - 1", "Crispy Chicken Strips - 6pcs", "Crispy Chicken Wings - 6pcs", "Large Peri Peri Fries - 1", "Chocolate Milkshake - 3"] }
+    { name: "Veggie Delight Maxi", price: "₹939", originalPrice: "₹1105", items: ["Corn / Paneer / Exotic Veg Pizza (8inch) - 1", "Aloo Tikki Cheese Burger - 2", "Schezwan Manchurian Burger - 1", "Medium Fries - 1", "Mojito - 3"] },
+    { name: "Veggie Delight Mini", price: "₹579", originalPrice: "₹647", items: ["Corn / Paneer / Exotic Veg Pizza (8inch) - 1", "Aloo Tikki Cheese Burger - 1", "Medium Fries - 1", "Mojito - 2"] },
+    { name: "Crazy Box", price: "₹419", originalPrice: "₹468", items: ["Crispy Chicken Popcorn - 13pcs", "Chicken Strips - 2pcs", "Crispy Wings - 2pcs", "Crispy Chicken Burger - 1"] },
+    { name: "Made For Couple", price: "₹469", originalPrice: "₹536", items: ["Mexican Chicken Burger - 1", "Chicken Cheese Burger - 1", "Magic Masala Fries - 1", "Chocolate Milkshake - 1"] },
+    { name: "Happy Meal Combo", price: "₹699", originalPrice: "₹806", items: ["Crispy Chicken Burger - 3", "Mint Mojito - 3", "Large Fries - 1"] },
+    { name: "Crazy Family Meal", price: "₹1499", originalPrice: "₹1643", items: ["Tandoori Chicken Pizza 8\" - 1", "Crispy Chicken Popcorn With Dip - 1", "Spicy Chicken Burger - 1", "Crispy Chicken Strips - 6pcs", "Crispy Chicken Wings - 6pcs", "Large Peri Peri Fries - 1", "Chocolate Milkshake - 3"] },
+    { name: "Chicken Spicy Meal", price: "₹479", originalPrice: "₹536", items: ["Mexican Chicken Burger - 1", "Crispy Chicken Cheese Burger - 1", "Magic Masala Fries - 1", "Chocolate Milkshake - 1"] }
   ]
 };
 

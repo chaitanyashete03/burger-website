@@ -10,11 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        accent: "#FF6B35",
-        gold: "#c8a96b",
-        background: "#faf7f2",
-        dark: "#0f0a08",
-        "dark-deep": "#0a0604",
+        accent: "#3B82F6",
+        gold: "#60A5FA",
+        background: "#f0f4fa",
+        dark: "#0a0f1a",
+        "dark-deep": "#060b14",
       },
       fontFamily: {
         sans: ['"Outfit"', "sans-serif"],
@@ -32,8 +32,8 @@ const config: Config = {
           "100%": { transform: "scale(1.8)", opacity: "0" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px rgba(255,107,53,0.3)" },
-          "50%": { boxShadow: "0 0 40px rgba(255,107,53,0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px rgba(59,130,246,0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(59,130,246,0.6)" },
         },
         "fade-up": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
