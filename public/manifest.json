@@ -1,0 +1,21 @@
+{
+  "name": "Kangen Burgers",
+  "short_name": "Kangen",
+  "description": "Healthy, Tasty Burgers with Alkaline Kangen Water.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

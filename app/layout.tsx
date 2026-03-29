@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteInfo.siteUrl,
   },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "Kangen Burgers",
+  },
   openGraph: {
     title: defaultSEO.title,
     description: defaultSEO.description,
