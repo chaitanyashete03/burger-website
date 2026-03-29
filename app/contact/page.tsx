@@ -111,7 +111,10 @@ export default function Contact() {
                   <div>
                     <label className="block text-[10px] font-black tracking-widest uppercase mb-2"
                            style={{ color: "var(--text-muted)" }}>Email</label>
-                    <input type="email" required className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none" style={fieldStyle} />
+                    <input type="email" required 
+                           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                           title="Please enter a valid email address."
+                           className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none" style={fieldStyle} />
                   </div>
                   <div>
                     <label className="block text-[10px] font-black tracking-widest uppercase mb-2"

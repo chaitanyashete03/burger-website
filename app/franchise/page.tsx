@@ -148,6 +148,8 @@ export default function FranchisePage() {
                     <input type="email" required 
                            value={formData.email}
                            onChange={(e) => setFormData({...formData, email: e.target.value})}
+                           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                           title="Please enter a valid email address."
                            className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none" style={fieldStyle} />
                   </div>
                 </div>
@@ -157,7 +159,10 @@ export default function FranchisePage() {
                            style={{ color: "var(--text-muted)" }}>Phone</label>
                     <input type="tel" required 
                            value={formData.phone}
-                           onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                           onChange={(e) => setFormData({...formData, phone: e.target.value.replace(/\D/g, "").slice(0, 10)})}
+                           minLength={10}
+                           maxLength={10}
+                           title="Please enter a valid 10-digit phone number."
                            className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none" style={fieldStyle} />
                   </div>
                   <div>
