@@ -426,13 +426,13 @@ export default function Home() {
             <div className="rounded-2xl p-10 sm:p-14" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
               <div className="flex items-center justify-center gap-1 mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <svg key={star} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill={star <= 4 ? "#FBBF24" : "none"} stroke="#FBBF24" strokeWidth="2">
+                  <svg key={star} xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="#FBBF24" stroke="#FBBF24" strokeWidth="2">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                 ))}
-                <span className="ml-2 text-2xl font-black" style={{ color: "var(--text-primary)" }}>4.6</span>
+                <span className="ml-2 text-2xl font-black" style={{ color: "var(--text-primary)" }}>4.8</span>
               </div>
-              <p className="text-sm mb-1" style={{ color: "var(--text-muted)" }}>Based on 320+ Google Reviews</p>
+              <p className="text-sm mb-1" style={{ color: "var(--text-muted)" }}>Based on 1.8k+ Google Reviews</p>
               <h2 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: "var(--text-primary)" }}>
                 Love Our Food? <span style={{ color: "#3B82F6" }}>Leave a Review!</span>
               </h2>
