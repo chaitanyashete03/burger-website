@@ -15,6 +15,11 @@ export const siteInfo = {
   googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbx3tXZw4eZlJhtVsVv5re4opsJ5tRNyoANlADHSbZUfOG_tRSbmuVZfKpnLi-ilVyd5/exec",
   googleFranchiseWebhookUrl: "https://script.google.com/macros/s/AKfycbx3tXZw4eZlJhtVsVv5re4opsJ5tRNyoANlADHSbZUfOG_tRSbmuVZfKpnLi-ilVyd5/exec",
   googleReviewUrl: "https://www.google.com/search?sca_esv=314db17b76bb14ae&rlz=1C1GCEA_enIN1168IN1168&sxsrf=ANbL-n5PMrl5HcjVPP87napXMtxnkaX-jg:1774693788158&q=kangen+burgers&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOVtqP3pZzLSaETvHPjgbCPG-_25_aYggXa7dSS0p7Sfrl2OElR-0y5tJkc24NLCr7ejYUrpUPJWkWfyRWVdbCWG8zXGk5Uh20EqSoycUgYILESPA5-mofOuDtysatFIwBKOzGEIqZ7euZTIwJ8pndzShsOgWVgo2ZPkc4SyyC2Eo7NLRZA%3D%3D&sa=X&ved=2ahUKEwjq5s_GscKTAxXEr1YBHXn-Bo0QrrQLegQIGxAB&biw=1536&bih=776&dpr=1.25#lrd=0x3bc2b163be0c7683:0x9cc4c420bc6b6587,3,,,,",
+  coordinates: {
+    lat: 18.7365386,
+    lng: 73.673889,
+    radiusKm: 2 // 2km radius for nearby alerts
+  }
 };
 
 export const aboutText = {

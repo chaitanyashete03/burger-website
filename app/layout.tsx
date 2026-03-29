@@ -7,6 +7,7 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import SmoothScrolling from '../components/SmoothScrolling';
+import NearbyAlert from '../components/NearbyAlert';
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
@@ -154,6 +155,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton />
+        <NearbyAlert />
       </body>
     </html>
   );
