@@ -323,7 +323,6 @@ export const menuData = {
     { name: "Sprite, Fanta Coke, thumbsup, etc", price: "₹30", description: "Chilled soft drinks served directly from the bottle." }
   ],
   alkalineWater: [
-    { name: "Alkaline Ionized Water (250ml)", price: "₹10", description: "Our signature 100% pure Kangen Alkaline Ionized Water. Micro-clustered to hydrate you 6x faster than regular water, actively detoxifying your system and completely neutralizing your body's acidity. Cell-level hydration for peak energy." },
     { name: "Alkaline Ionized Water (500ml)", price: "₹20", description: "Our signature 100% pure Kangen Alkaline Ionized Water. Perfect on-the-go hydration balance." },
     { name: "Alkaline Ionized Water (1L)", price: "₹30", description: "Our signature 100% pure Kangen Alkaline Ionized Water. Complete daily detox support in a 1L serving." }
   ],
@@ -541,7 +540,6 @@ export const comboBuilderOptions = {
     { name: "Crispy Ch. Strips (6pcs)", price: 269, category: "Snack" },
   ],
   drinks: [
-    { name: "Alkaline Water (250ml)", price: 10, category: "Drink" },
     { name: "Alkaline Water (500ml)", price: 20, category: "Drink" },
     { name: "Alkaline Water (1L)", price: 30, category: "Drink" },
     { name: "Sprite / Coke / Fanta / Thumbs Up", price: 30, category: "Drink" },
