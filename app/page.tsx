@@ -46,7 +46,7 @@ export default function Home() {
               </Magnetic>
             </div>
             <div className="order-1 lg:order-2 relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-              <Image src="/images/about-cafe.jpg" alt="Our Kitchen" fill className="object-cover" />
+              <Image src="/images/ABOUT CAFE.jpeg" alt="Our Kitchen" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
           </SectionReveal>
@@ -115,7 +115,7 @@ export default function Home() {
           <SectionReveal>
             <div className="relative h-[420px] sm:h-[500px] rounded-3xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.5)] bg-black/20">
               <Image 
-                src="/images/about-cafe.jpg" 
+                src="/images/ABOUT CAFE.jpeg" 
                 alt="About Kangen Burgers Cafe Front" 
                 fill 
                 className="object-cover"
