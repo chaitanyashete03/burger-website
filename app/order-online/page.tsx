@@ -1,6 +1,6 @@
 import SectionReveal from "../../components/SectionReveal";
 import Link from "next/link";
-import { Utensils, ShoppingBag, PhoneCall } from "lucide-react";
+import { Utensils, ShoppingBag, PhoneCall, MapPin } from "lucide-react";
 import { siteInfo } from "../../lib/constants";
 import { generatePageMetadata } from "../../lib/seo";
 
@@ -31,32 +31,32 @@ export default function OrderOnline() {
           </p>
         </div>
 
-        {/* platform cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
-          {[
-            { href: "#", icon: <Utensils size={28} />, name: "Zomato", sub: "Order via Zomato", accent: "#e23744" },
-            { href: "#", icon: <ShoppingBag size={28} />, name: "Swiggy", sub: "Order via Swiggy", accent: "#fc8019" },
-          ].map(({ href, icon, name, sub, accent }) => (
-            <a
-              key={name}
-              href={href}
-              className="group relative rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1"
-              style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}
+        {/* platform card */}
+        <div className="max-w-md mx-auto mb-10">
+          <a
+            href={siteInfo.magicpinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative rounded-2xl p-10 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1"
+            style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}
+          >
+            <div
+              className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+              style={{ background: "radial-gradient(circle at center, #ff316115, transparent 65%)" }}
+            />
+            <div
+              className="w-20 h-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
+              style={{ background: "#ff316118", color: "#ff3161" }}
             >
-              <div
-                className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                style={{ background: `radial-gradient(circle at center, ${accent}15, transparent 65%)` }}
-              />
-              <div
-                className="w-16 h-16 rounded-full flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
-                style={{ background: `${accent}18`, color: accent }}
-              >
-                {icon}
-              </div>
-              <h3 className="text-2xl font-black mb-1" style={{ color: "var(--text-primary)" }}>{name}</h3>
-              <p className="text-sm" style={{ color: "var(--text-muted)" }}>{sub}</p>
-            </a>
-          ))}
+              <MapPin size={36} />
+            </div>
+            <h3 className="text-3xl font-black mb-2" style={{ color: "var(--text-primary)" }}>Magicpin</h3>
+            <p className="text-sm" style={{ color: "var(--text-muted)" }}>Order via Magicpin for Great Savings</p>
+            <div className="mt-6 px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest text-white" 
+                 style={{ background: "#ff3161" }}>
+              Order Now
+            </div>
+          </a>
         </div>
 
         {/* divider */}
