@@ -17,33 +17,36 @@ export default function BurgersInTalegaon() {
           <div className="flex items-center gap-3 mb-5">
             <div className="w-8 h-px" style={{ background: "#3B82F6" }} />
             <span className="text-[10px] font-black tracking-[0.4em] uppercase" style={{ color: "#3B82F6" }}>
-              Talegaon Dabhade
+              #1 Rated in Talegaon Dabhade
             </span>
           </div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight mb-5" style={{ color: "var(--text-primary)" }}>
-            Best Burgers in{" "}
+            Best Burger Shop in{" "}
             <span style={{ color: "#3B82F6" }}>Talegaon Dabhade</span>
           </h1>
           <div className="w-8 h-[2px] rounded-full mb-6" style={{ background: "#3B82F6" }} />
           <p className="text-base sm:text-lg max-w-2xl leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-            Kangen Burgers is Talegaon Dabhade&apos;s favourite burger destination, 
-            serving handcrafted burgers, gourmet pizzas, crispy snacks, and refreshing beverages — 
+            Looking for the <strong>best burger shop in Talegaon Dabhade</strong>? Kangen Burgers is Talegaon&apos;s 
+            favourite burger destination with a <strong>4.8★ rating on Google</strong> from 1,800+ reviews. 
+            We serve handcrafted burgers, gourmet pizzas, crispy snacks, and refreshing beverages — 
             all prepared with the unique health benefits of alkaline Kangen Water. Located right at 
-            Chatrapati Shivaji Maharaj Chowk on Station Road, we&apos;re just minutes from Talegaon Railway Station.
+            Chatrapati Shivaji Maharaj Chowk on Station Road, we&apos;re just <strong>2 minutes from Talegaon Railway Station</strong>.
           </p>
         </SectionReveal>
 
         {/* Why Section */}
         <SectionReveal className="mb-16">
           <h2 className="text-3xl font-black mb-8" style={{ color: "var(--text-primary)" }}>
-            Why Talegaon Loves <span style={{ color: "#3B82F6" }}>Kangen Burgers</span>
+            Why Kangen Burgers is the <span style={{ color: "#3B82F6" }}>#1 Burger Shop in Talegaon</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[
-              { title: "Kangen Water-Infused", desc: "Every dish is prepared using ionized alkaline water for better taste and health benefits." },
-              { title: "Extensive Menu", desc: "40+ burgers, pizzas, pastas, snacks, cakes, and beverages — both vegetarian and non-vegetarian." },
-              { title: "Premium Hygiene", desc: "We use hospital-grade 2.5 pH acidic water to sanitize surfaces and ingredients before cooking." },
-              { title: "Prime Location", desc: "Located at Station Road, Yashwant Nagar — easily accessible from Talegaon Railway Station and bus stand." },
+              { title: "Kangen Water-Infused Recipes", desc: "Every dish at our Talegaon burger shop is prepared using ionized alkaline Kangen water (pH 9.5) for better taste, softer textures, and enhanced health benefits." },
+              { title: "40+ Menu Items", desc: "From classic veg burgers (₹69) to premium chicken cheese smash burgers (₹169), gourmet pizzas, pasta, cakes, and milkshakes — the largest menu of any burger shop in Talegaon Dabhade." },
+              { title: "Hospital-Grade Hygiene", desc: "We use 2.5 pH Strong Acidic Water (a hospital-grade sanitizer) to clean all surfaces and raw ingredients. One of the most hygienic restaurants near Talegaon Station." },
+              { title: "Near Talegaon Railway Station", desc: "Located at 409, Station Road, Yashwant Nagar — just a 2-minute walk from Talegaon Railway Station and bus stand. The most accessible burger shop in Talegaon." },
+              { title: "4.8★ Google Rating", desc: "With over 1,800 Google reviews and a 4.8-star rating, Kangen Burgers is the highest-rated burger restaurant in Talegaon Dabhade, Pune." },
+              { title: "Affordable Prices", desc: "Burgers starting at just ₹69, fries from ₹69, and mojitos at ₹99. The best value-for-money burger shop near Talegaon Dabhade." },
             ].map((item, i) => (
               <div
                 key={i}
@@ -58,10 +61,64 @@ export default function BurgersInTalegaon() {
           </div>
         </SectionReveal>
 
+        {/* What We Serve */}
+        <SectionReveal className="mb-16">
+          <h2 className="text-3xl font-black mb-6" style={{ color: "var(--text-primary)" }}>
+            What We Serve at Our <span style={{ color: "#3B82F6" }}>Talegaon Burger Shop</span>
+          </h2>
+          <p className="text-base leading-relaxed mb-8" style={{ color: "var(--text-secondary)" }}>
+            Our menu at the best burger shop in Talegaon Dabhade includes something for everyone:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { emoji: "🍔", title: "Burgers", desc: "22+ varieties — Veg Tikki, Paneer Tandoori, Crispy Chicken, Butter Chicken & more" },
+              { emoji: "🍕", title: "Pizzas", desc: "8\" & 10\" — Margherita, BBQ Chicken, Tandoori Paneer, Exotic Veggie & more" },
+              { emoji: "🍟", title: "Fries & Snacks", desc: "Normal, Peri Peri, Cheesy, BBQ Fries + Chicken Wings, Nuggets, Nachos" },
+              { emoji: "🌯", title: "Frankies & Sandwiches", desc: "Tandoori, Peri Peri, Chipotle Frankies + Club, Paneer, Chicken Tikka Sandwiches" },
+              { emoji: "🍰", title: "Cakes & Desserts", desc: "Red Velvet, Truffle Chocolate, Fresh Mango, Blueberry & more" },
+              { emoji: "🥤", title: "Beverages", desc: "Mojitos, Milkshakes, Cold Coffee, Fresh Lime Soda & Alkaline Kangen Water" },
+            ].map((item, i) => (
+              <div key={i} className="rounded-2xl p-6" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
+                <span className="text-2xl mb-3 block">{item.emoji}</span>
+                <h3 className="text-base font-black mb-1" style={{ color: "var(--text-primary)" }}>{item.title}</h3>
+                <p className="text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <Link href="/menu" className="inline-block px-8 py-3.5 rounded-full font-black text-sm text-white transition-all hover:scale-105" style={{ background: "#3B82F6" }}>
+              View Full Menu
+            </Link>
+          </div>
+        </SectionReveal>
+
+        {/* Customer Reviews */}
+        <SectionReveal className="mb-16">
+          <h2 className="text-3xl font-black mb-6" style={{ color: "var(--text-primary)" }}>
+            What Talegaon Customers Say About <span style={{ color: "#3B82F6" }}>Kangen Burgers</span>
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {[
+              { name: "Priya S.", text: "The best burgers in Talegaon, hands down! We come here every weekend with family. The Kangen water twist makes them taste super fresh.", rating: "5★" },
+              { name: "Rahul P.", text: "As a food blogger, I've tried every burger shop in Talegaon Dabhade. Kangen Burgers stands out — amazing taste, great hygiene, and the alkaline water concept is unique.", rating: "5★" },
+              { name: "Sneha D.", text: "Best cafe near Talegaon station. The Paneer Tandoori Burger is to die for, and the cold coffee is perfect. Highly recommended!", rating: "5★" },
+              { name: "Amit K.", text: "Started as a customer, now I'm a franchise partner! The best burger shop in Talegaon Dabhade with incredible potential for growth.", rating: "5★" },
+            ].map((review, i) => (
+              <div key={i} className="rounded-2xl p-6" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-yellow-400 font-bold text-sm">{review.rating}</span>
+                  <span className="font-black text-sm" style={{ color: "var(--text-primary)" }}>{review.name}</span>
+                </div>
+                <p className="text-sm leading-relaxed italic" style={{ color: "var(--text-secondary)" }}>&ldquo;{review.text}&rdquo;</p>
+              </div>
+            ))}
+          </div>
+        </SectionReveal>
+
         {/* Location + Map */}
         <SectionReveal className="mb-16">
           <h2 className="text-3xl font-black mb-6" style={{ color: "var(--text-primary)" }}>
-            Find Us in <span style={{ color: "#3B82F6" }}>Talegaon Dabhade</span>
+            Find the Best Burger Shop <span style={{ color: "#3B82F6" }}>Near Talegaon Station</span>
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="rounded-2xl p-8" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
@@ -69,6 +126,10 @@ export default function BurgersInTalegaon() {
                 <div>
                   <span className="block text-[10px] font-black tracking-widest uppercase mb-1" style={{ color: "var(--text-muted)" }}>Address</span>
                   <p className="text-sm" style={{ color: "var(--text-secondary)" }}>{siteInfo.address}</p>
+                </div>
+                <div>
+                  <span className="block text-[10px] font-black tracking-widest uppercase mb-1" style={{ color: "var(--text-muted)" }}>Landmark</span>
+                  <p className="text-sm" style={{ color: "var(--text-secondary)" }}>Near Talegaon Railway Station, opposite Chatrapati Shivaji Maharaj Chowk</p>
                 </div>
                 <div>
                   <span className="block text-[10px] font-black tracking-widest uppercase mb-1" style={{ color: "var(--text-muted)" }}>Phone</span>
@@ -95,9 +156,29 @@ export default function BurgersInTalegaon() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-full border-none grayscale"
-                title="Kangen Burgers Location in Talegaon Dabhade"
+                title="Kangen Burgers - Best Burger Shop in Talegaon Dabhade near Talegaon Station"
               />
             </div>
+          </div>
+        </SectionReveal>
+
+        {/* FAQ Section for this page */}
+        <SectionReveal className="mb-16">
+          <h2 className="text-3xl font-black mb-6" style={{ color: "var(--text-primary)" }}>
+            Frequently Asked Questions About <span style={{ color: "#3B82F6" }}>Burgers in Talegaon</span>
+          </h2>
+          <div className="space-y-4">
+            {[
+              { q: "What is the best burger shop in Talegaon Dabhade?", a: "Kangen Burgers is rated #1 on Google with a 4.8★ rating from 1,800+ reviews. Located at Station Road, Yashwant Nagar, near Talegaon Railway Station, we serve 40+ varieties of handcrafted burgers made with alkaline Kangen Water." },
+              { q: "Where is Kangen Burgers located in Talegaon?", a: "We are at 409, Station Road, Chatrapati Shivaji Maharaj Chowk, Yashwant Nagar, Talegaon Dabhade, Maharashtra 410507 — just a 2-minute walk from Talegaon Railway Station." },
+              { q: "Does the best burger shop in Talegaon offer delivery?", a: "Yes! You can order through Magicpin or call us directly at +91 8805174783 for takeaway and delivery across Talegaon Dabhade and surrounding areas." },
+              { q: "What are the prices at Kangen Burgers Talegaon?", a: "Our burgers start at just ₹69 (Crunchy Burger), with premium options up to ₹309. Fries from ₹69, pizzas from ₹199, and mojitos at ₹99. Best value burger shop in Talegaon!" },
+            ].map((faq, i) => (
+              <div key={i} className="rounded-2xl p-6" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
+                <h3 className="text-base font-bold mb-2" style={{ color: "var(--text-primary)" }}>{faq.q}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{faq.a}</p>
+              </div>
+            ))}
           </div>
         </SectionReveal>
 
@@ -105,14 +186,25 @@ export default function BurgersInTalegaon() {
         <SectionReveal>
           <div className="rounded-2xl p-10 text-center" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>
             <h2 className="text-2xl font-black mb-3" style={{ color: "var(--text-primary)" }}>
-              Ready to taste the best burgers in Talegaon?
+              Ready to taste the best burgers in Talegaon Dabhade?
             </h2>
             <p className="text-sm mb-6 max-w-md mx-auto" style={{ color: "var(--text-secondary)" }}>
-              Visit us today or order online for delivery & takeaway.
+              Visit our burger shop near Talegaon Station today or order online for fast delivery &amp; takeaway.
             </p>
-            <Link href="/order-online" className="px-10 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105 inline-block" style={{ background: "#3B82F6" }}>
-              Order Now
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link href="/order-online" className="px-10 py-4 rounded-full font-black text-base text-white transition-all hover:scale-105 inline-block" style={{ background: "#3B82F6" }}>
+                Order Now
+              </Link>
+              <a
+                href={siteInfo.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-10 py-4 rounded-full font-black text-base transition-all hover:scale-105 inline-block"
+                style={{ color: "var(--text-primary)", border: "1px solid var(--card-border)", background: "var(--card-bg)" }}
+              >
+                Get Directions
+              </a>
+            </div>
           </div>
         </SectionReveal>
       </div>
