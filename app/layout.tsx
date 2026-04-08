@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     canonical: siteInfo.siteUrl,
   },
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -133,7 +141,7 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#3B82F6" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.png" />
+
         {/* Dark mode init – prevent FOUC */}
         <script
           dangerouslySetInnerHTML={{
