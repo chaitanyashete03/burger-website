@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "YOUR_GOOGLE_SEARCH_CONSOLE_TOKEN", // Replace after deploying
+    google: "R2lvsardLdQ-WVyajS7qLn9SkjBXXKStkOQXD1eaJZI",
   },
 };
 
