@@ -11,7 +11,7 @@ export default function TermsOfService() {
           <h1 className="text-4xl font-bold text-gray-800 mb-8">Terms of Service</h1>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p className="mb-4">Last Updated: {new Date().toLocaleDateString()}</p>
-            <p>By accessing the website at https://kangenburgers.vercel.app, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
+            <p>By accessing the website at https://www.kangenburgers.com, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
             <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">1. Use License</h2>
             <p>Permission is granted to temporarily download one copy of the materials on Kangen Burgers&apos; website for personal, non-commercial transitory viewing only.</p>
             <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">2. Disclaimer</h2>
