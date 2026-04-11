@@ -31,13 +31,66 @@ export default function OrderOnline() {
           </p>
         </div>
 
-        {/* platform card */}
-        <div className="max-w-md mx-auto mb-10">
+        {/* platform cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+          {/* Swiggy */}
+          <a
+            href={siteInfo.swiggyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1"
+            style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}
+          >
+            <div
+              className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+              style={{ background: "radial-gradient(circle at center, #FC801915, transparent 65%)" }}
+            />
+            <div
+              className="w-16 h-16 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
+              style={{ background: "#FC801918", color: "#FC8019" }}
+            >
+              <ShoppingBag size={30} />
+            </div>
+            <h3 className="text-2xl font-black mb-2" style={{ color: "var(--text-primary)" }}>Swiggy</h3>
+            <p className="text-xs" style={{ color: "var(--text-muted)" }}>Order via Swiggy for Fast Delivery</p>
+            <div className="mt-6 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white" 
+                 style={{ background: "#FC8019" }}>
+              Order Now
+            </div>
+          </a>
+
+          {/* Zomato */}
+          <a
+            href={siteInfo.zomatoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1"
+            style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}
+          >
+            <div
+              className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+              style={{ background: "radial-gradient(circle at center, #E2374415, transparent 65%)" }}
+            />
+            <div
+              className="w-16 h-16 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
+              style={{ background: "#E2374418", color: "#E23744" }}
+            >
+              <Utensils size={30} />
+            </div>
+            <h3 className="text-2xl font-black mb-2" style={{ color: "var(--text-primary)" }}>Zomato</h3>
+            <p className="text-xs" style={{ color: "var(--text-muted)" }}>Order via Zomato for Best Deals</p>
+            <div className="mt-6 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white" 
+                 style={{ background: "#E23744" }}>
+              Order Now
+            </div>
+          </a>
+
+          {/* Magicpin */}
           <a
             href={siteInfo.magicpinUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative rounded-2xl p-10 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1"
+            className="group relative rounded-2xl p-8 flex flex-col items-center text-center transition-all duration-300 hover:-translate-y-1"
             style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}
           >
             <div
@@ -45,14 +98,14 @@ export default function OrderOnline() {
               style={{ background: "radial-gradient(circle at center, #ff316115, transparent 65%)" }}
             />
             <div
-              className="w-20 h-20 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
+              className="w-16 h-16 rounded-full flex items-center justify-center mb-6 transition-transform group-hover:scale-110"
               style={{ background: "#ff316118", color: "#ff3161" }}
             >
-              <MapPin size={36} />
+              <MapPin size={30} />
             </div>
-            <h3 className="text-3xl font-black mb-2" style={{ color: "var(--text-primary)" }}>Magicpin</h3>
-            <p className="text-sm" style={{ color: "var(--text-muted)" }}>Order via Magicpin for Great Savings</p>
-            <div className="mt-6 px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest text-white" 
+            <h3 className="text-2xl font-black mb-2" style={{ color: "var(--text-primary)" }}>Magicpin</h3>
+            <p className="text-xs" style={{ color: "var(--text-muted)" }}>Order via Magicpin for Great Savings</p>
+            <div className="mt-6 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest text-white" 
                  style={{ background: "#ff3161" }}>
               Order Now
             </div>

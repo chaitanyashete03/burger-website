@@ -171,7 +171,7 @@ export default function BurgersInTalegaon() {
             {[
               { q: "What is the best burger shop in Talegaon Dabhade?", a: "Kangen Burgers is rated #1 on Google with a 4.8★ rating from 1,800+ reviews. Located at Station Road, Yashwant Nagar, near Talegaon Railway Station, we serve 40+ varieties of handcrafted burgers made with alkaline Kangen Water." },
               { q: "Where is Kangen Burgers located in Talegaon?", a: "We are at 409, Station Road, Chatrapati Shivaji Maharaj Chowk, Yashwant Nagar, Talegaon Dabhade, Maharashtra 410507 — just a 2-minute walk from Talegaon Railway Station." },
-              { q: "Does the best burger shop in Talegaon offer delivery?", a: "Yes! You can order through Magicpin or call us directly at +91 8805174783 for takeaway and delivery across Talegaon Dabhade and surrounding areas." },
+              { q: "Does the best burger shop in Talegaon offer delivery?", a: "Yes! You can order through Magicpin, Zomato, or Swiggy, or call us directly at +91 8805174783 for takeaway and delivery across Talegaon Dabhade and surrounding areas." },
               { q: "What are the prices at Kangen Burgers Talegaon?", a: "Our burgers start at just ₹69 (Crunchy Burger), with premium options up to ₹309. Fries from ₹69, pizzas from ₹199, and mojitos at ₹99. Best value burger shop in Talegaon!" },
             ].map((faq, i) => (
               <div key={i} className="rounded-2xl p-6" style={{ background: "var(--card-bg)", border: "1px solid var(--card-border)" }}>

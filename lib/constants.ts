@@ -12,6 +12,8 @@ export const siteInfo = {
     linkedin: "https://www.linkedin.com/in/kangen-burgers-47a964305/",
   },
   magicpinUrl: "https://magicpin.in/Pune/Talegaon-Dabhade/Restaurant/Kangen-BurgerS/store/1676742/",
+  zomatoUrl: "https://www.zomato.com/pune/kangen-burgers-talegaon",
+  swiggyUrl: "https://www.swiggy.com/city/pune/kangen-burgers-solanki-complex-talegaon-rest945261",
   siteUrl: "https://www.kangenburgers.com",
   googleSheetsWebhookUrl: "https://script.google.com/macros/s/AKfycbx3tXZw4eZlJhtVsVv5re4opsJ5tRNyoANlADHSbZUfOG_tRSbmuVZfKpnLi-ilVyd5/exec",
   googleFranchiseWebhookUrl: "https://script.google.com/macros/s/AKfycbx3tXZw4eZlJhtVsVv5re4opsJ5tRNyoANlADHSbZUfOG_tRSbmuVZfKpnLi-ilVyd5/exec",
@@ -357,7 +359,7 @@ export const faqData = [
   },
   {
     question: "Does Kangen Burgers offer delivery?",
-    answer: "Yes! You can order through Magicpin or call us directly at +91 9112738490 for takeaway orders. We deliver across Talegaon Dabhade and surrounding areas in Pune."
+    answer: "Yes! You can order through Magicpin, Zomato, Swiggy, or call us directly at +91 9112738490 for takeaway orders. We deliver across Talegaon Dabhade and surrounding areas in Pune."
   },
   {
     question: "Are Kangen Water burgers healthier than regular burgers?",

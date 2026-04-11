@@ -56,7 +56,7 @@ async function run() {
     if (filesToAnalyze.length === 0) {
         console.log("No images left to rename!");
         return;
-    }
+    } 
 
     // 3. Process each unmapped file
     for (let i = 0; i < filesToAnalyze.length; i++) {
