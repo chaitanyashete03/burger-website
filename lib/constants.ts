@@ -334,7 +334,7 @@ export const menuData = {
     { name: "Veggie Delight Mini", price: "₹579", originalPrice: "₹647", items: ["Corn / Paneer / Exotic Veg Pizza (8inch) - 1", "Aloo Tikki Cheese Burger - 1", "Medium Fries - 1", "Mojito - 2"] },
     { name: "Crazy Box", price: "₹419", originalPrice: "₹468", items: ["Crispy Chicken Popcorn - 13pcs", "Chicken Strips - 2pcs", "Crispy Wings - 2pcs", "Crispy Chicken Burger - 1"] },
     { name: "Made For Couple", price: "₹469", originalPrice: "₹536", items: ["Mexican Chicken Burger - 1", "Chicken Cheese Burger - 1", "Magic Masala Fries - 1", "Chocolate Milkshake - 1"] },
-    { name: "Happy Meal Combo", price: "₹699", originalPrice: "₹806", items: ["Crispy Chicken Burger - 3", "Mint Mojito - 3", "Large Fries - 1"] },
+    { name: "Joy Meal Combo", price: "₹699", originalPrice: "₹806", items: ["Crispy Chicken Burger - 3", "Mint Mojito - 3", "Large Fries - 1"] },
     { name: "Crazy Family Meal", price: "₹1499", originalPrice: "₹1643", items: ["Tandoori Chicken Pizza 8\" - 1", "Crispy Chicken Popcorn With Dip - 1", "Spicy Chicken Burger - 1", "Crispy Chicken Strips - 6pcs", "Crispy Chicken Wings - 6pcs", "Large Peri Peri Fries - 1", "Chocolate Milkshake - 3"] },
     { name: "Chicken Spicy Meal", price: "₹479", originalPrice: "₹536", items: ["Mexican Chicken Burger - 1", "Crispy Chicken Cheese Burger - 1", "Magic Masala Fries - 1", "Chocolate Milkshake - 1"] }
   ]
